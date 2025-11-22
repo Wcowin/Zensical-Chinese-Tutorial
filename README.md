@@ -70,7 +70,7 @@
 这是最简单的方式，适合初学者快速体验：
 
 1. **下载模板**
-   - 访问 [Releases页面](https://github.com/Wcowin/Zensical-Wcowin/releases)
+   - 访问 [Releases页面](https://github.com/Wcowin/Zensical-Chinese-Tutorial/releases)
    - 下载最新版本的 `Zensical-Wcowin.zip`
    - 解压到你想要的目录
    - 比如你在本地新建了一个 `myblog` 文件夹，就把所有文件移动到该目录
@@ -101,7 +101,7 @@
 1. **克隆仓库**
    ```bash
    # 克隆到本地
-   git clone https://github.com/Wcowin/Zensical-Wcowin.git
+   git clone https://github.com/Wcowin/Zensical-Chinese-Tutorial.git
    
    # 进入项目目录
    cd Zensical-Wcowin
@@ -386,12 +386,12 @@ lang = "en"
 ## 案例成果
 
 - [Wcowin 的博客](https://wcowin.work) - Zensical 官方示例
-- [更多案例敬请期待...](https://github.com/Wcowin/Zensical-Wcowin)
+- [更多案例敬请期待...](https://github.com/Wcowin/Zensical-Chinese-Tutorial)
 
 ## 贡献者
 
-<a href="https://github.com/Wcowin/Zensical-Wcowin/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Wcowin/Zensical-Wcowin" />
+<a href="https://github.com/Wcowin/Zensical-Chinese-Tutorial/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Wcowin/Zensical-Chinese-Tutorial" />
 </a>
 
 [![Built with Zensical](https://img.shields.io/badge/Built_with-Zensical-4051B5?style=for-the-badge)](https://zensical.org/) 
