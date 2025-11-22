@@ -28,7 +28,7 @@ extra_javascript = [
 
 # ===== 额外的 CSS 文件 =====
 extra_css = [
-    "stylesheets/extra.css",         # 额外样式
+    "stylesheets/extra.css"          # 额外样式
 ]
 
 # ===== 导航配置 [Navigation] =====
@@ -71,7 +71,7 @@ nav = [
 [project.theme]
 variant = "modern"                # Zensical 特有：使用 modern 主题变体（或 "classic"）
 custom_dir = "overrides"          # 自定义主题目录（相对于配置文件）
-logo = "https://zensical.org/assets/images/logo.svg"  # 网站 Logo
+# logo = "https://zensical.org/assets/images/logo.svg"  # 网站 Logo
 favicon = "https://zensical.org/favicon.ico"          # 网站图标
 language = "zh"                   # 网站语言：中文
 
