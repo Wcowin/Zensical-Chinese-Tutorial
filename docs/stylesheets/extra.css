@@ -1,0 +1,53 @@
+/* ==========================================
+   Zensical-Wcowin 自定义样式
+   ========================================== */
+
+:root {
+  /* 主题颜色 */
+  --md-primary-fg-color: #4051B5;
+  --md-primary-fg-color--light: #5C6BC0;
+  --md-primary-fg-color--dark: #303F9F;
+  
+  /* 强调色 */
+  --md-accent-fg-color: #536DFE;
+}
+
+/* 网格卡片样式 */
+.grid.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.grid.cards > * {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.grid.cards > *:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .grid.cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 自定义字体 */
+.custom-font {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* 图标样式 */
+.lg.middle {
+  font-size: 2rem;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}

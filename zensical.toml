@@ -1,0 +1,250 @@
+# ==========================================
+# Zensical-Wcowin 配置文件
+# 最好的 Zensical 中文教程
+# ==========================================
+
+[project]
+# ===== 基本信息 [Info] =====
+site_name = "Zensical-Wcowin 中文教程"           # 网站名称
+site_url = "https://zensical-wcowin.example.com/"  # 网站URL（请修改为你的域名）
+site_description = "最详细、最便捷、最前沿的 Zensical 中文教程"  # 网站描述
+site_author = "Wcowin"                           # 网站作者
+copyright = "Copyright &copy; 2025 Wcowin"      # 左下角的版权声明
+docs_dir = "docs"                                # 文档目录
+site_dir = "site"                                # 生成的网站目录
+use_directory_urls = true                        # 使用目录形式的URL
+
+# ===== 仓库配置 =====
+repo_url = "https://github.com/Wcowin/Zensical-Wcowin"  # 右上角点击跳转的链接
+repo_name = "Zensical-Wcowin"                            # 右上角的名字
+edit_uri = "edit/main/docs"                              # 编辑按钮跳转的链接
+
+# ===== 额外的 JavaScript 文件 =====
+extra_javascript = [
+    "javascripts/extra.js",                                   # 额外功能脚本
+    "javascripts/mathjax.js",                                 # MathJax 配置
+    "https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"       # MathJax CDN
+]
+
+# ===== 额外的 CSS 文件 =====
+extra_css = [
+    "stylesheets/extra.css",         # 额外样式
+]
+
+# ===== 导航配置 [Navigation] =====
+nav = [
+    { "主页" = ["index.md"] },
+    { "快速开始" = [
+        { "5 分钟快速开始" = "blog/quick-start.md" },
+        { "从 MkDocs 迁移" = "blog/migration.md" },
+    ]},
+    { "核心教程" = [
+        { "Zensical 博客系统完全指南" = "blog/blog-tutorial.md" },
+        { "zensical.toml 配置详解" = "blog/configuration.md" },
+        { "主题定制指南" = "blog/theme-customization.md" },
+        { "Markdown 扩展使用" = "blog/markdown-extensions.md" },
+    ]},
+    { "插件系统" = [
+        { "博客插件详解" = "blog/plugins/blog.md" },
+        { "搜索插件配置" = "blog/plugins/search.md" },
+        { "标签插件使用" = "blog/plugins/tags.md" },
+        { "RSS 插件配置" = "blog/plugins/rss.md" },
+    ]},
+    { "部署指南" = [
+        { "Netlify 部署" = "blog/deployment/netlify.md" },
+        { "GitHub Pages 部署" = "blog/deployment/github-pages.md" },
+        { "自托管部署" = "blog/deployment/self-hosted.md" },
+    ]},
+    { "高级主题" = [
+        { "性能优化" = "blog/advanced/performance.md" },
+        { "SEO 优化" = "blog/advanced/seo.md" },
+        { "多语言支持" = "blog/advanced/i18n.md" },
+    ]},
+    { "常见问题" = "blog/faq.md" },
+    { "案例展示" = "blog/showcase.md" },
+    { "关于" = "about.md" },
+]
+
+# ==========================================
+# 主题配置 [Theme]
+# ==========================================
+[project.theme]
+variant = "modern"                # Zensical 特有：使用 modern 主题变体（或 "classic"）
+custom_dir = "overrides"          # 自定义主题目录（相对于配置文件）
+logo = "https://zensical.org/assets/images/logo.svg"  # 网站 Logo
+favicon = "https://zensical.org/favicon.ico"          # 网站图标
+language = "zh"                   # 网站语言：中文
+
+# ===== 主题特性 =====
+features = [
+    # 导航相关
+    "announce.dismiss",           # 可关闭公告栏
+    "navigation.prune",           # 只渲染可见导航项
+    "navigation.tracking",        # 滚动时URL锚点自动更新
+    "navigation.tabs",            # 一级导航显示为顶部Tab
+    "navigation.sections",        # 侧边栏分组
+    "navigation.top",             # 返回顶部按钮
+    "navigation.footer",          # 上一页/下一页导航
+    "navigation.expand",          # 默认展开导航
+    "navigation.indexes",         # 章节索引页
+    
+    # 搜索相关
+    "search.suggest",             # 搜索建议
+    "search.highlight",           # 搜索结果高亮
+    "search.share",               # 搜索结果分享
+    
+    # 目录相关
+    "toc.follow",                 # 目录跟随滚动
+    
+    # 内容相关
+    "content.tooltips",           # 内容提示框
+    "content.code.copy",          # 代码复制按钮
+    "content.code.select",        # 代码选择功能
+    "content.code.annotate",      # 代码注释功能
+]
+
+# ===== 调色板配置 =====
+# 自动模式
+[[project.theme.palette]]
+media = "(prefers-color-scheme)"
+toggle = { icon = "material/link", name = "关闭自动模式" }
+
+# 日间模式
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+primary = "indigo"
+accent = "indigo"
+toggle = { icon = "material/toggle-switch", name = "切换至夜间模式" }
+
+# 夜间模式
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+primary = "indigo"
+accent = "indigo"
+toggle = { icon = "material/toggle-switch-off-outline", name = "切换至日间模式" }
+
+# ===== 图标配置 =====
+[project.theme.icon]
+repo = "fontawesome/brands/github"
+previous = "fontawesome/solid/angle-left"
+alternate = "fontawesome/solid/language"
+
+# ==========================================
+# 额外配置 [Extra]
+# ==========================================
+[project.extra]
+generator = true
+
+# ===== 状态标签 =====
+[project.extra.status]
+new = "最近添加"
+deprecated = "已弃用"
+
+# ===== 社交媒体链接 =====
+[[project.extra.social]]
+icon = "fontawesome/brands/github"
+link = "https://github.com/Wcowin/Zensical-Wcowin"
+name = "GitHub"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/telegram"
+link = "https://t.me/Wcowin"
+name = "Telegram"
+
+[[project.extra.social]]
+icon = "fontawesome/regular/envelope"
+link = "mailto:wcowin@qq.com"
+name = "Email"
+
+# ==========================================
+# 插件配置 [Plugins]
+# ==========================================
+
+# ===== 搜索插件 =====
+[project.plugins.search]
+separator = '[\s\u200b\-]'
+
+# ===== 博客插件 =====
+[project.plugins.blog]
+post_date_format = "full"                    # 时间格式：完整日期
+draft = true                                  # 启用草稿功能
+draft_if_future_date = true                   # 自动将具有未来日期的帖子标记为草稿
+post_readtime = true                          # 显示阅读时间
+post_readtime_words_per_minute = 265          # 每分钟阅读字数（中文适配）
+post_url_format = "{date}/{slug}"             # 文章URL格式
+pagination_per_page = 10                      # 每页显示文章数
+pagination_url_format = "page/{page}"         # 分页URL格式
+
+# ===== 标签插件 =====
+[project.plugins.tags]
+
+# ===== RSS 插件 =====
+[project.plugins.rss]
+
+# ==========================================
+# Markdown 扩展配置 [Markdown Extensions]
+# ==========================================
+[project.markdown_extensions]
+abbr = {}           # 支持缩写
+attr_list = {}      # 支持属性列表
+admonition = {}     # 支持警告框
+def_list = {}       # 支持定义列表
+footnotes = {}      # 支持脚注
+md_in_html = {}     # 支持在 HTML 中使用 Markdown
+tables = {}         # 支持表格
+
+# ===== 基础扩展 =====
+# 注意：abbr 已在上面配置过，这里不需要重复配置
+# [project.markdown_extensions."markdown.extensions.abbr"]
+
+# ===== PyMdown 扩展 =====
+[project.markdown_extensions."pymdownx.magiclink"]        # 自动转换链接
+[project.markdown_extensions."pymdownx.blocks.caption"]   # 图片说明
+[project.markdown_extensions."pymdownx.caret"]            # 插入符号 (^text^)
+[project.markdown_extensions."pymdownx.betterem"]         # 更好的斜体/粗体
+smart_enable = "all"  # Zensical 推荐配置
+[project.markdown_extensions."pymdownx.critic"]           # 批评标记
+[project.markdown_extensions."pymdownx.details"]          # 可折叠详情
+[project.markdown_extensions."pymdownx.inlinehilite"]     # 行内代码高亮
+[project.markdown_extensions."pymdownx.keys"]             # 键盘按键 (++ctrl+alt+del++)
+[project.markdown_extensions."pymdownx.mark"]             # 标记文本 (==text==)
+[project.markdown_extensions."pymdownx.snippets"]         # 代码片段
+[project.markdown_extensions."pymdownx.smartsymbols"]     # 智能符号
+[project.markdown_extensions."pymdownx.tilde"]            # 删除线 (~~text~~)
+
+# ===== SuperFences 配置 =====
+# 支持代码块和 Mermaid 图表
+[project.markdown_extensions."pymdownx.superfences"]
+custom_fences = [
+    { name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" }
+]
+
+# ===== 数学公式支持 =====
+[project.markdown_extensions."pymdownx.arithmatex"]
+generic = true  # 使用 MathJax 渲染数学公式
+
+# ===== 目录配置 =====
+[project.markdown_extensions.toc]
+permalink = true  # 固定标题位置为当前位置，显示 # 符号
+
+# ===== 代码高亮配置 =====
+[project.markdown_extensions."pymdownx.highlight"]
+anchor_linenums = true  # 行号锚点
+linenums = true         # 显示行号
+auto_title = true       # 自动显示编程语言名称
+
+# ===== Emoji 表情支持 =====
+# 注意：必须使用 zensical 命名空间而非 material，以支持图标内联功能
+[project.markdown_extensions."pymdownx.emoji"]
+emoji_index = "zensical.extensions.emoji.twemoji"      # 使用 Twemoji (zensical 命名空间)
+emoji_generator = "zensical.extensions.emoji.to_svg"   # 转换为 SVG (zensical 命名空间)
+
+# ===== 标签页配置 =====
+[project.markdown_extensions."pymdownx.tabbed"]
+alternate_style = true  # 使用替代样式
+
+# ===== 任务列表配置 =====
+[project.markdown_extensions."pymdownx.tasklist"]
+custom_checkbox = true  # 自定义复选框样式
