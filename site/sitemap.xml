@@ -4,22 +4,22 @@
         <loc>https://wcowin.work/Zensical-Chinese-Tutorial/</loc>
       </url>
       <url>
-        <loc>https://wcowin.work/Zensical-Chinese-Tutorial/blog/quick-start/</loc>
+        <loc>https://wcowin.work/Zensical-Chinese-Tutorial/getting-started/quick-start/</loc>
       </url>
       <url>
-        <loc>https://wcowin.work/Zensical-Chinese-Tutorial/migration/</loc>
+        <loc>https://wcowin.work/Zensical-Chinese-Tutorial/getting-started/migration/</loc>
       </url>
       <url>
-        <loc>https://wcowin.work/Zensical-Chinese-Tutorial/blog/blog-tutorial/</loc>
+        <loc>https://wcowin.work/Zensical-Chinese-Tutorial/tutorials/configuration/</loc>
       </url>
       <url>
-        <loc>https://wcowin.work/Zensical-Chinese-Tutorial/configuration/</loc>
+        <loc>https://wcowin.work/Zensical-Chinese-Tutorial/tutorials/theme-customization/</loc>
       </url>
       <url>
-        <loc>https://wcowin.work/Zensical-Chinese-Tutorial/blog/theme-customization/</loc>
+        <loc>https://wcowin.work/Zensical-Chinese-Tutorial/tutorials/markdown-extensions/</loc>
       </url>
       <url>
-        <loc>https://wcowin.work/Zensical-Chinese-Tutorial/blog/markdown-extensions/</loc>
+        <loc>https://wcowin.work/Zensical-Chinese-Tutorial/tutorials/blog-tutorial/</loc>
       </url>
       <url>
         <loc>https://wcowin.work/Zensical-Chinese-Tutorial/blog/plugins/blog/</loc>
@@ -34,10 +34,13 @@
         <loc>https://wcowin.work/Zensical-Chinese-Tutorial/blog/plugins/rss/</loc>
       </url>
       <url>
+        <loc>https://wcowin.work/Zensical-Chinese-Tutorial/blog/deployment/github-pages/</loc>
+      </url>
+      <url>
         <loc>https://wcowin.work/Zensical-Chinese-Tutorial/blog/deployment/netlify/</loc>
       </url>
       <url>
-        <loc>https://wcowin.work/Zensical-Chinese-Tutorial/blog/deployment/github-pages/</loc>
+        <loc>https://wcowin.work/Zensical-Chinese-Tutorial/blog/deployment/gitlab-pages/</loc>
       </url>
       <url>
         <loc>https://wcowin.work/Zensical-Chinese-Tutorial/blog/deployment/self-hosted/</loc>
@@ -52,10 +55,19 @@
         <loc>https://wcowin.work/Zensical-Chinese-Tutorial/blog/advanced/i18n/</loc>
       </url>
       <url>
-        <loc>https://wcowin.work/Zensical-Chinese-Tutorial/blog/faq/</loc>
+        <loc>https://wcowin.work/Zensical-Chinese-Tutorial/blog/advanced/custom-404/</loc>
       </url>
       <url>
-        <loc>https://wcowin.work/Zensical-Chinese-Tutorial/blog/showcase/</loc>
+        <loc>https://wcowin.work/Zensical-Chinese-Tutorial/blog/advanced/custom-fonts/</loc>
+      </url>
+      <url>
+        <loc>https://wcowin.work/Zensical-Chinese-Tutorial/blog/advanced/comment-system/</loc>
+      </url>
+      <url>
+        <loc>https://wcowin.work/Zensical-Chinese-Tutorial/faq/</loc>
+      </url>
+      <url>
+        <loc>https://wcowin.work/Zensical-Chinese-Tutorial/showcase/</loc>
       </url>
       <url>
         <loc>https://wcowin.work/Zensical-Chinese-Tutorial/about/</loc>

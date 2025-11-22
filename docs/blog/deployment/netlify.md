@@ -1,5 +1,5 @@
 ---
-title: Netlify 部署（推荐）
+title: Netlify 部署
 date: 2025-01-22
 authors:
   - name: Wcowin
@@ -8,9 +8,12 @@ categories:
   - 部署指南
 ---
 
-# Netlify 部署（推荐）
+# Netlify 部署
 
 > 使用 Netlify 部署 Zensical 网站，享受自动构建、免费 HTTPS 和全球 CDN
+
+!!! tip "推荐使用 GitHub Pages"
+    对于大多数用户，我们推荐使用 [GitHub Pages 部署](github-pages.md)，它更简单、更免费，且与 GitHub 无缝集成。
 
 ## 为什么选择 Netlify？
 
@@ -68,9 +71,6 @@ Netlify 是部署 Zensical 网站的最佳选择：
   command = "pip install zensical && zensical build"
   publish = "site"
 
-[build.environment]
-  PYTHON_VERSION = "3.11"
-
 [[redirects]]
   from = "/*"
   to = "/404.html"
@@ -80,8 +80,14 @@ Netlify 是部署 Zensical 网站的最佳选择：
 !!! info "配置说明"
     - `command`: 安装 Zensical 并构建网站
     - `publish`: 指定发布目录
-    - `PYTHON_VERSION`: 指定 Python 版本
     - `redirects`: 配置 404 页面
+    
+!!! tip "Python 版本"
+    要指定 Python 版本，请在项目根目录创建 `runtime.txt` 文件（而不是在 `netlify.toml` 中设置）：
+    
+    ```
+    3.11
+    ```
 
 ### 第四步：部署
 
@@ -304,9 +310,6 @@ Netlify 默认启用自动部署。每次推送到主分支时，会自动触发
   command = "pip install zensical && zensical build"
   publish = "site"
 
-[build.environment]
-  PYTHON_VERSION = "3.11"
-
 # 404 页面
 [[redirects]]
   from = "/*"
@@ -342,13 +345,11 @@ zensical
 
 ## 下一步
 
-- 配置 [自定义域名](#配置自定义域名)
-- 启用 [性能优化](#性能优化)
-- 设置 [部署通知](#部署通知)
 - 查看 [Netlify 文档](https://docs.netlify.com/)
 
 ---
 
-**参考资料**：
-- [Netlify 官方文档](https://docs.netlify.com/)
+**参考资料**：  
+
+- [Netlify 官方文档](https://docs.netlify.com/)  
 - [Zensical 官方文档](https://zensical.org/docs/)

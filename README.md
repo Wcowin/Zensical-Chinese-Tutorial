@@ -300,6 +300,21 @@ source .venv/bin/activate  # macOS/Linux
 zensical serve -a 127.0.0.1:8080
 ```
 
+#### 🔧 权限问题
+
+如果遇到权限错误（特别是在 Linux/macOS 上）：
+
+```bash
+# 使用用户级安装
+pip install --user zensical
+
+# 或者使用虚拟环境（推荐）
+python3 -m venv .venv
+source .venv/bin/activate  # macOS/Linux
+# 或 .venv\Scripts\activate  # Windows
+pip install zensical
+```
+
 ###  自定义配置
 
 1. **修改网站信息**
@@ -362,13 +377,18 @@ zensical build
 
 ### 即时导航
 
-Zensical 内置即时导航功能，无需刷新页面即可切换内容：
+Zensical 内置即时导航功能，无需刷新页面即可切换内容。即时导航默认启用，如需显式配置：
 
 ```toml
-[project.extra]
-instant_loading = true  # 启用即时加载
-instant_prefetch = true # 启用预加载
+[project.theme]
+features = [
+    "navigation.instant",           # 即时导航
+    "navigation.instant.prefetch",  # 预加载
+]
 ```
+
+!!! warning "重要"
+    即时导航需要设置 `site_url` 才能正常工作。
 
 ### 搜索功能
 
@@ -409,8 +429,14 @@ lang = "en"
 
 ## 案例成果
 
-- [Wcowin 的博客](https://wcowin.work) - Zensical 官方示例
-- [更多案例敬请期待...](https://github.com/Wcowin/Zensical-Chinese-Tutorial)
+以下是一些使用 Zensical 构建的优秀网站：
+
+- [Wcowin 的博客](https://wcowin.work) - 使用 Zensical 构建的个人博客
+- [Zensical 官方文档](https://zensical.org/docs/) - Zensical 官方文档网站
+- [更多案例](https://github.com/Wcowin/Zensical-Chinese-Tutorial/blob/main/docs/blog/showcase.md) - 查看更多精彩案例
+
+!!! tip "提交你的案例"
+    如果你使用 Zensical 构建了网站，欢迎提交案例！查看 [案例展示页面](https://github.com/Wcowin/Zensical-Chinese-Tutorial/blob/main/docs/blog/showcase.md) 了解如何提交。
 
 ## 贡献者
 

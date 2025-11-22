@@ -20,7 +20,7 @@ source .venv/bin/activate  # macOS/Linux
 pip install zensical
 ```
 
-详细步骤请参考 [5 分钟快速开始](blog/quick-start.md)。
+详细步骤请参考 [5 分钟快速开始](getting-started/quick-start.md)。
 
 ### 安装后提示 `command not found: zensical` 怎么办？
 
@@ -113,7 +113,7 @@ post_readtime = true
 post_readtime_words_per_minute = 265  # 中文适配
 ```
 
-详细教程请参考 [博客系统完全指南](blog/blog-tutorial.md)。
+详细教程请参考 [博客系统完全指南](tutorials/blog-tutorial.md)。
 
 ### 支持数学公式吗？
 
@@ -145,14 +145,15 @@ extra_javascript = [
 
 ### 推荐的部署方式是什么？
 
-推荐使用 **Netlify**，因为：
+推荐使用 **GitHub Pages**，因为：
 
-- ✅ 自动构建和部署
-- ✅ 免费 HTTPS
-- ✅ 全球 CDN
-- ✅ 自动预览
+- ✅ **完全免费** - 无需任何费用
+- ✅ **自动 HTTPS** - 免费 SSL 证书
+- ✅ **GitHub 集成** - 与仓库无缝集成
+- ✅ **简单易用** - 推送即部署
+- ✅ **自定义域名** - 支持绑定域名
 
-详细步骤请参考 [Netlify 部署](blog/deployment/netlify.md)。
+详细步骤请参考 [GitHub Pages 部署](blog/deployment/github-pages.md)。
 
 ## 迁移相关
 
@@ -164,7 +165,7 @@ extra_javascript = [
 2. HTML 结构与 Material for MkDocs 匹配
 3. 大部分插件都有对应实现
 
-详细指南请参考 [从 MkDocs 迁移到 Zensical](migration.md)。
+详细指南请参考 [从 MkDocs 迁移到 Zensical](getting-started/migration.md)。
 
 ### MkDocs hooks 不支持怎么办？
 

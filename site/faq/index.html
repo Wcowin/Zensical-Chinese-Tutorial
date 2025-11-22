@@ -15,6 +15,10 @@
         <link rel="canonical" href="https://wcowin.work/Zensical-Chinese-Tutorial/faq/">
       
       
+        <link rel="prev" href="../blog/advanced/comment-system/">
+      
+      
+        <link rel="next" href="../showcase/">
       
       
         
@@ -25,7 +29,7 @@
     
     
       
-        <title>常见问题解答 (FAQ) - Zensical-Wcowin 中文教程</title>
+        <title>常见问题解答 (FAQ) - Zensical 中文教程</title>
       
     
     
@@ -87,6 +91,8 @@
     
       <link rel="stylesheet" href="../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="../stylesheets/ziti.css">
+    
       <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -128,7 +134,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href=".." title="Zensical-Wcowin 中文教程" class="md-header__button md-logo" aria-label="Zensical-Wcowin 中文教程" data-md-component="logo">
+    <a href=".." title="Zensical 中文教程" class="md-header__button md-logo" aria-label="Zensical 中文教程" data-md-component="logo">
       
   <img src="https://zensical.org/assets/zensical.svg" alt="logo">
 
@@ -141,7 +147,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Zensical-Wcowin 中文教程
+            Zensical 中文教程
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -259,7 +265,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../blog/quick-start/" class="md-tabs__link">
+        <a href="../getting-started/quick-start/" class="md-tabs__link">
           
   
   快速开始
@@ -278,7 +284,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../blog/blog-tutorial/" class="md-tabs__link">
+        <a href="../tutorials/configuration/" class="md-tabs__link">
           
   
   核心教程
@@ -316,7 +322,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../blog/deployment/netlify/" class="md-tabs__link">
+        <a href="../blog/deployment/github-pages/" class="md-tabs__link">
           
   
   部署指南
@@ -350,9 +356,11 @@
   
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href="../blog/faq/" class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
         
   
   常见问题
@@ -368,7 +376,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../blog/showcase/" class="md-tabs__link">
+      <a href="../showcase/" class="md-tabs__link">
         
   
   案例展示
@@ -388,6 +396,22 @@
         
   
   关于
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://wcowin.work/" class="md-tabs__link">
+        
+  
+  个人博客
 
       </a>
     </li>
@@ -416,12 +440,12 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Zensical-Wcowin 中文教程" class="md-nav__button md-logo" aria-label="Zensical-Wcowin 中文教程" data-md-component="logo">
+    <a href=".." title="Zensical 中文教程" class="md-nav__button md-logo" aria-label="Zensical 中文教程" data-md-component="logo">
       
   <img src="https://zensical.org/assets/zensical.svg" alt="logo">
 
     </a>
-    Zensical-Wcowin 中文教程
+    Zensical 中文教程
   </label>
   
     <div class="md-nav__source">
@@ -498,7 +522,7 @@
   
   
   
-    <a href="../blog/quick-start/" class="md-nav__link">
+    <a href="../getting-started/quick-start/" class="md-nav__link">
       
   
   
@@ -561,7 +585,7 @@
   
   
   
-    <a href="../blog/blog-tutorial/" class="md-nav__link">
+    <a href="../tutorials/configuration/" class="md-nav__link">
       
   
   
@@ -665,6 +689,8 @@
       
         
       
+        
+      
     
     
     
@@ -685,7 +711,7 @@
   
   
   
-    <a href="../blog/deployment/netlify/" class="md-nav__link">
+    <a href="../blog/deployment/github-pages/" class="md-nav__link">
       
   
   
@@ -719,6 +745,12 @@
   
     
     
+      
+        
+      
+        
+      
+        
       
         
       
@@ -776,10 +808,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../blog/faq/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    常见问题
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -795,6 +854,411 @@
   
 
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        安装相关
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="安装相关">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zensical" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        如何安装 Zensical？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-not-found-zensical" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        安装后提示 command not found: zensical 怎么办？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zensical-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zensical 需要什么 Python 版本？
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        配置相关
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="配置相关">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#site_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        site_name 是必需的吗？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        如何设置中文界面？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mkdocsyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        可以使用 mkdocs.yml 配置文件吗？
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        主题相关
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="主题相关">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modern-classic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        modern 和 classic 主题有什么区别？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        如何自定义主题？
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        功能相关
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="功能相关">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        如何启用即时导航？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        如何添加博客功能？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        支持数学公式吗？
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        部署相关
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="部署相关">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        如何部署到 GitHub Pages？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        推荐的部署方式是什么？
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        迁移相关
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="迁移相关">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mkdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        从 MkDocs 迁移难吗？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mkdocs-hooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MkDocs hooks 不支持怎么办？
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        错误处理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="错误处理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-such-file-or-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        提示 "No such file or directory" 错误
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        构建失败怎么办？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        样式显示不正常
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        性能相关
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="性能相关">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        如何提升网站性能？
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        其他问题
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="其他问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        在哪里可以获取帮助？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        如何贡献到本教程？
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -806,7 +1270,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/showcase/" class="md-nav__link">
+      <a href="../showcase/" class="md-nav__link">
         
   
   
@@ -841,6 +1305,33 @@
     
   
     关于
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://wcowin.work/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    个人博客
   
 
     
@@ -1299,7 +1790,7 @@
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># 安装 Zensical</span>
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>pip<span class="w"> </span>install<span class="w"> </span>zensical
 </span></code></pre></div>
-<p>详细步骤请参考 <a href="../blog/quick-start/">5 分钟快速开始</a>。</p>
+<p>详细步骤请参考 <a href="../getting-started/quick-start/">5 分钟快速开始</a>。</p>
 <h3 id="command-not-found-zensical">安装后提示 <code>command not found: zensical</code> 怎么办？<a class="headerlink" href="#command-not-found-zensical" title="Permanent link">&para;</a></h3>
 <p>这通常是因为虚拟环境未激活。请确保：</p>
 <ol>
@@ -1364,7 +1855,7 @@
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">post_readtime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
 </span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="n">post_readtime_words_per_minute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">265</span><span class="w">  </span><span class="c1"># 中文适配</span>
 </span></code></pre></div>
-<p>详细教程请参考 <a href="../blog/blog-tutorial/">博客系统完全指南</a>。</p>
+<p>详细教程请参考 <a href="../tutorials/blog-tutorial/">博客系统完全指南</a>。</p>
 <h3 id="_9">支持数学公式吗？<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <p>支持！启用 MathJax：</p>
 <div class="language-toml highlight"><span class="filename">TOML</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">[project.markdown_extensions.</span><span class="s2">&quot;pymdownx.arithmatex&quot;</span><span class="k">]</span>
@@ -1385,14 +1876,15 @@
 </ol>
 <p>详细步骤请参考 <a href="../blog/deployment/github-pages/">GitHub Pages 部署</a>。</p>
 <h3 id="_11">推荐的部署方式是什么？<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
-<p>推荐使用 <strong>Netlify</strong>，因为：</p>
+<p>推荐使用 <strong>GitHub Pages</strong>，因为：</p>
 <ul>
-<li>✅ 自动构建和部署</li>
-<li>✅ 免费 HTTPS</li>
-<li>✅ 全球 CDN</li>
-<li>✅ 自动预览</li>
+<li>✅ <strong>完全免费</strong> - 无需任何费用</li>
+<li>✅ <strong>自动 HTTPS</strong> - 免费 SSL 证书</li>
+<li>✅ <strong>GitHub 集成</strong> - 与仓库无缝集成</li>
+<li>✅ <strong>简单易用</strong> - 推送即部署</li>
+<li>✅ <strong>自定义域名</strong> - 支持绑定域名</li>
 </ul>
-<p>详细步骤请参考 <a href="../blog/deployment/netlify/">Netlify 部署</a>。</p>
+<p>详细步骤请参考 <a href="../blog/deployment/github-pages/">GitHub Pages 部署</a>。</p>
 <h2 id="_12">迁移相关<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
 <h3 id="mkdocs">从 MkDocs 迁移难吗？<a class="headerlink" href="#mkdocs" title="Permanent link">&para;</a></h3>
 <p>非常简单！Zensical 设计时就考虑了兼容性：</p>
@@ -1401,7 +1893,7 @@
 <li>HTML 结构与 Material for MkDocs 匹配</li>
 <li>大部分插件都有对应实现</li>
 </ol>
-<p>详细指南请参考 <a href="../migration/">从 MkDocs 迁移到 Zensical</a>。</p>
+<p>详细指南请参考 <a href="../getting-started/migration/">从 MkDocs 迁移到 Zensical</a>。</p>
 <h3 id="mkdocs-hooks">MkDocs hooks 不支持怎么办？<a class="headerlink" href="#mkdocs-hooks" title="Permanent link">&para;</a></h3>
 <p>Zensical 不支持 MkDocs hooks。替代方案：</p>
 <ul>
@@ -1492,6 +1984,44 @@
         <footer class="md-footer">
   
     
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../blog/advanced/comment-system/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 添加评论系统">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                添加评论系统
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../showcase/" class="md-footer__link md-footer__link--next" aria-label="下一页: 案例展示">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                案例展示
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M247.1 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L179.2 256 41.9 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1552,7 +2082,7 @@
       
       
       
-      <script id="__config" type="application/json">{"annotate":null,"base":"..","features":["announce.dismiss","navigation.prune","navigation.tracking","navigation.tabs","navigation.sections","navigation.top","navigation.footer","navigation.expand","navigation.indexes","search.suggest","search.highlight","search.share","toc.follow","content.tooltips","content.code.copy","content.code.select","content.code.annotate"],"search":"../assets/javascripts/workers/search.5e1f2129.min.js","tags":null,"translations":{"clipboard.copied":"已复制","clipboard.copy":"复制","search.result.more.one":"在该页上还有 1 个符合条件的结果","search.result.more.other":"在该页上还有 # 个符合条件的结果","search.result.none":"没有找到符合条件的结果","search.result.one":"找到 1 个符合条件的结果","search.result.other":"# 个符合条件的结果","search.result.placeholder":"键入以开始搜索","search.result.term.missing":"缺少","select.version":"选择当前版本"},"version":null}</script>
+      <script id="__config" type="application/json">{"annotate":null,"base":"..","features":["announce.dismiss","navigation.prune","navigation.tracking","navigation.tabs","navigation.sections","navigation.top","navigation.footer","navigation.expand","navigation.indexes","navigation.instant","navigation.instant.prefetch","search.suggest","search.highlight","search.share","toc.follow","content.tooltips","content.code.copy","content.code.select","content.code.annotate"],"search":"../assets/javascripts/workers/search.5e1f2129.min.js","tags":null,"translations":{"clipboard.copied":"已复制","clipboard.copy":"复制","search.result.more.one":"在该页上还有 1 个符合条件的结果","search.result.more.other":"在该页上还有 # 个符合条件的结果","search.result.none":"没有找到符合条件的结果","search.result.one":"找到 1 个符合条件的结果","search.result.other":"# 个符合条件的结果","search.result.placeholder":"键入以开始搜索","search.result.term.missing":"缺少","select.version":"选择当前版本"},"version":null}</script>
     
     
       <script src="../assets/javascripts/bundle.6b62de02.min.js"></script>

@@ -514,16 +514,9 @@ server {
 }
 ```
 
-## 下一步
 
-- 配置 [CDN 加速](#)
-- 设置 [自动备份](#)
-- 配置 [监控告警](#)
-- 优化 [服务器性能](#)
+**参考资料**：  
 
----
-
-**参考资料**：
-- [Nginx 官方文档](https://nginx.org/en/docs/)
-- [Let's Encrypt 文档](https://letsencrypt.org/docs/)
+- [Nginx 官方文档](https://nginx.org/en/docs/)  
+- [Let's Encrypt 文档](https://letsencrypt.org/docs/)  
 - [Docker 官方文档](https://docs.docker.com/)

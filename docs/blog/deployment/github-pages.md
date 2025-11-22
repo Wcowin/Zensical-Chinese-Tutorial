@@ -8,9 +8,9 @@ categories:
   - 部署指南
 ---
 
-# GitHub Pages 部署
+# GitHub Pages 部署（推荐）
 
-> 使用 GitHub Pages 免费托管你的 Zensical 网站
+> 使用 GitHub Pages 免费托管你的 Zensical 网站 - 最简单、最推荐的部署方式
 
 ## 什么是 GitHub Pages？
 
@@ -34,92 +34,151 @@ GitHub Pages 是 GitHub 提供的免费静态网站托管服务：
 
 ### 第一步：创建 GitHub Actions 工作流
 
-在项目根目录创建 `.github/workflows/docs.yml` 文件：
+在项目根目录创建 `.github/workflows/docs.yml` 文件。
 
-```yaml
-name: Deploy Zensical to GitHub Pages
+**创建目录结构：**
+
+```bash
+# 在项目根目录执行
+mkdir -p .github/workflows
+```
+
+**创建工作流文件：**
+
+使用你喜欢的编辑器创建 `.github/workflows/docs.yml` 文件，复制以下内容：
+
+```yaml title=".github/workflows/docs.yml"
+name: Documentation
 
 on:
   push:
     branches:
-      - main  # 或 master
-  workflow_dispatch:
+      - master
+      - main
 
 permissions:
   contents: read
   pages: write
   id-token: write
 
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  # 获取完整历史，用于 git-revision-date-localized 插件
-
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-          cache: 'pip'
-
-      - name: Install dependencies
-        run: |
-          pip install zensical
-
-      - name: Build site
-        run: |
-          zensical build
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./site
-
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    needs: build
     steps:
-      - name: Deploy to GitHub Pages
+      - uses: actions/configure-pages@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+      - run: pip install zensical
+      - run: zensical build --clean
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: site
+      - uses: actions/deploy-pages@v4
         id: deployment
-        uses: actions/deploy-pages@v4
 ```
+
+!!! note "关于缓存"
+    目前，我们不推荐在 CI 系统中使用缓存，因为缓存功能将在我们优化 Zensical 性能时进行修订。
+
+**检查文件结构：**
+
+创建完成后，检查一下目录结构：
+
+```bash
+# 查看目录结构
+tree -a .github
+# 或
+ls -la .github/workflows/
+```
+
+应该看到：
+
+```
+.github/
+└── workflows/
+    └── docs.yml
+```
+到这里先检查一下你的目录结构  
+目录树状图:  
+```
+$ tree -a
+xx
+├── .github
+│   ├── .DS_Store
+│   └── workflows
+│       └── docs.yml
+├── docs
+│   ├── index.md
+│   └── ...
+├── zensical.toml
+└── ...
+```
+
+!!! 重点来了
+    Github仓库setings/Actions/General  勾选这两项
+    ![](https://s1.imagehub.cc/images/2024/02/02/02fd4e77eb52d4ce18c227f0e29b2c6d.png)
+
 
 ### 第二步：配置 GitHub Pages
 
-1. 进入 GitHub 仓库
-2. 点击 **Settings** → **Pages**
-3. 在 **Source** 下选择 **GitHub Actions**
-4. 保存设置
+在推送代码之前，需要先在 GitHub 仓库中启用 Pages 功能：
+
+1. **进入仓库设置**
+   - 打开你的 GitHub 仓库
+   - 点击 `Settings`（设置）标签
+
+2. **启用 Pages**
+   - 在左侧菜单中找到 `Pages`
+   - 在 `Source` 部分，选择 `GitHub Actions`
+
+!!! warning "重要"
+    必须选择 `GitHub Actions` 作为源，而不是 `Deploy from a branch`。这是使用 GitHub Actions 部署的关键步骤。
 
 ### 第三步：推送代码触发部署
 
+将工作流文件添加到 Git 并推送：
+
 ```bash
-git add .
-git commit -m "Add GitHub Actions workflow"
+# 添加文件
+git add .github/workflows/docs.yml
+
+# 提交更改
+git commit -m "Add GitHub Actions workflow for Pages"
+
+# 推送到 GitHub
 git push origin main
+# 或 git push origin master（根据你的默认分支）
 ```
 
-GitHub Actions 会自动构建并部署你的网站。
+### 第四步：查看部署状态
 
-### 第四步：访问网站
+1. **查看 Actions 运行状态**
+   - 在仓库页面点击 `Actions` 标签
+   - 你应该能看到一个新的工作流运行
+   - 点击运行查看详细日志
 
-部署成功后，你的网站将在以下地址可用：
+2. **等待部署完成**
+   - 通常需要 1-3 分钟
+   - 看到绿色的 ✓ 表示部署成功
+   - 如果失败，点击查看错误日志
 
-```
-https://<username>.github.io/<repository>/
-```
+3. **访问网站**
+   - 部署成功后，在 `Settings > Pages` 中可以看到网站 URL
+   - 格式：`https://你的用户名.github.io/仓库名/`
+   - 如果是 `用户名.github.io` 仓库，URL 是：`https://你的用户名.github.io/`
 
-例如：`https://wcowin.github.io/Zensical-Chinese-Tutorial/`
+**示例：**
+- 仓库名：`my-blog`，用户名：`zhangsan`
+- 网站 URL：`https://zhangsan.github.io/my-blog/`
+- 如果是 `zhangsan.github.io` 仓库，URL：`https://zhangsan.github.io/`
+
+!!! tip "首次部署"
+    首次部署可能需要等待几分钟，GitHub 需要时间来设置 Pages 环境。如果第一次失败，可以重新运行 Actions。
 
 ## 方法二：手动部署
 
@@ -185,6 +244,8 @@ site_url = "https://example.com"
 
 #### 使用 A 记录（推荐）
 
+下面任意选择一个A记录，把下面的值填入到你的域名注册商处
+
 | 类型 | 名称 | 值 |
 |------|------|-----|
 | A | @ | 185.199.108.153 |
@@ -196,7 +257,16 @@ site_url = "https://example.com"
 
 | 类型 | 名称 | 值 |
 |------|------|-----|
-| CNAME | www | <username>.github.io |
+| CNAME | www | username.github.io |
+
+--- 
+
+所以你应该最终是两条DNS记录  
+
+| 类型 | 名称 | 值 |
+|------|------|-----|
+| A | @ | 185.199.108.153 |
+| CNAME | www | username.github.io |
 
 ### 第三步：在 GitHub 设置自定义域名
 
@@ -209,34 +279,46 @@ site_url = "https://example.com"
 !!! warning "DNS 生效时间"
     DNS 记录修改后，可能需要 24-48 小时才能完全生效。
 
-## 配置 site_url
+## 配置 site_url（重要）
 
-如果你的网站部署在子路径（如 `https://username.github.io/repository/`），需要在 `zensical.toml` 中配置：
+如果你的网站部署在子路径（如 `https://username.github.io/repository/`），**必须在 `zensical.toml` 中配置 `site_url`**：
 
 ```toml
 [project]
-site_url = "https://username.github.io/repository/"
+site_name = "我的博客"
+site_url = "https://username.github.io/repository/"  # 注意末尾的斜杠
 ```
 
-这样可以确保：
+**为什么需要配置 site_url？**
 
-- ✅ 链接正确生成
-- ✅ 资源路径正确
-- ✅ 即时导航正常工作
+1. **即时导航需要** - 如果启用了即时导航，必须设置正确的 `site_url`
+2. **资源路径正确** - CSS、JS 等资源文件路径需要正确的 base URL
+3. **链接正确生成** - 所有内部链接都需要正确的 base URL
+4. **RSS 订阅** - RSS 链接需要完整的 URL
+
+**配置示例：**
+
+```toml
+# 子路径部署（如 username.github.io/repo/）
+[project]
+site_url = "https://username.github.io/repository/"
+
+# 根路径部署（如 username.github.io）
+[project]
+site_url = "https://username.github.io/"
+
+# 自定义域名
+[project]
+site_url = "https://example.com/"
+```
+
+!!! warning "注意末尾斜杠"
+    `site_url` 的末尾必须有斜杠 `/`，否则可能导致路径错误。
 
 ## 优化部署速度
 
-### 使用缓存
-
-在 GitHub Actions 中启用缓存：
-
-```yaml
-- name: Setup Python
-  uses: actions/setup-python@v5
-  with:
-    python-version: '3.11'
-    cache: 'pip'  # 启用 pip 缓存
-```
+!!! warning "关于缓存"
+    目前，我们不推荐在 CI 系统中使用缓存，因为缓存功能将在我们优化 Zensical 性能时进行修订。
 
 ### 并行构建
 
@@ -308,12 +390,13 @@ site_url = "https://username.github.io/repository/"
 ### .github/workflows/docs.yml
 
 ```yaml
-name: Deploy Zensical
+name: Documentation
 
 on:
   push:
-    branches: [main]
-  workflow_dispatch:
+    branches:
+      - master
+      - main
 
 permissions:
   contents: read
@@ -321,35 +404,22 @@ permissions:
   id-token: write
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-          cache: 'pip'
-
-      - name: Install Zensical
-        run: pip install zensical
-
-      - name: Build
-        run: zensical build
-
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./site
-
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    needs: build
     steps:
+      - uses: actions/configure-pages@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+      - run: pip install zensical
+      - run: zensical build --clean
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: site
       - uses: actions/deploy-pages@v4
         id: deployment
 ```
@@ -379,14 +449,13 @@ example.com
 
 ## 下一步
 
-- 配置 [自定义域名](#配置自定义域名)
-- 优化 [部署速度](#优化部署速度)
 - 查看 [GitHub Pages 文档](https://docs.github.com/pages)
 - 考虑使用 [Netlify 部署](netlify.md)（更强大）
 
 ---
 
-**参考资料**：
-- [GitHub Pages 官方文档](https://docs.github.com/pages)
-- [GitHub Actions 文档](https://docs.github.com/actions)
+**参考资料**：  
+
+- [GitHub Pages 官方文档](https://docs.github.com/pages)  
+- [GitHub Actions 文档](https://docs.github.com/actions)  
 - [Zensical 官方文档](https://zensical.org/docs/)

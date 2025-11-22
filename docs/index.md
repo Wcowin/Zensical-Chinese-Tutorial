@@ -28,7 +28,7 @@ comments: false
 
     ---
     
-    ![Zensical Logo](https://zensical.org/assets/zensical.svg){ align=right width="200" style="border-radius: 15px;" }
+    ![Zensical Logo](https://zensical.org/assets/zensical.svg){ class="responsive-image" align=right width="200" style="border-radius: 15px;" }
     
     - [x] MkDocs 已停止更新，Zensical 是官方推荐的新一代
     - [x] 即时导航，无需刷新页面
@@ -43,6 +43,13 @@ comments: false
         请点击左上角图标选择分类和文章
 
 </div>
+<style>
+    @media only screen and (max-width: 768px) {
+        .responsive-image {
+            display: none;
+        }
+    }
+</style>
 
 > 不同于市面上过时的 [MkDocs 教程](https://wcowin.work/Mkdocs-Wcowin/)，本站提供了 **最详细、最便捷、最前沿** 的 Zensical 中文教程，与 [官方发布](https://zensical.org/about/roadmap/) 的版本同步。包含了 Zensical 的安装、配置、主题美化、博客系统等内容。无论你是初学者还是有经验的用户，都能在这里找到你需要的帮助。𝓳𝓾𝓼𝓽 𝓮𝓷𝓳𝓸𝔂 𝓲𝓽～
 
@@ -54,18 +61,18 @@ comments: false
 
     ---
     
-    - [5 分钟快速开始](blog/quick-start.md)
-    - [Zensical 博客系统完全指南](blog/blog-tutorial.md)
-    - [zensical.toml 配置详解](configuration.md)
-    - [从 MkDocs 迁移到 Zensical](migration.md)
+    - [5 分钟快速开始](getting-started/quick-start.md)
+    - [Zensical 博客系统完全指南](tutorials/blog-tutorial.md)
+    - [zensical.toml 配置详解](tutorials/configuration.md)
+    - [从 MkDocs 迁移到 Zensical](getting-started/migration.md)
     - [常见问题解答](faq.md)
 
 -   :material-palette:{ .lg .middle } __主题定制__
 
     ---
     
-    - [主题配置指南](blog/theme-customization.md)
-    - [配置详解](configuration.md)
+    - [主题配置指南](tutorials/theme-customization.md)
+    - [配置详解](tutorials/configuration.md)
 
 -   :material-puzzle:{ .lg .middle } __插件系统__
 
@@ -80,21 +87,14 @@ comments: false
 
     ---
     
-    - [Netlify 部署（推荐）](blog/deployment/netlify.md)
-    - [GitHub Pages 部署](blog/deployment/github-pages.md)
+    - [GitHub Pages 部署（推荐）](blog/deployment/github-pages.md)
+    - [Netlify 部署](blog/deployment/netlify.md)
+    - [GitLab Pages 部署](blog/deployment/gitlab-pages.md)
     - [自托管部署](blog/deployment/self-hosted.md)
-
--   :simple-aboutdotme:{ .lg .middle } __关于__
-
-    ---
-    
-    - [Zensical-Wcowin 社区](https://support.qq.com/products/646913/){target="_blank"}
-    - [案例展示](blog/showcase.md)
-    - [:octicons-arrow-right-24: 了解作者](about.md)
 
 </div>
 
-## 🆚 Zensical vs MkDocs
+<!-- ## 🆚 Zensical vs MkDocs
 
 | 特性 | Zensical | MkDocs |
 |------|----------|--------|
@@ -104,22 +104,22 @@ comments: false
 | **性能** | ✅ 优异 | ⚠️ 一般 |
 | **现代化** | ✅ 现代设计 | ⚠️ 传统设计 |
 | **配置文件** | TOML | YAML |
-| **中文支持** | ✅ 完整 | ✅ 完整 |
+| **中文支持** | ✅ 完整 | ✅ 完整 | -->
 
 ## 📚 推荐学习路径
 
 ### 初学者路线
 
-1. **第一步**：阅读 [5 分钟快速开始](blog/quick-start.md)
-2. **第二步**：学习 [zensical.toml 配置详解](configuration.md)
-3. **第三步**：掌握 [博客系统完全指南](blog/blog-tutorial.md)
-4. **第四步**：尝试 [主题定制](blog/theme-customization.md)
-5. **第五步**：部署到线上 [Netlify 部署](blog/deployment/netlify.md)
+1. **第一步**：阅读 [5 分钟快速开始](getting-started/quick-start.md)
+2. **第二步**：学习 [zensical.toml 配置详解](tutorials/configuration.md)
+3. **第三步**：掌握 [博客系统完全指南](tutorials/blog-tutorial.md)
+4. **第四步**：尝试 [主题定制](tutorials/theme-customization.md)
+5. **第五步**：部署到线上 [GitHub Pages 部署](blog/deployment/github-pages.md)
 
 ### 从 MkDocs 迁移
 
-1. **第一步**：阅读 [从 MkDocs 迁移到 Zensical](migration.md)
-2. **第二步**：了解 [配置文件差异](configuration.md)
+1. **第一步**：阅读 [从 MkDocs 迁移到 Zensical](getting-started/migration.md)
+2. **第二步**：了解 [配置文件差异](tutorials/configuration.md)
 3. **第三步**：测试和调整
 4. **第四步**：重新部署
 
@@ -128,7 +128,10 @@ comments: false
 1. **性能优化**：阅读 [性能优化指南](blog/advanced/performance.md)
 2. **SEO 优化**：学习 [SEO 优化](blog/advanced/seo.md)
 3. **多语言支持**：配置 [多语言支持](blog/advanced/i18n.md)
-4. **扩展开发**：等待 Zensical 模块系统发布
+4. **自定义 404 页面**：学习 [自定义 404 页面](blog/advanced/custom-404.md)
+5. **自定义字体**：配置 [自定义字体](blog/advanced/custom-fonts.md)
+6. **添加评论系统**：配置 [评论系统](blog/advanced/comment-system.md)
+7. **扩展开发**：等待 Zensical 模块系统发布
 
 ## 🎯 核心特性
 
@@ -144,17 +147,17 @@ features = [
 ]
 ```
 
+!!! warning "重要"
+    即时导航需要设置 `site_url` 才能正常工作：
+    
+    ```toml
+    [project]
+    site_url = "https://example.com"
+    ```
+
 ### 博客系统
 
-内置的博客系统，无需额外插件：
-
-```toml
-[project.plugins.blog]
-post_date_format = "full"
-draft = true
-post_readtime = true
-post_readtime_words_per_minute = 265
-```
+很快到来
 
 ### Modern 主题
 
@@ -185,7 +188,7 @@ zensical serve
 
 打开浏览器访问 [http://localhost:8000](http://localhost:8000)
 
-详细步骤请阅读 [5 分钟快速开始](blog/quick-start.md)
+详细步骤请阅读 [5 分钟快速开始](getting-started/quick-start.md)
 
 ## 📖 文档结构
 
@@ -193,16 +196,21 @@ zensical serve
 Zensical-Chinese-Tutorial/
 ├── docs/
 │   ├── index.md                    # 本页面
-│   ├── configuration.md            # 配置详解
-│   ├── migration.md                # 迁移指南
+│   ├── about.md                    # 关于页面
 │   ├── faq.md                      # 常见问题
-│   ├── theme-customization.md      # 主题定制
-│   ├── blog/                       # 博客文章
-│   │   ├── quick-start.md          # 快速开始
-│   │   └── blog-tutorial.md        # 博客教程
-│   ├── plugins/                    # 插件文档
-│   ├── deployment/                 # 部署指南
-│   └── advanced/                   # 高级主题
+│   ├── showcase.md                  # 案例展示
+│   ├── getting-started/            # 快速开始
+│   │   ├── quick-start.md          # 5 分钟快速开始
+│   │   └── migration.md            # 从 MkDocs 迁移
+│   ├── tutorials/                   # 核心教程
+│   │   ├── blog-tutorial.md        # 博客系统完全指南
+│   │   ├── configuration.md        # 配置详解
+│   │   ├── theme-customization.md  # 主题定制
+│   │   └── markdown-extensions.md  # Markdown 扩展
+│   ├── blog/                       # 博客相关
+│   │   ├── plugins/                # 插件文档
+│   │   ├── deployment/             # 部署指南
+│   │   └── advanced/              # 高级主题
 ├── zensical.toml                   # 配置文件
 └── README.md                       # 项目说明
 ```
@@ -227,7 +235,7 @@ Zensical-Chinese-Tutorial/
 
 ## 🤝 参与贡献
 
-欢迎参与 Zensical-Wcowin 的完善：
+欢迎参与 Zensical-Chinese-Tutorial 的完善：
 
 1. Fork 本仓库
 2. 创建你的特性分支
@@ -237,14 +245,33 @@ Zensical-Chinese-Tutorial/
 
 ## 📞 联系方式
 
-- **GitHub**: [Wcowin/Zensical-Wcowin](https://github.com/Wcowin/Zensical-Wcowin)
+- **GitHub**: [Wcowin/Zensical-Chinese-Tutorial](https://github.com/Wcowin/Zensical-Chinese-Tutorial)
 - **Email**: wcowin@qq.com
 - **微信**: 扫描下方二维码
 
+
+<center>
+
+<p>微信</p>  
+
+<a href="https://pic3.zhimg.com/80/v2-5ef3dde831c9d0a41fe35fabb0cb8784_1440w.webp" target="_blank">
+<img src="https://pic3.zhimg.com/80/v2-5ef3dde831c9d0a41fe35fabb0cb8784_1440w.webp" style="width: 450px; height: auto;">
+</a>
+
+<p>Telegram</p>  
+
+<a href="https://t.me/Wcowin" target="_blank">
+<img src="https://pica.zhimg.com/80/v2-d5876bc0c8c756ecbba8ff410ed29c14_1440w.webp" style="width: 450px; height: auto;">
+</a>
+
+</center>
+
 ---
 
+<center>
+<b>开始你的 Zensical 之旅吧！</b> 🚀
 
-**开始你的 Zensical 之旅吧！** 🚀
+</center>
 
 
 <style>

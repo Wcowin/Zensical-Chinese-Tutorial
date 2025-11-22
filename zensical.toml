@@ -2,10 +2,18 @@
 # Zensical-Wcowin 配置文件
 # 最好的 Zensical 中文教程
 # ==========================================
+#
+# ⚠️ 重要：配置顺序规则
+# 1. 先声明 [project] 父表
+# 2. 然后配置所有直接属于 [project] 的键值对
+# 3. 最后才声明子表（[project.theme], [project.extra] 等）
+# 不能在声明子表后再回到父表添加键！
+# 详细说明：https://wcowin.work/Zensical-Chinese-Tutorial/configuration/#重要配置顺序规则
+# ==========================================
 
 [project]
 # ===== 基本信息 [Info] =====
-site_name = "Zensical-Wcowin 中文教程"           # 网站名称
+site_name = "Zensical 中文教程"           # 网站名称
 site_url = "https://wcowin.work/Zensical-Chinese-Tutorial/"  # 网站URL（请修改为你的域名）
 site_description = "最详细、最便捷、最前沿的 Zensical 中文教程"  # 网站描述
 site_author = "Wcowin"                           # 网站作者
@@ -32,6 +40,7 @@ extra_javascript = [
 # ===== 额外的 CSS 文件 =====
 extra_css = [
     "stylesheets/extra.css",          # 额外样式
+    "stylesheets/ziti.css",            # 字体样式
     "https://unpkg.com/katex@0/dist/katex.min.css"
 ]
 
@@ -39,34 +48,39 @@ extra_css = [
 nav = [
     { "主页" = "index.md" },
     { "快速开始" = [
-        { "5 分钟快速开始" = "blog/quick-start.md" },
-        { "从 MkDocs 迁移" = "migration.md" },
-    ]},
+        { "5 分钟快速开始" = "getting-started/quick-start.md" },
+        { "从 MkDocs 迁移" = "getting-started/migration.md" },
+    ] },
     { "核心教程" = [
-        { "Zensical 博客系统完全指南" = "blog/blog-tutorial.md" },
-        { "zensical.toml 配置详解" = "configuration.md" },
-        { "主题定制指南" = "blog/theme-customization.md" },
-        { "Markdown 扩展使用" = "blog/markdown-extensions.md" },
-    ]},
+        { "zensical.toml 配置详解" = "tutorials/configuration.md" },
+        { "主题定制指南" = "tutorials/theme-customization.md" },
+        { "Markdown 扩展使用" = "tutorials/markdown-extensions.md" },
+        { "Zensical 博客系统完全指南" = "tutorials/blog-tutorial.md" },
+    ] },
     { "插件系统" = [
         { "博客插件详解" = "blog/plugins/blog.md" },
         { "搜索插件配置" = "blog/plugins/search.md" },
         { "标签插件使用" = "blog/plugins/tags.md" },
         { "RSS 插件配置" = "blog/plugins/rss.md" },
-    ]},
+    ] },
     { "部署指南" = [
+        { "GitHub Pages 部署（推荐）" = "blog/deployment/github-pages.md" },
         { "Netlify 部署" = "blog/deployment/netlify.md" },
-        { "GitHub Pages 部署" = "blog/deployment/github-pages.md" },
+        { "GitLab Pages 部署" = "blog/deployment/gitlab-pages.md" },
         { "自托管部署" = "blog/deployment/self-hosted.md" },
-    ]},
+    ] },
     { "高级主题" = [
         { "性能优化" = "blog/advanced/performance.md" },
         { "SEO 优化" = "blog/advanced/seo.md" },
         { "多语言支持" = "blog/advanced/i18n.md" },
-    ]},
-    { "常见问题" = "blog/faq.md" },
-    { "案例展示" = "blog/showcase.md" },
+        { "自定义 404 页面" = "blog/advanced/custom-404.md" },
+        { "自定义字体" = "blog/advanced/custom-fonts.md" },
+        { "添加评论系统" = "blog/advanced/comment-system.md" },
+    ] },
+    { "常见问题" = "faq.md" },
+    { "案例展示" = "showcase.md" },
     { "关于" = "about.md" },
+    { "个人博客" = "https://wcowin.work/" },
 ]
 
 # ==========================================
@@ -91,6 +105,8 @@ features = [
     "navigation.footer",          # 上一页/下一页导航
     "navigation.expand",          # 默认展开导航
     "navigation.indexes",         # 章节索引页
+    "navigation.instant",      # 即时导航
+    "navigation.instant.prefetch",  # 预加载
     
     # 搜索相关
     "search.suggest",             # 搜索建议
@@ -265,67 +281,34 @@ utm_medium = "feed"            # UTM 媒介标记
 # ==========================================
 # Markdown 扩展配置 [Markdown Extensions]
 # ==========================================
-[project.markdown_extensions]
-abbr = {}           # 支持缩写
-attr_list = {}      # 支持属性列表
-admonition = {}     # 支持警告框
-def_list = {}       # 支持定义列表
-footnotes = {}      # 支持脚注
-md_in_html = {}     # 支持在 HTML 中使用 Markdown
-tables = {}         # 支持表格
 
-# ===== 基础扩展说明 =====
-# 以下扩展已在上面配置，无需重复
-
-# ===== PyMdown 扩展 =====
-[project.markdown_extensions."pymdownx.magiclink"]        # 自动转换链接
-[project.markdown_extensions."pymdownx.blocks.caption"]   # 图片说明
-[project.markdown_extensions."pymdownx.caret"]            # 插入符号 (^text^)
-[project.markdown_extensions."pymdownx.betterem"]         # 更好的斜体/粗体
-smart_enable = "all"  # 智能启用所有功能
-[project.markdown_extensions."pymdownx.critic"]           # 批评标记
-[project.markdown_extensions."pymdownx.details"]          # 可折叠详情
-[project.markdown_extensions."pymdownx.inlinehilite"]     # 行内代码高亮
-[project.markdown_extensions."pymdownx.keys"]             # 键盘按键 (++ctrl+alt+del++)
-[project.markdown_extensions."pymdownx.mark"]             # 标记文本 (==text==)
-[project.markdown_extensions."pymdownx.snippets"]         # 代码片段
-[project.markdown_extensions."pymdownx.smartsymbols"]     # 智能符号
-[project.markdown_extensions."pymdownx.tilde"]            # 删除线 (~~text~~)
-
-# ===== SuperFences 配置 =====
-# 支持代码块和 Mermaid 图表
-[project.markdown_extensions."pymdownx.superfences"]
-custom_fences = [
-    { name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" }
-]
-
-# ===== 数学公式支持 =====
-[project.markdown_extensions."pymdownx.arithmatex"]
-generic = true  # 使用 MathJax 渲染数学公式
-
-# ===== 目录配置 =====
+# ===== 官方默认配置（严格按照 Zensical 官方文档）=====
+[project.markdown_extensions.abbr]
+[project.markdown_extensions.admonition]
+[project.markdown_extensions.attr_list]
+[project.markdown_extensions.def_list]
+[project.markdown_extensions.footnotes]
+[project.markdown_extensions.md_in_html]
 [project.markdown_extensions.toc]
-permalink = true     # 固定标题位置为当前位置，显示 # 符号
-toc_depth = 3        # 目录深度（1-6级标题）
-
-# ===== 代码高亮配置 =====
-[project.markdown_extensions."pymdownx.highlight"]
-anchor_linenums = true  # 行号锚点
-linenums = false        # 默认不显示行号（可在代码块中单独启用）
-auto_title = true       # 自动显示编程语言名称
-line_spans = "__span"   # 代码行跨度
-pygments_lang_class = true  # 添加语言类名
-
-# ===== Emoji 表情支持 =====
-# 注意：必须使用 zensical 命名空间而非 material，以支持图标内联功能
-[project.markdown_extensions."pymdownx.emoji"]
-emoji_index = "zensical.extensions.emoji.twemoji"      # 使用 Twemoji (zensical 命名空间)
-emoji_generator = "zensical.extensions.emoji.to_svg"   # 转换为 SVG (zensical 命名空间)
-
-# ===== 标签页配置 =====
-[project.markdown_extensions."pymdownx.tabbed"]
-alternate_style = true  # 使用替代样式
-
-# ===== 任务列表配置 =====
-[project.markdown_extensions."pymdownx.tasklist"]
-custom_checkbox = true  # 自定义复选框样式
+toc_depth = 3
+permalink = true  # 固定标题位置为当前位置，显示 # 符号
+[project.markdown_extensions.pymdownx.arithmatex]
+generic = true
+[project.markdown_extensions.pymdownx.betterem]
+smart_enable = "all"
+[project.markdown_extensions.pymdownx.caret]
+[project.markdown_extensions.pymdownx.details]
+[project.markdown_extensions.pymdownx.emoji]
+emoji_generator = "zensical.extensions.emoji.to_svg"
+emoji_index = "zensical.extensions.emoji.twemoji"
+[project.markdown_extensions.pymdownx.highlight]
+[project.markdown_extensions.pymdownx.inlinehilite]
+[project.markdown_extensions.pymdownx.keys]
+[project.markdown_extensions.pymdownx.mark]
+[project.markdown_extensions.pymdownx.smartsymbols]
+[project.markdown_extensions.pymdownx.superfences]
+[project.markdown_extensions.pymdownx.tabbed]
+alternate_style = true
+[project.markdown_extensions.pymdownx.tasklist]
+custom_checkbox = true
+[project.markdown_extensions.pymdownx.tilde]

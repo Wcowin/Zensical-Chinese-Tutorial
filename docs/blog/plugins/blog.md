@@ -90,4 +90,4 @@ draft = true                    # 启用草稿
 draft_if_future_date = true     # 未来日期自动标记为草稿
 ```
 
-更多详细内容请参考 [博客系统完全指南](../blog-tutorial.md)。
+更多详细内容请参考 [博客系统完全指南](../../tutorials/blog-tutorial.md)。
