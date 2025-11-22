@@ -1,0 +1,2717 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="最详细、最便捷、最前沿的 Zensical 中文教程">
+      
+      
+        <meta name="author" content="Wcowin">
+      
+      
+        <link rel="canonical" href="https://wcowin.work/Zensical-Chinese-Tutorial/configuration/">
+      
+      
+        <link rel="prev" href="../blog/blog-tutorial/">
+      
+      
+        <link rel="next" href="../blog/theme-customization/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="https://zensical.org/assets/zensical.svg">
+      <meta name="generator" content="zensical-0.0.6">
+    
+    
+      
+        <title>zensical.toml 配置详解 - Zensical-Wcowin 中文教程</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../assets/stylesheets/modern/main.71200a3a.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../assets/stylesheets/modern/palette.dfe2e883.min.css">
+      
+      
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+  
+  <style>:root{}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#zensicaltoml" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="Zensical-Wcowin 中文教程" class="md-header__button md-logo" aria-label="Zensical-Wcowin 中文教程" data-md-component="logo">
+      
+  <img src="https://zensical.org/assets/zensical.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Zensical-Wcowin 中文教程
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              zensical.toml 配置详解
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="关闭自动模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="关闭自动模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="查找">
+  <button type="button" class="md-search__button">
+    查找
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+        <a href="https://github.com/Wcowin/Zensical-Chinese-Tutorial" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Zensical-Chinese-Tutorial
+  </div>
+</a>
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  主页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../blog/quick-start/" class="md-tabs__link">
+          
+  
+  快速开始
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../blog/blog-tutorial/" class="md-tabs__link">
+          
+  
+  核心教程
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../blog/plugins/blog/" class="md-tabs__link">
+          
+  
+  插件系统
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../blog/deployment/netlify/" class="md-tabs__link">
+          
+  
+  部署指南
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../blog/advanced/performance/" class="md-tabs__link">
+          
+  
+  高级主题
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../blog/faq/" class="md-tabs__link">
+        
+  
+  常见问题
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../blog/showcase/" class="md-tabs__link">
+        
+  
+  案例展示
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../about/" class="md-tabs__link">
+        
+  
+  关于
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Zensical-Wcowin 中文教程" class="md-nav__button md-logo" aria-label="Zensical-Wcowin 中文教程" data-md-component="logo">
+      
+  <img src="https://zensical.org/assets/zensical.svg" alt="logo">
+
+    </a>
+    Zensical-Wcowin 中文教程
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Wcowin/Zensical-Chinese-Tutorial" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Zensical-Chinese-Tutorial
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    主页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../blog/quick-start/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    快速开始
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    核心教程
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    核心教程
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog/blog-tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zensical 博客系统完全指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    zensical.toml 配置详解
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    zensical.toml 配置详解
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        配置文件格式
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="配置文件格式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#toml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        为什么选择 TOML？
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mkdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        从 MkDocs 过渡
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        项目作用域
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        主题变体
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基础设置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基础设置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#site_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        site_name
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#site_url" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        site_url
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#site_description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        site_description
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#site_author" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        site_author
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copyright" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        copyright
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docs_dir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        docs_dir
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#site_dir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        site_dir
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extra" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        extra
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use_directory_urls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        use_directory_urls
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        主题配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="主题配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#language" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        language
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#palette" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        palette
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#font" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        font
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logo-favicon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        logo 和 favicon
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        插件配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="插件配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        博客插件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        搜索插件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        标签插件
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        导航配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="导航配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nav" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        nav
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#markdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Markdown 扩展
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Markdown 扩展">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        启用扩展
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        完整配置示例
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        下一步
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog/theme-customization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    主题定制指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog/markdown-extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Markdown 扩展使用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../blog/plugins/blog/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    插件系统
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../blog/deployment/netlify/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    部署指南
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../blog/advanced/performance/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    高级主题
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    常见问题
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog/showcase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    案例展示
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    关于
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        配置文件格式
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="配置文件格式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#toml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        为什么选择 TOML？
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mkdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        从 MkDocs 过渡
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        项目作用域
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        主题变体
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基础设置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基础设置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#site_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        site_name
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#site_url" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        site_url
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#site_description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        site_description
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#site_author" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        site_author
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copyright" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        copyright
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docs_dir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        docs_dir
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#site_dir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        site_dir
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extra" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        extra
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use_directory_urls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        use_directory_urls
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        主题配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="主题配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#language" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        language
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#palette" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        palette
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#font" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        font
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logo-favicon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        logo 和 favicon
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        插件配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="插件配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        博客插件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        搜索插件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        标签插件
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        导航配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="导航配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nav" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        nav
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#markdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Markdown 扩展
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Markdown 扩展">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        启用扩展
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        完整配置示例
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        下一步
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+  
+
+
+<h1 id="zensicaltoml">zensical.toml 配置详解<a class="headerlink" href="#zensicaltoml" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>全面了解 Zensical 的配置选项</p>
+</blockquote>
+<h2 id="_1">配置文件格式<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Zensical 项目通过 <code>zensical.toml</code> 文件进行配置。如果你使用 <code>zensical new</code> 命令创建项目，该文件会自动生成，并包含带注释的示例配置。</p>
+<h3 id="toml">为什么选择 TOML？<a class="headerlink" href="#toml" title="Permanent link">&para;</a></h3>
+<p><a href="https://toml.io/">TOML 文件格式</a> 专门设计为易于扫描和理解。我们选择 TOML 而不是 YAML，因为它避免了 YAML 的一些问题：</p>
+<ul>
+<li><strong>YAML 使用缩进表示结构</strong>，这使得缩进错误特别容易出现且难以定位。在 TOML 中，空白主要是样式选择。</li>
+<li><strong>在 YAML 中，值不需要转义</strong>，这可能导致歧义，例如 <code>no</code> 可能被解释为字符串或布尔值。TOML 要求所有字符串都要加引号。</li>
+</ul>
+<h2 id="mkdocs">从 MkDocs 过渡<a class="headerlink" href="#mkdocs" title="Permanent link">&para;</a></h2>
+<p>为了便于从 <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a> 过渡，Zensical 可以原生读取 <code>mkdocs.yml</code> 配置文件。但是，我们建议新项目使用 <code>zensical.toml</code> 文件。</p>
+<div class="admonition info">
+<p class="admonition-title">配置文件支持</p>
+<p>由于 Zensical 是由 Material for MkDocs 的创建者构建的，我们支持通过 <code>mkdocs.yml</code> 文件进行配置，作为过渡机制，使现有项目能够平滑迁移到 Zensical。对 <code>mkdocs.yml</code> 的支持将始终保持，但最终会移出核心。</p>
+</div>
+<h2 id="_2">项目作用域<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><code>zensical.toml</code> 配置以声明项目作用域的行开始：</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TOML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">[project]</span>
+</code></pre></div></td></tr></table></div>
+<p>目前，所有设置都包含在此作用域内。随着 Zensical 的发展，我们将引入额外的作用域，并在适当的地方将设置移出项目作用域。当然，我们会提供自动重构，因此无需手动迁移。</p>
+<h2 id="_3">主题变体<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>Zensical 提供两种主题变体：<strong>modern</strong>（现代）和 <strong>classic</strong>（经典），默认为 modern。classic 主题完全匹配 Material for MkDocs 的外观和感觉，而 modern 主题提供全新的设计。</p>
+<p>如果你来自 Material for MkDocs 并希望保持其外观，或基于其外观自定义网站，可以切换到 classic 主题变体：</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">zensical.toml</label><label for="__tabbed_1_2">mkdocs.yml</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TOML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">[project.theme]</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="n">variant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;classic&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">YAML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nt">theme</span><span class="p">:</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">  </span><span class="nt">variant</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">classic</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">自定义提示</p>
+<p>Zensical 的 HTML 结构在两种主题变体中都与 Material for MkDocs 匹配。这意味着你现有的 CSS 和 JavaScript 自定义应该可以在任一主题变体中工作。</p>
+</div>
+<h2 id="_4">基础设置<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="site_name">site_name<a class="headerlink" href="#site_name" title="Permanent link">&para;</a></h3>
+<p><strong>必需设置</strong> - 提供网站名称，将包含在 HTML head 和页面标题中。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">zensical.toml</label><label for="__tabbed_2_2">mkdocs.yml</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TOML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">[project]</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="n">site_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;我的 Zensical 项目&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">YAML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">我的 Zensical 项目</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">关于 site_name</p>
+<p><code>site_name</code> 目前是必需的，因为 Zensical 替换的静态网站生成器 MkDocs 需要它。我们计划在未来版本中使此设置可选。</p>
+</div>
+<h3 id="site_url">site_url<a class="headerlink" href="#site_url" title="Permanent link">&para;</a></h3>
+<p>指定网站的规范 URL，将出现在 HTML 头部。除非你正在构建离线使用的文档，否则应该设置此项。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">zensical.toml</label><label for="__tabbed_3_2">mkdocs.yml</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TOML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">[project]</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="n">site_url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://example.com&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">YAML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="nt">site_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://example.com</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">重要</p>
+<p>设置 <code>site_url</code> 是以下功能的前提：</p>
+<ul>
+<li>即时导航</li>
+<li>即时预览</li>
+<li>自定义错误页面</li>
+</ul>
+</div>
+<h3 id="site_description">site_description<a class="headerlink" href="#site_description" title="Permanent link">&para;</a></h3>
+<p>用于 HTML head 中的网站描述（如果页面本身未在页面元数据中指定描述）。一些搜索引擎使用此描述来描述页面内容。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">zensical.toml</label><label for="__tabbed_4_2">mkdocs.yml</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TOML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="k">[project]</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="n">site_description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;这是我的 Zensical 文档网站&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">YAML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="nt">site_description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">这是我的 Zensical 文档网站</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<h3 id="site_author">site_author<a class="headerlink" href="#site_author" title="Permanent link">&para;</a></h3>
+<p>用于 HTML head 元素中，指示网站的作者。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">zensical.toml</label><label for="__tabbed_5_2">mkdocs.yml</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TOML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<span class="normal"><a href="#__codelineno-9-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="k">[project]</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="n">site_author</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;张三&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">YAML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="nt">site_author</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">张三</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<h3 id="copyright">copyright<a class="headerlink" href="#copyright" title="Permanent link">&para;</a></h3>
+<p>指定将插入到页面页脚的版权声明。可以在此处指定 HTML 片段或纯文本。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">zensical.toml</label><label for="__tabbed_6_2">mkdocs.yml</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TOML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<span class="normal"><a href="#__codelineno-11-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="k">[project]</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="n">copyright</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&amp;copy; 2025 张三&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">YAML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="nt">copyright</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&amp;copy;</span><span class="nv"> </span><span class="s">2025</span><span class="nv"> </span><span class="s">张三&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<h3 id="docs_dir">docs_dir<a class="headerlink" href="#docs_dir" title="Permanent link">&para;</a></h3>
+<p>指定包含源文件的目录路径。必须是相对路径，相对于配置文件解析。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">zensical.toml</label><label for="__tabbed_7_2">mkdocs.yml</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TOML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
+<span class="normal"><a href="#__codelineno-13-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="k">[project]</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="n">docs_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;docs&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">YAML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="nt">docs_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docs</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<h3 id="site_dir">site_dir<a class="headerlink" href="#site_dir" title="Permanent link">&para;</a></h3>
+<p>指定网站将写入的目录路径。必须是相对路径，相对于配置文件解析。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">zensical.toml</label><label for="__tabbed_8_2">mkdocs.yml</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TOML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
+<span class="normal"><a href="#__codelineno-15-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="k">[project]</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="n">site_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;site&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">YAML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="nt">site_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">site</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<h3 id="extra">extra<a class="headerlink" href="#extra" title="Permanent link">&para;</a></h3>
+<p><code>extra</code> 配置选项用于存储模板使用的任意键值对。如果你覆盖模板，可以使用这些值来自定义行为。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">zensical.toml</label><label for="__tabbed_9_2">mkdocs.yml</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TOML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
+<span class="normal"><a href="#__codelineno-17-2">2</a></span>
+<span class="normal"><a href="#__codelineno-17-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="k">[project.extra]</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="n">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;value&quot;</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="n">analytics</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;UA-XXXXXXXX-X&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">YAML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span>
+<span class="normal"><a href="#__codelineno-18-2">2</a></span>
+<span class="normal"><a href="#__codelineno-18-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="nt">extra</span><span class="p">:</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="w">  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="w">  </span><span class="nt">analytics</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">UA-XXXXXXXX-X</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<h3 id="use_directory_urls">use_directory_urls<a class="headerlink" href="#use_directory_urls" title="Permanent link">&para;</a></h3>
+<p>控制文档网站的目录结构，从而控制用于链接到页面的 URL 格式。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">zensical.toml</label><label for="__tabbed_10_2">mkdocs.yml</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TOML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span>
+<span class="normal"><a href="#__codelineno-19-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="k">[project]</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="n">use_directory_urls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w">  </span><span class="c1"># 默认值</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">YAML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="nt">use_directory_urls</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<div class="admonition info">
+<p class="admonition-title">离线使用</p>
+<p>在构建离线使用时，此选项会自动设置为 <code>false</code>，以便可以从本地文件系统浏览文档，而无需 Web 服务器。</p>
+</div>
+<h2 id="_5">主题配置<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="language">language<a class="headerlink" href="#language" title="Permanent link">&para;</a></h3>
+<p>设置网站的语言。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">zensical.toml</label><label for="__tabbed_11_2">mkdocs.yml</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TOML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1">1</a></span>
+<span class="normal"><a href="#__codelineno-21-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="k">[project.theme]</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2"></a><span class="n">language</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;zh&quot;</span><span class="w">  </span><span class="c1"># 中文</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">YAML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span>
+<span class="normal"><a href="#__codelineno-22-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="nt">theme</span><span class="p">:</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2"></a><span class="w">  </span><span class="nt">language</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">zh</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<h3 id="features">features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h3>
+<p>启用或禁用主题功能。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">zensical.toml</label><label for="__tabbed_12_2">mkdocs.yml</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TOML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-23-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-23-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-23-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-23-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-23-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-23-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-23-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-23-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-23-10">10</a></span>
+<span class="normal"><a href="#__codelineno-23-11">11</a></span>
+<span class="normal"><a href="#__codelineno-23-12">12</a></span>
+<span class="normal"><a href="#__codelineno-23-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="k">[project.theme]</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2"></a><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3"></a><span class="w">    </span><span class="s2">&quot;navigation.instant&quot;</span><span class="p">,</span><span class="w">           </span><span class="c1"># 即时导航</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4"></a><span class="w">    </span><span class="s2">&quot;navigation.instant.prefetch&quot;</span><span class="p">,</span><span class="w">  </span><span class="c1"># 预加载</span>
+<a id="__codelineno-23-5" name="__codelineno-23-5"></a><span class="w">    </span><span class="s2">&quot;navigation.tracking&quot;</span><span class="p">,</span><span class="w">          </span><span class="c1"># 锚点跟踪</span>
+<a id="__codelineno-23-6" name="__codelineno-23-6"></a><span class="w">    </span><span class="s2">&quot;navigation.tabs&quot;</span><span class="p">,</span><span class="w">              </span><span class="c1"># 导航标签</span>
+<a id="__codelineno-23-7" name="__codelineno-23-7"></a><span class="w">    </span><span class="s2">&quot;navigation.sections&quot;</span><span class="p">,</span><span class="w">          </span><span class="c1"># 导航部分</span>
+<a id="__codelineno-23-8" name="__codelineno-23-8"></a><span class="w">    </span><span class="s2">&quot;navigation.expand&quot;</span><span class="p">,</span><span class="w">            </span><span class="c1"># 展开导航</span>
+<a id="__codelineno-23-9" name="__codelineno-23-9"></a><span class="w">    </span><span class="s2">&quot;navigation.top&quot;</span><span class="p">,</span><span class="w">               </span><span class="c1"># 返回顶部按钮</span>
+<a id="__codelineno-23-10" name="__codelineno-23-10"></a><span class="w">    </span><span class="s2">&quot;search.suggest&quot;</span><span class="p">,</span><span class="w">               </span><span class="c1"># 搜索建议</span>
+<a id="__codelineno-23-11" name="__codelineno-23-11"></a><span class="w">    </span><span class="s2">&quot;search.highlight&quot;</span><span class="p">,</span><span class="w">             </span><span class="c1"># 搜索高亮</span>
+<a id="__codelineno-23-12" name="__codelineno-23-12"></a><span class="w">    </span><span class="s2">&quot;content.code.copy&quot;</span><span class="p">,</span><span class="w">            </span><span class="c1"># 代码复制按钮</span>
+<a id="__codelineno-23-13" name="__codelineno-23-13"></a><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">YAML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-24-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-24-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-24-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-24-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-24-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-24-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-24-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-24-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-24-10">10</a></span>
+<span class="normal"><a href="#__codelineno-24-11">11</a></span>
+<span class="normal"><a href="#__codelineno-24-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="nt">theme</span><span class="p">:</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2"></a><span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.instant</span>
+<a id="__codelineno-24-4" name="__codelineno-24-4"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.instant.prefetch</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.tracking</span>
+<a id="__codelineno-24-6" name="__codelineno-24-6"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.tabs</span>
+<a id="__codelineno-24-7" name="__codelineno-24-7"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.sections</span>
+<a id="__codelineno-24-8" name="__codelineno-24-8"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.expand</span>
+<a id="__codelineno-24-9" name="__codelineno-24-9"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.top</span>
+<a id="__codelineno-24-10" name="__codelineno-24-10"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">search.suggest</span>
+<a id="__codelineno-24-11" name="__codelineno-24-11"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">search.highlight</span>
+<a id="__codelineno-24-12" name="__codelineno-24-12"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">content.code.copy</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<h3 id="palette">palette<a class="headerlink" href="#palette" title="Permanent link">&para;</a></h3>
+<p>配置颜色主题。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">zensical.toml</label><label for="__tabbed_13_2">mkdocs.yml</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TOML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-25-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-25-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-25-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-25-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-25-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-25-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-25-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-25-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-25-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="k">[[project.theme.palette]]</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2"></a><span class="n">scheme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;default&quot;</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3"></a><span class="n">primary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;indigo&quot;</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4"></a><span class="n">accent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;indigo&quot;</span>
+<a id="__codelineno-25-5" name="__codelineno-25-5"></a>
+<a id="__codelineno-25-6" name="__codelineno-25-6"></a><span class="k">[[project.theme.palette]]</span>
+<a id="__codelineno-25-7" name="__codelineno-25-7"></a><span class="n">scheme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;slate&quot;</span>
+<a id="__codelineno-25-8" name="__codelineno-25-8"></a><span class="n">primary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;indigo&quot;</span>
+<a id="__codelineno-25-9" name="__codelineno-25-9"></a><span class="n">accent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;indigo&quot;</span>
+<a id="__codelineno-25-10" name="__codelineno-25-10"></a><span class="n">toggle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">icon</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;material/brightness-4&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;切换到深色模式&quot;</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">YAML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-26-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-26-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-26-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-26-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-26-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-26-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-26-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-26-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-26-10">10</a></span>
+<span class="normal"><a href="#__codelineno-26-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="nt">theme</span><span class="p">:</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2"></a><span class="w">  </span><span class="nt">palette</span><span class="p">:</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">scheme</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<a id="__codelineno-26-4" name="__codelineno-26-4"></a><span class="w">      </span><span class="nt">primary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">indigo</span>
+<a id="__codelineno-26-5" name="__codelineno-26-5"></a><span class="w">      </span><span class="nt">accent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">indigo</span>
+<a id="__codelineno-26-6" name="__codelineno-26-6"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">scheme</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">slate</span>
+<a id="__codelineno-26-7" name="__codelineno-26-7"></a><span class="w">      </span><span class="nt">primary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">indigo</span>
+<a id="__codelineno-26-8" name="__codelineno-26-8"></a><span class="w">      </span><span class="nt">accent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">indigo</span>
+<a id="__codelineno-26-9" name="__codelineno-26-9"></a><span class="w">      </span><span class="nt">toggle</span><span class="p">:</span>
+<a id="__codelineno-26-10" name="__codelineno-26-10"></a><span class="w">        </span><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material/brightness-4</span>
+<a id="__codelineno-26-11" name="__codelineno-26-11"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">切换到深色模式</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<h3 id="font">font<a class="headerlink" href="#font" title="Permanent link">&para;</a></h3>
+<p>配置字体。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="14:2"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><div class="tabbed-labels"><label for="__tabbed_14_1">zensical.toml</label><label for="__tabbed_14_2">mkdocs.yml</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TOML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-1">1</a></span>
+<span class="normal"><a href="#__codelineno-27-2">2</a></span>
+<span class="normal"><a href="#__codelineno-27-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1"></a><span class="k">[project.theme.font]</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2"></a><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Roboto&quot;</span>
+<a id="__codelineno-27-3" name="__codelineno-27-3"></a><span class="n">code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Roboto Mono&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">YAML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-1">1</a></span>
+<span class="normal"><a href="#__codelineno-28-2">2</a></span>
+<span class="normal"><a href="#__codelineno-28-3">3</a></span>
+<span class="normal"><a href="#__codelineno-28-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1"></a><span class="nt">theme</span><span class="p">:</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2"></a><span class="w">  </span><span class="nt">font</span><span class="p">:</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3"></a><span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Roboto</span>
+<a id="__codelineno-28-4" name="__codelineno-28-4"></a><span class="w">    </span><span class="nt">code</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Roboto Mono</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<h3 id="logo-favicon">logo 和 favicon<a class="headerlink" href="#logo-favicon" title="Permanent link">&para;</a></h3>
+<p>设置网站 logo 和 favicon。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="15:2"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><div class="tabbed-labels"><label for="__tabbed_15_1">zensical.toml</label><label for="__tabbed_15_2">mkdocs.yml</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TOML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-29-1">1</a></span>
+<span class="normal"><a href="#__codelineno-29-2">2</a></span>
+<span class="normal"><a href="#__codelineno-29-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1"></a><span class="k">[project.theme]</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2"></a><span class="n">logo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;assets/logo.png&quot;</span>
+<a id="__codelineno-29-3" name="__codelineno-29-3"></a><span class="n">favicon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;assets/favicon.png&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">YAML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-30-1">1</a></span>
+<span class="normal"><a href="#__codelineno-30-2">2</a></span>
+<span class="normal"><a href="#__codelineno-30-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1"></a><span class="nt">theme</span><span class="p">:</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2"></a><span class="w">  </span><span class="nt">logo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">assets/logo.png</span>
+<a id="__codelineno-30-3" name="__codelineno-30-3"></a><span class="w">  </span><span class="nt">favicon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">assets/favicon.png</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<h2 id="_6">插件配置<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="_7">博客插件<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="16:2"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><input id="__tabbed_16_2" name="__tabbed_16" type="radio" /><div class="tabbed-labels"><label for="__tabbed_16_1">zensical.toml</label><label for="__tabbed_16_2">mkdocs.yml</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TOML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-31-1">1</a></span>
+<span class="normal"><a href="#__codelineno-31-2">2</a></span>
+<span class="normal"><a href="#__codelineno-31-3">3</a></span>
+<span class="normal"><a href="#__codelineno-31-4">4</a></span>
+<span class="normal"><a href="#__codelineno-31-5">5</a></span>
+<span class="normal"><a href="#__codelineno-31-6">6</a></span>
+<span class="normal"><a href="#__codelineno-31-7">7</a></span>
+<span class="normal"><a href="#__codelineno-31-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1"></a><span class="k">[project.plugins.blog]</span>
+<a id="__codelineno-31-2" name="__codelineno-31-2"></a><span class="n">enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-31-3" name="__codelineno-31-3"></a><span class="n">blog_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;blog&quot;</span>
+<a id="__codelineno-31-4" name="__codelineno-31-4"></a><span class="n">post_date_format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;full&quot;</span>
+<a id="__codelineno-31-5" name="__codelineno-31-5"></a><span class="n">post_url_format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;{date}/{slug}&quot;</span>
+<a id="__codelineno-31-6" name="__codelineno-31-6"></a><span class="n">post_readtime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-31-7" name="__codelineno-31-7"></a><span class="n">post_readtime_words_per_minute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">265</span>
+<a id="__codelineno-31-8" name="__codelineno-31-8"></a><span class="n">draft</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">YAML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-32-1">1</a></span>
+<span class="normal"><a href="#__codelineno-32-2">2</a></span>
+<span class="normal"><a href="#__codelineno-32-3">3</a></span>
+<span class="normal"><a href="#__codelineno-32-4">4</a></span>
+<span class="normal"><a href="#__codelineno-32-5">5</a></span>
+<span class="normal"><a href="#__codelineno-32-6">6</a></span>
+<span class="normal"><a href="#__codelineno-32-7">7</a></span>
+<span class="normal"><a href="#__codelineno-32-8">8</a></span>
+<span class="normal"><a href="#__codelineno-32-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1"></a><span class="nt">plugins</span><span class="p">:</span>
+<a id="__codelineno-32-2" name="__codelineno-32-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">blog</span><span class="p">:</span>
+<a id="__codelineno-32-3" name="__codelineno-32-3"></a><span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-32-4" name="__codelineno-32-4"></a><span class="w">      </span><span class="nt">blog_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blog</span>
+<a id="__codelineno-32-5" name="__codelineno-32-5"></a><span class="w">      </span><span class="nt">post_date_format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">full</span>
+<a id="__codelineno-32-6" name="__codelineno-32-6"></a><span class="w">      </span><span class="nt">post_url_format</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{date}/{slug}&quot;</span>
+<a id="__codelineno-32-7" name="__codelineno-32-7"></a><span class="w">      </span><span class="nt">post_readtime</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-32-8" name="__codelineno-32-8"></a><span class="w">      </span><span class="nt">post_readtime_words_per_minute</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">265</span>
+<a id="__codelineno-32-9" name="__codelineno-32-9"></a><span class="w">      </span><span class="nt">draft</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<h3 id="_8">搜索插件<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="17:2"><input checked="checked" id="__tabbed_17_1" name="__tabbed_17" type="radio" /><input id="__tabbed_17_2" name="__tabbed_17" type="radio" /><div class="tabbed-labels"><label for="__tabbed_17_1">zensical.toml</label><label for="__tabbed_17_2">mkdocs.yml</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TOML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-33-1">1</a></span>
+<span class="normal"><a href="#__codelineno-33-2">2</a></span>
+<span class="normal"><a href="#__codelineno-33-3">3</a></span>
+<span class="normal"><a href="#__codelineno-33-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1"></a><span class="k">[project.plugins.search]</span>
+<a id="__codelineno-33-2" name="__codelineno-33-2"></a><span class="n">enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-33-3" name="__codelineno-33-3"></a><span class="n">lang</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;zh&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;en&quot;</span><span class="p">]</span>
+<a id="__codelineno-33-4" name="__codelineno-33-4"></a><span class="n">separator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;[\s\-\.]+&#39;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">YAML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-34-1">1</a></span>
+<span class="normal"><a href="#__codelineno-34-2">2</a></span>
+<span class="normal"><a href="#__codelineno-34-3">3</a></span>
+<span class="normal"><a href="#__codelineno-34-4">4</a></span>
+<span class="normal"><a href="#__codelineno-34-5">5</a></span>
+<span class="normal"><a href="#__codelineno-34-6">6</a></span>
+<span class="normal"><a href="#__codelineno-34-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1"></a><span class="nt">plugins</span><span class="p">:</span>
+<a id="__codelineno-34-2" name="__codelineno-34-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">search</span><span class="p">:</span>
+<a id="__codelineno-34-3" name="__codelineno-34-3"></a><span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-34-4" name="__codelineno-34-4"></a><span class="w">      </span><span class="nt">lang</span><span class="p">:</span>
+<a id="__codelineno-34-5" name="__codelineno-34-5"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">zh</span>
+<a id="__codelineno-34-6" name="__codelineno-34-6"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">en</span>
+<a id="__codelineno-34-7" name="__codelineno-34-7"></a><span class="w">      </span><span class="nt">separator</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;[\s\-\.]+&#39;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<h3 id="_9">标签插件<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="18:2"><input checked="checked" id="__tabbed_18_1" name="__tabbed_18" type="radio" /><input id="__tabbed_18_2" name="__tabbed_18" type="radio" /><div class="tabbed-labels"><label for="__tabbed_18_1">zensical.toml</label><label for="__tabbed_18_2">mkdocs.yml</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TOML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-35-1">1</a></span>
+<span class="normal"><a href="#__codelineno-35-2">2</a></span>
+<span class="normal"><a href="#__codelineno-35-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1"></a><span class="k">[project.plugins.tags]</span>
+<a id="__codelineno-35-2" name="__codelineno-35-2"></a><span class="n">enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-35-3" name="__codelineno-35-3"></a><span class="n">tags_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;tags.md&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">YAML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-36-1">1</a></span>
+<span class="normal"><a href="#__codelineno-36-2">2</a></span>
+<span class="normal"><a href="#__codelineno-36-3">3</a></span>
+<span class="normal"><a href="#__codelineno-36-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1"></a><span class="nt">plugins</span><span class="p">:</span>
+<a id="__codelineno-36-2" name="__codelineno-36-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">tags</span><span class="p">:</span>
+<a id="__codelineno-36-3" name="__codelineno-36-3"></a><span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-36-4" name="__codelineno-36-4"></a><span class="w">      </span><span class="nt">tags_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tags.md</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<h2 id="_10">导航配置<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h3 id="nav">nav<a class="headerlink" href="#nav" title="Permanent link">&para;</a></h3>
+<p>定义网站的导航结构。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="19:2"><input checked="checked" id="__tabbed_19_1" name="__tabbed_19" type="radio" /><input id="__tabbed_19_2" name="__tabbed_19" type="radio" /><div class="tabbed-labels"><label for="__tabbed_19_1">zensical.toml</label><label for="__tabbed_19_2">mkdocs.yml</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TOML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-37-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-37-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-37-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-37-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-37-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-37-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-37-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-37-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-37-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-37-10">10</a></span>
+<span class="normal"><a href="#__codelineno-37-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1"></a><span class="k">[[project.nav]]</span>
+<a id="__codelineno-37-2" name="__codelineno-37-2"></a><span class="n">Home</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;index.md&quot;</span>
+<a id="__codelineno-37-3" name="__codelineno-37-3"></a>
+<a id="__codelineno-37-4" name="__codelineno-37-4"></a><span class="k">[[project.nav]]</span>
+<a id="__codelineno-37-5" name="__codelineno-37-5"></a><span class="s2">&quot;快速开始&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;quick-start.md&quot;</span>
+<a id="__codelineno-37-6" name="__codelineno-37-6"></a>
+<a id="__codelineno-37-7" name="__codelineno-37-7"></a><span class="k">[[project.nav]]</span>
+<a id="__codelineno-37-8" name="__codelineno-37-8"></a><span class="s2">&quot;配置&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;configuration.md&quot;</span>
+<a id="__codelineno-37-9" name="__codelineno-37-9"></a>
+<a id="__codelineno-37-10" name="__codelineno-37-10"></a><span class="k">[[project.nav.Blog]]</span>
+<a id="__codelineno-37-11" name="__codelineno-37-11"></a><span class="s2">&quot;博客&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;blog/index.md&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">YAML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-38-1">1</a></span>
+<span class="normal"><a href="#__codelineno-38-2">2</a></span>
+<span class="normal"><a href="#__codelineno-38-3">3</a></span>
+<span class="normal"><a href="#__codelineno-38-4">4</a></span>
+<span class="normal"><a href="#__codelineno-38-5">5</a></span>
+<span class="normal"><a href="#__codelineno-38-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1"></a><span class="nt">nav</span><span class="p">:</span>
+<a id="__codelineno-38-2" name="__codelineno-38-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Home</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span>
+<a id="__codelineno-38-3" name="__codelineno-38-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">快速开始</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">quick-start.md</span>
+<a id="__codelineno-38-4" name="__codelineno-38-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">配置</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">configuration.md</span>
+<a id="__codelineno-38-5" name="__codelineno-38-5"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Blog</span><span class="p">:</span>
+<a id="__codelineno-38-6" name="__codelineno-38-6"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">博客</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blog/index.md</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<h2 id="markdown">Markdown 扩展<a class="headerlink" href="#markdown" title="Permanent link">&para;</a></h2>
+<h3 id="_11">启用扩展<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="20:2"><input checked="checked" id="__tabbed_20_1" name="__tabbed_20" type="radio" /><input id="__tabbed_20_2" name="__tabbed_20" type="radio" /><div class="tabbed-labels"><label for="__tabbed_20_1">zensical.toml</label><label for="__tabbed_20_2">mkdocs.yml</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TOML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-39-1">1</a></span>
+<span class="normal"><a href="#__codelineno-39-2">2</a></span>
+<span class="normal"><a href="#__codelineno-39-3">3</a></span>
+<span class="normal"><a href="#__codelineno-39-4">4</a></span>
+<span class="normal"><a href="#__codelineno-39-5">5</a></span>
+<span class="normal"><a href="#__codelineno-39-6">6</a></span>
+<span class="normal"><a href="#__codelineno-39-7">7</a></span>
+<span class="normal"><a href="#__codelineno-39-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1"></a><span class="k">[project.markdown_extensions]</span>
+<a id="__codelineno-39-2" name="__codelineno-39-2"></a><span class="n">pymdownx</span><span class="p">.</span><span class="n">highlight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">anchor_linenums</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-39-3" name="__codelineno-39-3"></a><span class="n">pymdownx</span><span class="p">.</span><span class="n">superfences</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span>
+<a id="__codelineno-39-4" name="__codelineno-39-4"></a><span class="n">pymdownx</span><span class="p">.</span><span class="n">tabbed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">alternate_style</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-39-5" name="__codelineno-39-5"></a><span class="n">pymdownx</span><span class="p">.</span><span class="n">tasklist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">custom_checkbox</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-39-6" name="__codelineno-39-6"></a><span class="n">admonition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span>
+<a id="__codelineno-39-7" name="__codelineno-39-7"></a><span class="n">attr_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span>
+<a id="__codelineno-39-8" name="__codelineno-39-8"></a><span class="n">md_in_html</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">YAML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-40-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-40-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-40-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-40-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-40-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-40-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-40-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-40-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-40-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-40-10">10</a></span>
+<span class="normal"><a href="#__codelineno-40-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
+<a id="__codelineno-40-2" name="__codelineno-40-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.highlight</span><span class="p">:</span>
+<a id="__codelineno-40-3" name="__codelineno-40-3"></a><span class="w">      </span><span class="nt">anchor_linenums</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-40-4" name="__codelineno-40-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.superfences</span>
+<a id="__codelineno-40-5" name="__codelineno-40-5"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.tabbed</span><span class="p">:</span>
+<a id="__codelineno-40-6" name="__codelineno-40-6"></a><span class="w">      </span><span class="nt">alternate_style</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-40-7" name="__codelineno-40-7"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.tasklist</span><span class="p">:</span>
+<a id="__codelineno-40-8" name="__codelineno-40-8"></a><span class="w">      </span><span class="nt">custom_checkbox</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-40-9" name="__codelineno-40-9"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admonition</span>
+<a id="__codelineno-40-10" name="__codelineno-40-10"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">attr_list</span>
+<a id="__codelineno-40-11" name="__codelineno-40-11"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">md_in_html</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<h2 id="_12">完整配置示例<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">zensical.toml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-41-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-41-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-41-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-41-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-41-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-41-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-41-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-41-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-41-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-41-10">10</a></span>
+<span class="normal"><a href="#__codelineno-41-11">11</a></span>
+<span class="normal"><a href="#__codelineno-41-12">12</a></span>
+<span class="normal"><a href="#__codelineno-41-13">13</a></span>
+<span class="normal"><a href="#__codelineno-41-14">14</a></span>
+<span class="normal"><a href="#__codelineno-41-15">15</a></span>
+<span class="normal"><a href="#__codelineno-41-16">16</a></span>
+<span class="normal"><a href="#__codelineno-41-17">17</a></span>
+<span class="normal"><a href="#__codelineno-41-18">18</a></span>
+<span class="normal"><a href="#__codelineno-41-19">19</a></span>
+<span class="normal"><a href="#__codelineno-41-20">20</a></span>
+<span class="normal"><a href="#__codelineno-41-21">21</a></span>
+<span class="normal"><a href="#__codelineno-41-22">22</a></span>
+<span class="normal"><a href="#__codelineno-41-23">23</a></span>
+<span class="normal"><a href="#__codelineno-41-24">24</a></span>
+<span class="normal"><a href="#__codelineno-41-25">25</a></span>
+<span class="normal"><a href="#__codelineno-41-26">26</a></span>
+<span class="normal"><a href="#__codelineno-41-27">27</a></span>
+<span class="normal"><a href="#__codelineno-41-28">28</a></span>
+<span class="normal"><a href="#__codelineno-41-29">29</a></span>
+<span class="normal"><a href="#__codelineno-41-30">30</a></span>
+<span class="normal"><a href="#__codelineno-41-31">31</a></span>
+<span class="normal"><a href="#__codelineno-41-32">32</a></span>
+<span class="normal"><a href="#__codelineno-41-33">33</a></span>
+<span class="normal"><a href="#__codelineno-41-34">34</a></span>
+<span class="normal"><a href="#__codelineno-41-35">35</a></span>
+<span class="normal"><a href="#__codelineno-41-36">36</a></span>
+<span class="normal"><a href="#__codelineno-41-37">37</a></span>
+<span class="normal"><a href="#__codelineno-41-38">38</a></span>
+<span class="normal"><a href="#__codelineno-41-39">39</a></span>
+<span class="normal"><a href="#__codelineno-41-40">40</a></span>
+<span class="normal"><a href="#__codelineno-41-41">41</a></span>
+<span class="normal"><a href="#__codelineno-41-42">42</a></span>
+<span class="normal"><a href="#__codelineno-41-43">43</a></span>
+<span class="normal"><a href="#__codelineno-41-44">44</a></span>
+<span class="normal"><a href="#__codelineno-41-45">45</a></span>
+<span class="normal"><a href="#__codelineno-41-46">46</a></span>
+<span class="normal"><a href="#__codelineno-41-47">47</a></span>
+<span class="normal"><a href="#__codelineno-41-48">48</a></span>
+<span class="normal"><a href="#__codelineno-41-49">49</a></span>
+<span class="normal"><a href="#__codelineno-41-50">50</a></span>
+<span class="normal"><a href="#__codelineno-41-51">51</a></span>
+<span class="normal"><a href="#__codelineno-41-52">52</a></span>
+<span class="normal"><a href="#__codelineno-41-53">53</a></span>
+<span class="normal"><a href="#__codelineno-41-54">54</a></span>
+<span class="normal"><a href="#__codelineno-41-55">55</a></span>
+<span class="normal"><a href="#__codelineno-41-56">56</a></span>
+<span class="normal"><a href="#__codelineno-41-57">57</a></span>
+<span class="normal"><a href="#__codelineno-41-58">58</a></span>
+<span class="normal"><a href="#__codelineno-41-59">59</a></span>
+<span class="normal"><a href="#__codelineno-41-60">60</a></span>
+<span class="normal"><a href="#__codelineno-41-61">61</a></span>
+<span class="normal"><a href="#__codelineno-41-62">62</a></span>
+<span class="normal"><a href="#__codelineno-41-63">63</a></span>
+<span class="normal"><a href="#__codelineno-41-64">64</a></span>
+<span class="normal"><a href="#__codelineno-41-65">65</a></span>
+<span class="normal"><a href="#__codelineno-41-66">66</a></span>
+<span class="normal"><a href="#__codelineno-41-67">67</a></span>
+<span class="normal"><a href="#__codelineno-41-68">68</a></span>
+<span class="normal"><a href="#__codelineno-41-69">69</a></span>
+<span class="normal"><a href="#__codelineno-41-70">70</a></span>
+<span class="normal"><a href="#__codelineno-41-71">71</a></span>
+<span class="normal"><a href="#__codelineno-41-72">72</a></span>
+<span class="normal"><a href="#__codelineno-41-73">73</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1"></a><span class="k">[project]</span>
+<a id="__codelineno-41-2" name="__codelineno-41-2"></a><span class="n">site_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;我的 Zensical 博客&quot;</span>
+<a id="__codelineno-41-3" name="__codelineno-41-3"></a><span class="n">site_url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://example.com&quot;</span>
+<a id="__codelineno-41-4" name="__codelineno-41-4"></a><span class="n">site_author</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;张三&quot;</span>
+<a id="__codelineno-41-5" name="__codelineno-41-5"></a><span class="n">site_description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;使用 Zensical 构建的现代文档网站&quot;</span>
+<a id="__codelineno-41-6" name="__codelineno-41-6"></a><span class="n">copyright</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&amp;copy; 2025 张三&quot;</span>
+<a id="__codelineno-41-7" name="__codelineno-41-7"></a>
+<a id="__codelineno-41-8" name="__codelineno-41-8"></a><span class="k">[project.theme]</span>
+<a id="__codelineno-41-9" name="__codelineno-41-9"></a><span class="n">variant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;modern&quot;</span>
+<a id="__codelineno-41-10" name="__codelineno-41-10"></a><span class="n">language</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;zh&quot;</span>
+<a id="__codelineno-41-11" name="__codelineno-41-11"></a><span class="n">logo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;assets/logo.png&quot;</span>
+<a id="__codelineno-41-12" name="__codelineno-41-12"></a><span class="n">favicon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;assets/favicon.png&quot;</span>
+<a id="__codelineno-41-13" name="__codelineno-41-13"></a>
+<a id="__codelineno-41-14" name="__codelineno-41-14"></a><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-41-15" name="__codelineno-41-15"></a><span class="w">    </span><span class="s2">&quot;navigation.instant&quot;</span><span class="p">,</span>
+<a id="__codelineno-41-16" name="__codelineno-41-16"></a><span class="w">    </span><span class="s2">&quot;navigation.instant.prefetch&quot;</span><span class="p">,</span>
+<a id="__codelineno-41-17" name="__codelineno-41-17"></a><span class="w">    </span><span class="s2">&quot;navigation.tracking&quot;</span><span class="p">,</span>
+<a id="__codelineno-41-18" name="__codelineno-41-18"></a><span class="w">    </span><span class="s2">&quot;navigation.tabs&quot;</span><span class="p">,</span>
+<a id="__codelineno-41-19" name="__codelineno-41-19"></a><span class="w">    </span><span class="s2">&quot;navigation.sections&quot;</span><span class="p">,</span>
+<a id="__codelineno-41-20" name="__codelineno-41-20"></a><span class="w">    </span><span class="s2">&quot;navigation.top&quot;</span><span class="p">,</span>
+<a id="__codelineno-41-21" name="__codelineno-41-21"></a><span class="w">    </span><span class="s2">&quot;search.suggest&quot;</span><span class="p">,</span>
+<a id="__codelineno-41-22" name="__codelineno-41-22"></a><span class="w">    </span><span class="s2">&quot;search.highlight&quot;</span><span class="p">,</span>
+<a id="__codelineno-41-23" name="__codelineno-41-23"></a><span class="w">    </span><span class="s2">&quot;content.code.copy&quot;</span><span class="p">,</span>
+<a id="__codelineno-41-24" name="__codelineno-41-24"></a><span class="p">]</span>
+<a id="__codelineno-41-25" name="__codelineno-41-25"></a>
+<a id="__codelineno-41-26" name="__codelineno-41-26"></a><span class="k">[[project.theme.palette]]</span>
+<a id="__codelineno-41-27" name="__codelineno-41-27"></a><span class="n">scheme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;default&quot;</span>
+<a id="__codelineno-41-28" name="__codelineno-41-28"></a><span class="n">primary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;indigo&quot;</span>
+<a id="__codelineno-41-29" name="__codelineno-41-29"></a><span class="n">accent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;indigo&quot;</span>
+<a id="__codelineno-41-30" name="__codelineno-41-30"></a>
+<a id="__codelineno-41-31" name="__codelineno-41-31"></a><span class="k">[[project.theme.palette]]</span>
+<a id="__codelineno-41-32" name="__codelineno-41-32"></a><span class="n">scheme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;slate&quot;</span>
+<a id="__codelineno-41-33" name="__codelineno-41-33"></a><span class="n">primary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;indigo&quot;</span>
+<a id="__codelineno-41-34" name="__codelineno-41-34"></a><span class="n">accent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;indigo&quot;</span>
+<a id="__codelineno-41-35" name="__codelineno-41-35"></a>
+<a id="__codelineno-41-36" name="__codelineno-41-36"></a><span class="k">[project.theme.font]</span>
+<a id="__codelineno-41-37" name="__codelineno-41-37"></a><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Roboto&quot;</span>
+<a id="__codelineno-41-38" name="__codelineno-41-38"></a><span class="n">code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Roboto Mono&quot;</span>
+<a id="__codelineno-41-39" name="__codelineno-41-39"></a>
+<a id="__codelineno-41-40" name="__codelineno-41-40"></a><span class="k">[project.plugins.blog]</span>
+<a id="__codelineno-41-41" name="__codelineno-41-41"></a><span class="n">enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-41-42" name="__codelineno-41-42"></a><span class="n">blog_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;blog&quot;</span>
+<a id="__codelineno-41-43" name="__codelineno-41-43"></a><span class="n">post_date_format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;full&quot;</span>
+<a id="__codelineno-41-44" name="__codelineno-41-44"></a><span class="n">post_readtime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-41-45" name="__codelineno-41-45"></a><span class="n">post_readtime_words_per_minute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">265</span>
+<a id="__codelineno-41-46" name="__codelineno-41-46"></a>
+<a id="__codelineno-41-47" name="__codelineno-41-47"></a><span class="k">[project.plugins.search]</span>
+<a id="__codelineno-41-48" name="__codelineno-41-48"></a><span class="n">enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-41-49" name="__codelineno-41-49"></a><span class="n">lang</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;zh&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;en&quot;</span><span class="p">]</span>
+<a id="__codelineno-41-50" name="__codelineno-41-50"></a>
+<a id="__codelineno-41-51" name="__codelineno-41-51"></a><span class="k">[project.plugins.tags]</span>
+<a id="__codelineno-41-52" name="__codelineno-41-52"></a><span class="n">enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-41-53" name="__codelineno-41-53"></a>
+<a id="__codelineno-41-54" name="__codelineno-41-54"></a><span class="k">[project.markdown_extensions]</span>
+<a id="__codelineno-41-55" name="__codelineno-41-55"></a><span class="n">pymdownx</span><span class="p">.</span><span class="n">highlight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">anchor_linenums</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-41-56" name="__codelineno-41-56"></a><span class="n">pymdownx</span><span class="p">.</span><span class="n">superfences</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span>
+<a id="__codelineno-41-57" name="__codelineno-41-57"></a><span class="n">pymdownx</span><span class="p">.</span><span class="n">tabbed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">alternate_style</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-41-58" name="__codelineno-41-58"></a><span class="n">pymdownx</span><span class="p">.</span><span class="n">tasklist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">custom_checkbox</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-41-59" name="__codelineno-41-59"></a><span class="n">admonition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span>
+<a id="__codelineno-41-60" name="__codelineno-41-60"></a><span class="n">attr_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span>
+<a id="__codelineno-41-61" name="__codelineno-41-61"></a><span class="n">md_in_html</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span>
+<a id="__codelineno-41-62" name="__codelineno-41-62"></a>
+<a id="__codelineno-41-63" name="__codelineno-41-63"></a><span class="k">[[project.nav]]</span>
+<a id="__codelineno-41-64" name="__codelineno-41-64"></a><span class="n">Home</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;index.md&quot;</span>
+<a id="__codelineno-41-65" name="__codelineno-41-65"></a>
+<a id="__codelineno-41-66" name="__codelineno-41-66"></a><span class="k">[[project.nav]]</span>
+<a id="__codelineno-41-67" name="__codelineno-41-67"></a><span class="s2">&quot;快速开始&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;quick-start.md&quot;</span>
+<a id="__codelineno-41-68" name="__codelineno-41-68"></a>
+<a id="__codelineno-41-69" name="__codelineno-41-69"></a><span class="k">[[project.nav]]</span>
+<a id="__codelineno-41-70" name="__codelineno-41-70"></a><span class="s2">&quot;配置&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;configuration.md&quot;</span>
+<a id="__codelineno-41-71" name="__codelineno-41-71"></a>
+<a id="__codelineno-41-72" name="__codelineno-41-72"></a><span class="k">[[project.nav.Blog]]</span>
+<a id="__codelineno-41-73" name="__codelineno-41-73"></a><span class="s2">&quot;博客&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;blog/index.md&quot;</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="_13">下一步<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<ul>
+<li>了解 <a href="../theme-customization/">主题定制</a></li>
+<li>学习 <a href="../blog-tutorial/">博客系统</a></li>
+<li>查看 <a href="../deployment/netlify/">部署指南</a></li>
+</ul>
+<hr />
+<p><strong>参考资料</strong>：<a href="https://zensical.org/docs/setup/basics/">Zensical 官方文档 - Basics</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../blog/blog-tutorial/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Zensical 博客系统完全指南">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                Zensical 博客系统完全指南
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../blog/theme-customization/" class="md-footer__link md-footer__link--next" aria-label="下一页: 主题定制指南">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                主题定制指南
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M247.1 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L179.2 256 41.9 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Wcowin
+    </div>
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/Wcowin/Zensical-Chinese-Tutorial" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://t.me/Wcowin" target="_blank" rel="noopener" title="Telegram" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M256 8a248 248 0 1 0 0 496 248 248 0 1 0 0-496m115 168.7c-3.7 39.2-19.9 134.4-28.1 178.3-3.5 18.6-10.3 24.8-16.9 25.4-14.4 1.3-25.3-9.5-39.3-18.7-21.8-14.3-34.2-23.2-55.3-37.2-24.5-16.1-8.6-25 5.3-39.5 3.7-3.8 67.1-61.5 68.3-66.7.2-.7.3-3.1-1.2-4.4s-3.6-.8-5.1-.5c-2.2.5-37.1 23.5-104.6 69.1-9.9 6.8-18.9 10.1-26.9 9.9-8.9-.2-25.9-5-38.6-9.1-15.5-5-27.9-7.7-26.8-16.3.6-4.5 6.7-9 18.4-13.7 72.3-31.5 120.5-52.3 144.6-62.3 68.9-28.6 83.2-33.6 92.5-33.8 2.1 0 6.6.5 9.6 2.9 2 1.7 3.2 4.1 3.5 6.7.5 3.2.6 6.5.4 9.8z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:wcowin@qq.com" target="_blank" rel="noopener" title="Email" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M61.4 64C27.5 64 0 91.5 0 125.4c0 .9 0 1.7.1 2.6H0v256c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V128h-.1c0-.9.1-1.7.1-2.6 0-33.9-27.5-61.4-61.4-61.4zM464 192.3V384c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V192.3l154.8 117.4c31.4 23.9 74.9 23.9 106.4 0zM48 125.4c0-7.4 6-13.4 13.4-13.4h389.2c7.4 0 13.4 6 13.4 13.4 0 4.2-2 8.2-5.3 10.7L280.2 271.5c-14.3 10.8-34.1 10.8-48.4 0L53.3 136.1c-3.3-2.5-5.3-6.5-5.3-10.7"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      <script id="__config" type="application/json">{"annotate":null,"base":"..","features":["announce.dismiss","navigation.prune","navigation.tracking","navigation.tabs","navigation.sections","navigation.top","navigation.footer","navigation.expand","navigation.indexes","search.suggest","search.highlight","search.share","toc.follow","content.tooltips","content.code.copy","content.code.select","content.code.annotate"],"search":"../assets/javascripts/workers/search.5e1f2129.min.js","tags":null,"translations":{"clipboard.copied":"已复制","clipboard.copy":"复制","search.result.more.one":"在该页上还有 1 个符合条件的结果","search.result.more.other":"在该页上还有 # 个符合条件的结果","search.result.none":"没有找到符合条件的结果","search.result.one":"找到 1 个符合条件的结果","search.result.other":"# 个符合条件的结果","search.result.placeholder":"键入以开始搜索","search.result.term.missing":"缺少","select.version":"选择当前版本"},"version":null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.6b62de02.min.js"></script>
+      
+        <script src="../javascripts/extra.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../javascripts/katex.js"></script>
+      
+    
+  </body>
+</html>

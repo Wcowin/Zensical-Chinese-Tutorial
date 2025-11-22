@@ -12,6 +12,11 @@
   --md-accent-fg-color: #536DFE;
 }
 
+/* 移除链接下划线 */
+.md-typeset a {
+  text-decoration: none;
+}
+
 /* 网格卡片样式 */
 .grid.cards {
   display: grid;
@@ -39,15 +44,5 @@
   }
 }
 
-/* 自定义字体 */
-.custom-font {
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}
 
-/* 图标样式 */
-.lg.middle {
-  font-size: 2rem;
-  vertical-align: middle;
-  margin-right: 0.5rem;
-}
+

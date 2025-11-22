@@ -1,7 +1,8 @@
 ---
+title: Zensical 中文教程
 hide:
-  - navigation
-  - toc
+#   - navigation
+#   - toc 
   - footer
 comments: false
 ---
@@ -20,17 +21,18 @@ comments: false
 }
 </style>
 
+
 <div class="grid cards" markdown>
 
 -   :material-rocket-launch:{ .lg .middle } __为什么选择 Zensical？__
 
     ---
     
-    ![Zensical Logo](https://zensical.org/assets/images/logo.svg){ align=right width="200" style="border-radius: 15px;" }
+    ![Zensical Logo](https://zensical.org/assets/zensical.svg){ align=right width="200" style="border-radius: 15px;" }
     
-    - [x] {==MkDocs 已停止更新==}，Zensical 是官方推荐的新一代
-    - [x] {++即时导航++}，无需刷新页面
-    - [x] {~~博客系统~~}，开箱即用
+    - [x] MkDocs 已停止更新，Zensical 是官方推荐的新一代
+    - [x] 即时导航，无需刷新页面
+    - [x] 博客系统，开箱即用
     - [x] 性能优异，加载迅速
     - [x] 𝕙𝕒𝕧𝕖 𝕒 𝕘𝕠𝕠𝕕 𝕥𝕚𝕞𝕖 !
     
@@ -42,7 +44,7 @@ comments: false
 
 </div>
 
-> 不同于市面上过时的 MkDocs 教程，本站提供了 **最详细、最便捷、最前沿** 的 Zensical 中文教程，与 [官方发布](https://zensical.org/about/roadmap/) 的版本同步。包含了 Zensical 的安装、配置、主题美化、博客系统等内容。无论你是初学者还是有经验的用户，都能在这里找到你需要的帮助。𝓳𝓾𝓼𝓽 𝓮𝓷𝓳𝓸𝔂 𝓲𝓽～
+> 不同于市面上过时的 [MkDocs 教程](https://wcowin.work/Mkdocs-Wcowin/)，本站提供了 **最详细、最便捷、最前沿** 的 Zensical 中文教程，与 [官方发布](https://zensical.org/about/roadmap/) 的版本同步。包含了 Zensical 的安装、配置、主题美化、博客系统等内容。无论你是初学者还是有经验的用户，都能在这里找到你需要的帮助。𝓳𝓾𝓼𝓽 𝓮𝓷𝓳𝓸𝔂 𝓲𝓽～
 
 ---
 
@@ -52,8 +54,8 @@ comments: false
 
     ---
     
-    - [5 分钟快速开始](quick-start.md)
-    - [Zensical 博客系统完全指南](blog-tutorial.md)
+    - [5 分钟快速开始](blog/quick-start.md)
+    - [Zensical 博客系统完全指南](blog/blog-tutorial.md)
     - [zensical.toml 配置详解](configuration.md)
     - [从 MkDocs 迁移到 Zensical](migration.md)
     - [常见问题解答](faq.md)
@@ -62,38 +64,33 @@ comments: false
 
     ---
     
-    - [主题配置指南](theme-customization.md)
-    - [自定义 CSS 样式](custom-css.md)
-    - [自定义 JavaScript](custom-js.md)
-    - [模板覆盖技巧](template-overrides.md)
+    - [主题配置指南](blog/theme-customization.md)
+    - [配置详解](configuration.md)
 
 -   :material-puzzle:{ .lg .middle } __插件系统__
 
     ---
     
-    - [博客插件详解](plugins/blog.md)
-    - [搜索插件配置](plugins/search.md)
-    - [标签插件使用](plugins/tags.md)
-    - [RSS 插件配置](plugins/rss.md)
+    - [博客插件详解](blog/plugins/blog.md)
+    - [搜索插件配置](blog/plugins/search.md)
+    - [标签插件使用](blog/plugins/tags.md)
+    - [RSS 插件配置](blog/plugins/rss.md)
 
 -   :material-rocket:{ .lg .middle } __部署指南__
 
     ---
     
-    - [Netlify 部署（推荐）](deployment/netlify.md)
-    - [GitHub Pages 部署](deployment/github-pages.md)
-    - [自托管部署](deployment/self-hosted.md)
-    - [CI/CD 自动化](deployment/cicd.md)
+    - [Netlify 部署（推荐）](blog/deployment/netlify.md)
+    - [GitHub Pages 部署](blog/deployment/github-pages.md)
+    - [自托管部署](blog/deployment/self-hosted.md)
 
 -   :simple-aboutdotme:{ .lg .middle } __关于__
 
     ---
     
     - [Zensical-Wcowin 社区](https://support.qq.com/products/646913/){target="_blank"}
-    - [留言板](feedback.md)
-    - [案例展示](showcase.md)
+    - [案例展示](blog/showcase.md)
     - [:octicons-arrow-right-24: 了解作者](about.md)
-    - [请作者喝杯咖啡](sponsor.md)
 
 </div>
 
@@ -113,25 +110,24 @@ comments: false
 
 ### 初学者路线
 
-1. **第一步**：阅读 [5 分钟快速开始](quick-start.md)
+1. **第一步**：阅读 [5 分钟快速开始](blog/quick-start.md)
 2. **第二步**：学习 [zensical.toml 配置详解](configuration.md)
-3. **第三步**：掌握 [博客系统完全指南](blog-tutorial.md)
-4. **第四步**：尝试 [主题定制](theme-customization.md)
-5. **第五步**：部署到线上 [Netlify 部署](deployment/netlify.md)
+3. **第三步**：掌握 [博客系统完全指南](blog/blog-tutorial.md)
+4. **第四步**：尝试 [主题定制](blog/theme-customization.md)
+5. **第五步**：部署到线上 [Netlify 部署](blog/deployment/netlify.md)
 
 ### 从 MkDocs 迁移
 
 1. **第一步**：阅读 [从 MkDocs 迁移到 Zensical](migration.md)
-2. **第二步**：了解 [配置文件差异](configuration.md#从-mkdocs-迁移)
-3. **第三步**：处理 [插件兼容性](plugins/compatibility.md)
-4. **第四步**：测试和调整
-5. **第五步**：重新部署
+2. **第二步**：了解 [配置文件差异](configuration.md)
+3. **第三步**：测试和调整
+4. **第四步**：重新部署
 
 ### 高级用户路线
 
-1. **模板系统**：学习 [模板覆盖技巧](template-overrides.md)
-2. **性能优化**：阅读 [性能优化指南](advanced/performance.md)
-3. **自动化**：配置 [CI/CD 自动化](deployment/cicd.md)
+1. **性能优化**：阅读 [性能优化指南](blog/advanced/performance.md)
+2. **SEO 优化**：学习 [SEO 优化](blog/advanced/seo.md)
+3. **多语言支持**：配置 [多语言支持](blog/advanced/i18n.md)
 4. **扩展开发**：等待 Zensical 模块系统发布
 
 ## 🎯 核心特性
@@ -172,31 +168,38 @@ variant = "modern"  # 或 "classic"
 ## 🚀 快速开始
 
 ```bash
+# 创建虚拟环境
+python3 -m venv .venv
+source .venv/bin/activate  # macOS/Linux
+# 或 .venv\Scripts\activate  # Windows
+
 # 安装 Zensical
 pip install zensical
 
 # 创建新项目
-zensical new my-blog
-cd my-blog
+zensical new .
 
 # 启动开发服务器
 zensical serve
 ```
 
-打开浏览器访问 `http://127.0.0.1:8000`
+打开浏览器访问 [http://localhost:8000](http://localhost:8000)
+
+详细步骤请阅读 [5 分钟快速开始](blog/quick-start.md)
 
 ## 📖 文档结构
 
 ```
-Zensical-Wcowin/
+Zensical-Chinese-Tutorial/
 ├── docs/
 │   ├── index.md                    # 本页面
-│   ├── quick-start.md              # 快速开始
-│   ├── blog-tutorial.md            # 博客教程
 │   ├── configuration.md            # 配置详解
 │   ├── migration.md                # 迁移指南
 │   ├── faq.md                      # 常见问题
 │   ├── theme-customization.md      # 主题定制
+│   ├── blog/                       # 博客文章
+│   │   ├── quick-start.md          # 快速开始
+│   │   └── blog-tutorial.md        # 博客教程
 │   ├── plugins/                    # 插件文档
 │   ├── deployment/                 # 部署指南
 │   └── advanced/                   # 高级主题
@@ -240,9 +243,9 @@ Zensical-Wcowin/
 
 ---
 
-<center>
+
 **开始你的 Zensical 之旅吧！** 🚀
-</center>
+
 
 <style>
 body::before {

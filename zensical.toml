@@ -6,7 +6,7 @@
 [project]
 # ===== 基本信息 [Info] =====
 site_name = "Zensical-Wcowin 中文教程"           # 网站名称
-site_url = "https://zensical-wcowin.example.com/"  # 网站URL（请修改为你的域名）
+site_url = "https://wcowin.work/Zensical-Chinese-Tutorial/"  # 网站URL（请修改为你的域名）
 site_description = "最详细、最便捷、最前沿的 Zensical 中文教程"  # 网站描述
 site_author = "Wcowin"                           # 网站作者
 copyright = "Copyright &copy; 2025 Wcowin"      # 左下角的版权声明
@@ -15,32 +15,36 @@ site_dir = "site"                                # 生成的网站目录
 use_directory_urls = true                        # 使用目录形式的URL
 
 # ===== 仓库配置 =====
-repo_url = "https://github.com/Wcowin/Zensical-Wcowin"  # 右上角点击跳转的链接
-repo_name = "Zensical-Wcowin"                            # 右上角的名字
+repo_url = "https://github.com/Wcowin/Zensical-Chinese-Tutorial"  # 右上角点击跳转的链接
+repo_name = "Zensical-Chinese-Tutorial"                            # 右上角的名字
 edit_uri = "edit/main/docs"                              # 编辑按钮跳转的链接
 
 # ===== 额外的 JavaScript 文件 =====
 extra_javascript = [
     "javascripts/extra.js",                                   # 额外功能脚本
-    "javascripts/mathjax.js",                                 # MathJax 配置
-    "https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"       # MathJax CDN
+    # "javascripts/mathjax.js",                                 # MathJax 配置
+    # "https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"       # MathJax CDN
+    "https://unpkg.com/katex@0/dist/katex.min.js",            # 1. 先加载 KaTeX 核心库
+    "https://unpkg.com/katex@0/dist/contrib/auto-render.min.js",  # 2. 再加载自动渲染插件
+    "javascripts/katex.js"                                     # 3. 最后加载配置文件
 ]
 
 # ===== 额外的 CSS 文件 =====
 extra_css = [
-    "stylesheets/extra.css"          # 额外样式
+    "stylesheets/extra.css",          # 额外样式
+    "https://unpkg.com/katex@0/dist/katex.min.css"
 ]
 
 # ===== 导航配置 [Navigation] =====
 nav = [
-    { "主页" = ["index.md"] },
+    { "主页" = "index.md" },
     { "快速开始" = [
         { "5 分钟快速开始" = "blog/quick-start.md" },
-        { "从 MkDocs 迁移" = "blog/migration.md" },
+        { "从 MkDocs 迁移" = "migration.md" },
     ]},
     { "核心教程" = [
         { "Zensical 博客系统完全指南" = "blog/blog-tutorial.md" },
-        { "zensical.toml 配置详解" = "blog/configuration.md" },
+        { "zensical.toml 配置详解" = "configuration.md" },
         { "主题定制指南" = "blog/theme-customization.md" },
         { "Markdown 扩展使用" = "blog/markdown-extensions.md" },
     ]},
@@ -70,9 +74,9 @@ nav = [
 # ==========================================
 [project.theme]
 variant = "modern"                # Zensical 特有：使用 modern 主题变体（或 "classic"）
-# custom_dir = "overrides"        # 自定义主题目录（相对于配置文件）- 如不需要自定义主题可注释掉
-# logo = "https://zensical.org/assets/images/logo.svg"  # 网站 Logo
-favicon = "https://zensical.org/favicon.ico"          # 网站图标
+# custom_dir = "docs/overrides"     # 自定义主题目录（相对于配置文件）
+logo = "https://zensical.org/assets/zensical.svg"  # 网站 Logo
+favicon = "https://zensical.org/assets/zensical.svg"          # 网站图标
 language = "zh"                   # 网站语言：中文
 
 # ===== 主题特性 =====
@@ -104,7 +108,7 @@ features = [
 ]
 
 # ===== 调色板配置 =====
-# 自动模式
+# 自动模式（跟随系统）
 [[project.theme.palette]]
 media = "(prefers-color-scheme)"
 toggle = { icon = "material/link", name = "关闭自动模式" }
@@ -112,24 +116,25 @@ toggle = { icon = "material/link", name = "关闭自动模式" }
 # 日间模式
 [[project.theme.palette]]
 media = "(prefers-color-scheme: light)"
-scheme = "default"
-primary = "indigo"
-accent = "indigo"
+scheme = "default"                # 日间模式配色
+primary = "indigo"                # 主色调
+accent = "indigo"                 # 强调色
 toggle = { icon = "material/toggle-switch", name = "切换至夜间模式" }
 
 # 夜间模式
 [[project.theme.palette]]
 media = "(prefers-color-scheme: dark)"
-scheme = "slate"
-primary = "indigo"
-accent = "indigo"
+scheme = "slate"                  # 夜间模式配色
+primary = "indigo"                # 主色调
+accent = "indigo"                 # 强调色
 toggle = { icon = "material/toggle-switch-off-outline", name = "切换至日间模式" }
 
 # ===== 图标配置 =====
 [project.theme.icon]
-repo = "fontawesome/brands/github"
-previous = "fontawesome/solid/angle-left"
-alternate = "fontawesome/solid/language"
+repo = "fontawesome/brands/github"          # 仓库图标
+previous = "fontawesome/solid/angle-left"   # 上一页图标
+next = "fontawesome/solid/angle-right"      # 下一页图标
+alternate = "fontawesome/solid/language"    # 语言切换图标
 
 # ==========================================
 # 额外配置 [Extra]
@@ -142,10 +147,24 @@ generator = true
 new = "最近添加"
 deprecated = "已弃用"
 
+# ===== 多语言切换配置 =====
+# 可选：如果需要多语言翻译功能，取消注释以下配置
+# 需要配合 JavaScript 翻译脚本使用
+# [[project.extra.alternate]]
+# name = "中文"
+# link = "javascript:translateTo('chinese_simplified');"
+# lang = "zh"
+# 
+# [[project.extra.alternate]]
+# name = "English"
+# link = "javascript:translateTo('english');"
+# lang = "en"
+
 # ===== 社交媒体链接 =====
+# 显示在页脚的社交媒体图标
 [[project.extra.social]]
 icon = "fontawesome/brands/github"
-link = "https://github.com/Wcowin/Zensical-Wcowin"
+link = "https://github.com/Wcowin/Zensical-Chinese-Tutorial"
 name = "GitHub"
 
 [[project.extra.social]]
@@ -157,6 +176,29 @@ name = "Telegram"
 icon = "fontawesome/regular/envelope"
 link = "mailto:wcowin@qq.com"
 name = "Email"
+
+# ===== Google Analytics =====
+# 网站分析工具，用于统计访问数据
+# 如果你需要使用 Google Analytics，取消注释并替换为你自己的 ID
+# [project.extra.analytics]
+# provider = "google"
+# property = "G-XXXXXXXXXX"  # 请替换为你的 Google Analytics 追踪 ID
+# 
+# # 用户反馈配置
+# [project.extra.analytics.feedback]
+# title = "此页面有帮助吗？"
+# 
+# [[project.extra.analytics.feedback.ratings]]
+# icon = "material/thumb-up-outline"
+# name = "This page was helpful"
+# data = 1
+# note = "谢谢你的反馈！"
+# 
+# [[project.extra.analytics.feedback.ratings]]
+# icon = "material/thumb-down-outline"
+# name = "This page could be improved"
+# data = 0
+# note = "感谢您的反馈！"
 
 # ==========================================
 # 插件配置 [Plugins]
@@ -180,8 +222,45 @@ pagination_url_format = "page/{page}"         # 分页URL格式
 # ===== 标签插件 =====
 [project.plugins.tags]
 
-# ===== RSS 插件 =====
+# ===== 文档日期插件 =====
+# 显示文档的创建和更新时间
+# 注意：这个插件需要单独安装：pip install mkdocs-document-dates
+# 如果你需要使用，取消注释以下配置
+# [project.plugins."document-dates"]
+# position = "bottom"            # 显示位置：bottom (文档末尾) 或 top (标题后)
+# type = "date"                  # 日期类型：date (日期) / datetime (日期时间) / timeago (相对时间)
+# locale = "zh"                  # 本地化语言
+# date_format = "%Y-%m-%d"       # 日期格式
+# time_format = "%H:%M:%S"       # 时间格式
+# show_author = true             # 显示作者信息
+# exclude = [                    # 排除以下文件
+#     "index.md",
+#     "about.md",
+#     "blog/index.md"
+# ]
+
+# ===== RSS 订阅插件 =====
 [project.plugins.rss]
+enabled = true                                                                    # 启用 RSS 订阅
+match_path = "blog/.*"                                                            # 包含的路径：博客文章
+use_git = false                                                                   # 禁用Git日志读取，避免警告
+categories = ["tags", "categories"]                                               # 分类标签
+comments_path = "#__comments"                                                     # 评论区锚点
+image = "https://zensical.org/assets/zensical.svg"                                # RSS 订阅图片
+feed_ttl = 1440                                                                   # 订阅更新时间（分钟），24小时
+length = 20                                                                       # 最新文章数量
+pretty_print = true                                                               # 格式化输出
+feed_description = "Zensical 中文教程 - 最详细、最便捷、最前沿的 Zensical 中文教程"  # RSS 描述
+feed_title = "Zensical-Wcowin RSS Feed"                                           # RSS 标题
+
+[project.plugins.rss.date_from_meta]
+as_creation = "date"           # 创建日期来源
+as_update = "update"           # 更新日期来源
+datetime_format = "%Y-%m-%d"   # 日期格式
+
+[project.plugins.rss.url_parameters]
+utm_source = "rss"             # UTM 来源标记
+utm_medium = "feed"            # UTM 媒介标记
 
 # ==========================================
 # Markdown 扩展配置 [Markdown Extensions]
@@ -195,16 +274,15 @@ footnotes = {}      # 支持脚注
 md_in_html = {}     # 支持在 HTML 中使用 Markdown
 tables = {}         # 支持表格
 
-# ===== 基础扩展 =====
-# 注意：abbr 已在上面配置过，这里不需要重复配置
-# [project.markdown_extensions."markdown.extensions.abbr"]
+# ===== 基础扩展说明 =====
+# 以下扩展已在上面配置，无需重复
 
 # ===== PyMdown 扩展 =====
 [project.markdown_extensions."pymdownx.magiclink"]        # 自动转换链接
 [project.markdown_extensions."pymdownx.blocks.caption"]   # 图片说明
 [project.markdown_extensions."pymdownx.caret"]            # 插入符号 (^text^)
 [project.markdown_extensions."pymdownx.betterem"]         # 更好的斜体/粗体
-smart_enable = "all"  # Zensical 推荐配置
+smart_enable = "all"  # 智能启用所有功能
 [project.markdown_extensions."pymdownx.critic"]           # 批评标记
 [project.markdown_extensions."pymdownx.details"]          # 可折叠详情
 [project.markdown_extensions."pymdownx.inlinehilite"]     # 行内代码高亮
@@ -227,13 +305,16 @@ generic = true  # 使用 MathJax 渲染数学公式
 
 # ===== 目录配置 =====
 [project.markdown_extensions.toc]
-permalink = true  # 固定标题位置为当前位置，显示 # 符号
+permalink = true     # 固定标题位置为当前位置，显示 # 符号
+toc_depth = 3        # 目录深度（1-6级标题）
 
 # ===== 代码高亮配置 =====
 [project.markdown_extensions."pymdownx.highlight"]
 anchor_linenums = true  # 行号锚点
-linenums = true         # 显示行号
+linenums = false        # 默认不显示行号（可在代码块中单独启用）
 auto_title = true       # 自动显示编程语言名称
+line_spans = "__span"   # 代码行跨度
+pygments_lang_class = true  # 添加语言类名
 
 # ===== Emoji 表情支持 =====
 # 注意：必须使用 zensical 命名空间而非 material，以支持图标内联功能

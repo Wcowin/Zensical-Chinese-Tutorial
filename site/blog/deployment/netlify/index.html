@@ -12,7 +12,7 @@
         <meta name="author" content="Wcowin">
       
       
-        <link rel="canonical" href="https://zensical-wcowin.example.com/blog/deployment/netlify/">
+        <link rel="canonical" href="https://wcowin.work/Zensical-Chinese-Tutorial/blog/deployment/netlify/">
       
       
         <link rel="prev" href="../../plugins/rss/">
@@ -24,12 +24,12 @@
         
       
       
-      <link rel="icon" href="https://zensical.org/favicon.ico">
+      <link rel="icon" href="https://zensical.org/assets/zensical.svg">
       <meta name="generator" content="zensical-0.0.6">
     
     
       
-        <title>Netlify 部署 - Zensical-Wcowin 中文教程</title>
+        <title>Netlify 部署（推荐） - Zensical-Wcowin 中文教程</title>
       
     
     
@@ -91,6 +91,8 @@
     
       <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -132,8 +134,7 @@
   <nav class="md-header__inner md-grid" aria-label="页眉">
     <a href="../../.." title="Zensical-Wcowin 中文教程" class="md-header__button md-logo" aria-label="Zensical-Wcowin 中文教程" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+  <img src="https://zensical.org/assets/zensical.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -150,7 +151,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Netlify 部署
+              Netlify 部署（推荐）
             
           </span>
         </div>
@@ -213,13 +214,13 @@
     
     <div class="md-header__source">
       
-        <a href="https://github.com/Wcowin/Zensical-Wcowin" title="前往仓库" class="md-source" data-md-component="source">
+        <a href="https://github.com/Wcowin/Zensical-Chinese-Tutorial" title="前往仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
   </div>
   <div class="md-source__repository">
-    Zensical-Wcowin
+    Zensical-Chinese-Tutorial
   </div>
 </a>
       
@@ -243,17 +244,14 @@
   
   
   
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../.." class="md-tabs__link">
-          
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
   
   主页
 
-        </a>
-      </li>
-    
+      </a>
+    </li>
   
 
       
@@ -426,21 +424,20 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="Zensical-Wcowin 中文教程" class="md-nav__button md-logo" aria-label="Zensical-Wcowin 中文教程" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+  <img src="https://zensical.org/assets/zensical.svg" alt="logo">
 
     </a>
     Zensical-Wcowin 中文教程
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/Wcowin/Zensical-Wcowin" title="前往仓库" class="md-source" data-md-component="source">
+      <a href="https://github.com/Wcowin/Zensical-Chinese-Tutorial" title="前往仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
   </div>
   <div class="md-source__repository">
-    Zensical-Wcowin
+    Zensical-Chinese-Tutorial
   </div>
 </a>
     </div>
@@ -453,35 +450,9 @@
   
   
   
-    
-    
-      
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
         
-          
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../../.." class="md-nav__link">
-      
   
   
   <span class="md-ellipsis">
@@ -495,13 +466,7 @@
   
   
 
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
+      </a>
     </li>
   
 
@@ -774,6 +739,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Netlify 部署
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -790,6 +773,442 @@
   
 
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#netlify_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        为什么选择 Netlify？
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        准备工作
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#netlify_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        方法一：通过 Netlify 网站部署（推荐）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="方法一：通过 Netlify 网站部署（推荐）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第一步：连接 GitHub 仓库
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第二步：配置构建设置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第三步：添加构建配置文件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第四步：部署
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#netlify-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        方法二：使用 Netlify CLI 部署
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="方法二：使用 Netlify CLI 部署">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#netlify-cli_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        安装 Netlify CLI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#netlify_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        登录 Netlify
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        初始化项目
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        部署网站
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        配置自定义域名
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="配置自定义域名">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#netlify_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第一步：在 Netlify 添加域名
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第二步：配置 DNS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#https" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第三步：启用 HTTPS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        环境变量配置
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        自动部署配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="自动部署配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        启用自动部署
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        部署预览
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        部署通知
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        性能优化
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="性能优化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        启用资源优化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        配置缓存
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        常见问题
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="常见问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        构建失败
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python 版本问题
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#404" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        404 页面不生效
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        部署时间过长
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        完整配置示例
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="完整配置示例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#netlifytoml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        netlify.toml
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtimetxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        runtime.txt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirementstxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        requirements.txt
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        下一步
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1022,6 +1441,430 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#netlify_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        为什么选择 Netlify？
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        准备工作
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#netlify_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        方法一：通过 Netlify 网站部署（推荐）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="方法一：通过 Netlify 网站部署（推荐）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第一步：连接 GitHub 仓库
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第二步：配置构建设置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第三步：添加构建配置文件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第四步：部署
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#netlify-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        方法二：使用 Netlify CLI 部署
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="方法二：使用 Netlify CLI 部署">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#netlify-cli_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        安装 Netlify CLI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#netlify_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        登录 Netlify
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        初始化项目
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        部署网站
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        配置自定义域名
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="配置自定义域名">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#netlify_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第一步：在 Netlify 添加域名
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第二步：配置 DNS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#https" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第三步：启用 HTTPS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        环境变量配置
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        自动部署配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="自动部署配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        启用自动部署
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        部署预览
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        部署通知
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        性能优化
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="性能优化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        启用资源优化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        配置缓存
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        常见问题
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="常见问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        构建失败
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python 版本问题
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#404" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        404 页面不生效
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        部署时间过长
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        完整配置示例
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="完整配置示例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#netlifytoml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        netlify.toml
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtimetxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        runtime.txt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirementstxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        requirements.txt
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        下一步
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1038,8 +1881,312 @@
   
 
 
-<h1 id="netlify">Netlify 部署<a class="headerlink" href="#netlify" title="Permanent link">&para;</a></h1>
-<p>详细内容正在完善中...</p>
+<h1 id="netlify">Netlify 部署（推荐）<a class="headerlink" href="#netlify" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>使用 Netlify 部署 Zensical 网站，享受自动构建、免费 HTTPS 和全球 CDN</p>
+</blockquote>
+<h2 id="netlify_1">为什么选择 Netlify？<a class="headerlink" href="#netlify_1" title="Permanent link">&para;</a></h2>
+<p>Netlify 是部署 Zensical 网站的最佳选择：</p>
+<ul>
+<li>✅ <strong>自动构建和部署</strong> - 推送代码即自动部署</li>
+<li>✅ <strong>免费 HTTPS</strong> - 自动配置 SSL 证书</li>
+<li>✅ <strong>全球 CDN</strong> - 快速访问速度</li>
+<li>✅ <strong>自动预览</strong> - 每个 PR 都有预览链接</li>
+<li>✅ <strong>自定义域名</strong> - 支持绑定自己的域名</li>
+<li>✅ <strong>免费额度充足</strong> - 个人项目完全够用</li>
+</ul>
+<h2 id="_1">准备工作<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>在开始之前，确保你已经：</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 安装了 Zensical</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 创建了 Zensical 项目</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 将项目推送到 GitHub 仓库</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 注册了 <a href="https://app.netlify.com/signup">Netlify 账号</a></li>
+</ul>
+<h2 id="netlify_2">方法一：通过 Netlify 网站部署（推荐）<a class="headerlink" href="#netlify_2" title="Permanent link">&para;</a></h2>
+<h3 id="github">第一步：连接 GitHub 仓库<a class="headerlink" href="#github" title="Permanent link">&para;</a></h3>
+<ol>
+<li>登录 <a href="https://app.netlify.com/">Netlify</a></li>
+<li>点击 <strong>Add new site</strong> → <strong>Import an existing project</strong></li>
+<li>选择 <strong>Deploy with GitHub</strong></li>
+<li>授权 Netlify 访问你的 GitHub 账号</li>
+<li>选择你的 Zensical 项目仓库</li>
+</ol>
+<h3 id="_2">第二步：配置构建设置<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>在构建设置页面，填写以下信息：</p>
+<table>
+<thead>
+<tr>
+<th>设置项</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Branch to deploy</strong></td>
+<td><code>main</code> 或 <code>master</code></td>
+</tr>
+<tr>
+<td><strong>Build command</strong></td>
+<td><code>zensical build</code></td>
+</tr>
+<tr>
+<td><strong>Publish directory</strong></td>
+<td><code>site</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Python 版本</p>
+<p>Netlify 默认使用 Python 3.8。如果需要指定版本，在项目根目录创建 <code>runtime.txt</code>：</p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>3.11
+</span></code></pre></div>
+</div>
+<h3 id="_3">第三步：添加构建配置文件<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>在项目根目录创建 <code>netlify.toml</code> 文件：</p>
+<div class="language-toml highlight"><span class="filename">TOML</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">[build]</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="n">command</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pip install zensical &amp;&amp; zensical build&quot;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="n">publish</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;site&quot;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">[build.environment]</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="n">PYTHON_VERSION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;3.11&quot;</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="k">[[redirects]]</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="n">from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/*&quot;</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="n">to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/404.html&quot;</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">  </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">404</span>
+</span></code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">配置说明</p>
+<ul>
+<li><code>command</code>: 安装 Zensical 并构建网站</li>
+<li><code>publish</code>: 指定发布目录</li>
+<li><code>PYTHON_VERSION</code>: 指定 Python 版本</li>
+<li><code>redirects</code>: 配置 404 页面</li>
+</ul>
+</div>
+<h3 id="_4">第四步：部署<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ol>
+<li>点击 <strong>Deploy site</strong> 按钮</li>
+<li>等待构建完成（通常 1-3 分钟）</li>
+<li>构建成功后，Netlify 会提供一个临时域名（如 <code>https://random-name-123456.netlify.app</code>）</li>
+</ol>
+<h2 id="netlify-cli">方法二：使用 Netlify CLI 部署<a class="headerlink" href="#netlify-cli" title="Permanent link">&para;</a></h2>
+<h3 id="netlify-cli_1">安装 Netlify CLI<a class="headerlink" href="#netlify-cli_1" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>netlify-cli
+</span></code></pre></div>
+<h3 id="netlify_3">登录 Netlify<a class="headerlink" href="#netlify_3" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>netlify<span class="w"> </span>login
+</span></code></pre></div>
+<h3 id="_5">初始化项目<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>在项目根目录运行：</p>
+<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>netlify<span class="w"> </span>init
+</span></code></pre></div>
+<p>按照提示选择：</p>
+<ol>
+<li><strong>Create &amp; configure a new site</strong> - 创建新站点</li>
+<li>选择你的团队</li>
+<li>输入站点名称（可选）</li>
+<li><strong>Build command</strong>: <code>zensical build</code></li>
+<li><strong>Publish directory</strong>: <code>site</code></li>
+</ol>
+<h3 id="_6">部署网站<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># 构建并部署</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>zensical<span class="w"> </span>build
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>netlify<span class="w"> </span>deploy<span class="w"> </span>--prod
+</span></code></pre></div>
+<h2 id="_7">配置自定义域名<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h3 id="netlify_4">第一步：在 Netlify 添加域名<a class="headerlink" href="#netlify_4" title="Permanent link">&para;</a></h3>
+<ol>
+<li>进入你的站点设置</li>
+<li>点击 <strong>Domain management</strong> → <strong>Add custom domain</strong></li>
+<li>输入你的域名（如 <code>example.com</code>）</li>
+<li>点击 <strong>Verify</strong></li>
+</ol>
+<h3 id="dns">第二步：配置 DNS<a class="headerlink" href="#dns" title="Permanent link">&para;</a></h3>
+<p>在你的域名注册商处，添加以下 DNS 记录：</p>
+<h4 id="netlify-dns">使用 Netlify DNS（推荐）<a class="headerlink" href="#netlify-dns" title="Permanent link">&para;</a></h4>
+<p>Netlify 会提供 4 个 Name Server，在域名注册商处修改 NS 记录：</p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>dns1.p01.nsone.net
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>dns2.p01.nsone.net
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>dns3.p01.nsone.net
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>dns4.p01.nsone.net
+</span></code></pre></div>
+<h4 id="cname">使用 CNAME 记录<a class="headerlink" href="#cname" title="Permanent link">&para;</a></h4>
+<p>如果不想更换 DNS，可以添加 CNAME 记录：</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>名称</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CNAME</td>
+<td>www</td>
+<td>your-site.netlify.app</td>
+</tr>
+<tr>
+<td>A</td>
+<td>@</td>
+<td>75.2.60.5</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">DNS 生效时间</p>
+<p>DNS 记录修改后，可能需要 24-48 小时才能完全生效。</p>
+</div>
+<h3 id="https">第三步：启用 HTTPS<a class="headerlink" href="#https" title="Permanent link">&para;</a></h3>
+<ol>
+<li>等待 DNS 生效</li>
+<li>Netlify 会自动配置 Let's Encrypt SSL 证书</li>
+<li>启用 <strong>Force HTTPS</strong> 选项</li>
+</ol>
+<h2 id="_8">环境变量配置<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>如果你的项目需要环境变量（如 API 密钥），可以在 Netlify 中配置：</p>
+<ol>
+<li>进入站点设置</li>
+<li>点击 <strong>Build &amp; deploy</strong> → <strong>Environment</strong></li>
+<li>点击 <strong>Add variable</strong></li>
+<li>添加你的环境变量</li>
+</ol>
+<p>示例：</p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>GOOGLE_ANALYTICS_ID=G-XXXXXXXXXX
+</span></code></pre></div>
+<h2 id="_9">自动部署配置<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h3 id="_10">启用自动部署<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>Netlify 默认启用自动部署。每次推送到主分支时，会自动触发构建。</p>
+<h3 id="_11">部署预览<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>对于 Pull Request，Netlify 会自动创建预览部署：</p>
+<ol>
+<li>创建 PR</li>
+<li>Netlify 自动构建预览版本</li>
+<li>在 PR 中查看预览链接</li>
+<li>合并 PR 后自动部署到生产环境</li>
+</ol>
+<h3 id="_12">部署通知<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p>配置部署通知：</p>
+<ol>
+<li>进入站点设置</li>
+<li>点击 <strong>Build &amp; deploy</strong> → <strong>Deploy notifications</strong></li>
+<li>添加通知（Email、Slack、Webhook 等）</li>
+</ol>
+<h2 id="_13">性能优化<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<h3 id="_14">启用资源优化<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>在 Netlify 设置中启用：</p>
+<ol>
+<li><strong>Asset optimization</strong></li>
+<li>Bundle CSS</li>
+<li>Minify CSS</li>
+<li>Minify JS</li>
+<li>
+<p>Compress images</p>
+</li>
+<li>
+<p><strong>Post processing</strong></p>
+</li>
+<li>Pretty URLs</li>
+<li>Prerendering</li>
+</ol>
+<h3 id="_15">配置缓存<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p>在 <code>netlify.toml</code> 中配置缓存：</p>
+<div class="language-toml highlight"><span class="filename">TOML</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">[[headers]]</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="n">for</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/*&quot;</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="k">[headers.values]</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="n">Cache-Control</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;public, max-age=0, must-revalidate&quot;</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="k">[[headers]]</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">  </span><span class="n">for</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/assets/*&quot;</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">  </span><span class="k">[headers.values]</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">    </span><span class="n">Cache-Control</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;public, max-age=31536000, immutable&quot;</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="k">[[headers]]</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">  </span><span class="n">for</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/*.css&quot;</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">  </span><span class="k">[headers.values]</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">    </span><span class="n">Cache-Control</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;public, max-age=31536000, immutable&quot;</span>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="k">[[headers]]</span>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="w">  </span><span class="n">for</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/*.js&quot;</span>
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="w">  </span><span class="k">[headers.values]</span>
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="w">    </span><span class="n">Cache-Control</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;public, max-age=31536000, immutable&quot;</span>
+</span></code></pre></div>
+<h2 id="_16">常见问题<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
+<h3 id="_17">构建失败<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<p><strong>问题</strong>：构建时提示 <code>zensical: command not found</code></p>
+<p><strong>解决方案</strong>：确保 <code>netlify.toml</code> 中的构建命令包含安装步骤：</p>
+<div class="language-toml highlight"><span class="filename">TOML</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">[build]</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="n">command</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pip install zensical &amp;&amp; zensical build&quot;</span>
+</span></code></pre></div>
+<h3 id="python">Python 版本问题<a class="headerlink" href="#python" title="Permanent link">&para;</a></h3>
+<p><strong>问题</strong>：需要特定的 Python 版本</p>
+<p><strong>解决方案</strong>：在 <code>runtime.txt</code> 中指定版本：</p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>3.11
+</span></code></pre></div>
+<h3 id="404">404 页面不生效<a class="headerlink" href="#404" title="Permanent link">&para;</a></h3>
+<p><strong>问题</strong>：自定义 404 页面不显示</p>
+<p><strong>解决方案</strong>：在 <code>netlify.toml</code> 中添加重定向规则：</p>
+<div class="language-toml highlight"><span class="filename">TOML</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">[[redirects]]</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="n">from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/*&quot;</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span><span class="n">to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/404.html&quot;</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">  </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">404</span>
+</span></code></pre></div>
+<h3 id="_18">部署时间过长<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<p><strong>问题</strong>：每次部署需要很长时间</p>
+<p><strong>解决方案</strong>：</p>
+<ol>
+<li>使用依赖缓存</li>
+<li>优化构建命令</li>
+<li>减少不必要的依赖</li>
+</ol>
+<h2 id="_19">完整配置示例<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>
+<h3 id="netlifytoml">netlify.toml<a class="headerlink" href="#netlifytoml" title="Permanent link">&para;</a></h3>
+<div class="language-toml highlight"><span class="filename">TOML</span><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">[build]</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="n">command</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pip install zensical &amp;&amp; zensical build&quot;</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">  </span><span class="n">publish</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;site&quot;</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="k">[build.environment]</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">  </span><span class="n">PYTHON_VERSION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;3.11&quot;</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="c1"># 404 页面</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="k">[[redirects]]</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w">  </span><span class="n">from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/*&quot;</span>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">  </span><span class="n">to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/404.html&quot;</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="w">  </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">404</span>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="c1"># 缓存配置</span>
+</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="k">[[headers]]</span>
+</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span class="w">  </span><span class="n">for</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/*&quot;</span>
+</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="w">  </span><span class="k">[headers.values]</span>
+</span><span id="__span-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="w">    </span><span class="n">X-Frame-Options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;DENY&quot;</span>
+</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a><span class="w">    </span><span class="n">X-XSS-Protection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;1; mode=block&quot;</span>
+</span><span id="__span-12-20"><a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a><span class="w">    </span><span class="n">X-Content-Type-Options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;nosniff&quot;</span>
+</span><span id="__span-12-21"><a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a><span class="w">    </span><span class="n">Referrer-Policy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;strict-origin-when-cross-origin&quot;</span>
+</span><span id="__span-12-22"><a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a>
+</span><span id="__span-12-23"><a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a><span class="k">[[headers]]</span>
+</span><span id="__span-12-24"><a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a><span class="w">  </span><span class="n">for</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/assets/*&quot;</span>
+</span><span id="__span-12-25"><a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a><span class="w">  </span><span class="k">[headers.values]</span>
+</span><span id="__span-12-26"><a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a><span class="w">    </span><span class="n">Cache-Control</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;public, max-age=31536000, immutable&quot;</span>
+</span></code></pre></div>
+<h3 id="runtimetxt">runtime.txt<a class="headerlink" href="#runtimetxt" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>3.11
+</span></code></pre></div>
+<h3 id="requirementstxt">requirements.txt<a class="headerlink" href="#requirementstxt" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>zensical
+</span></code></pre></div>
+<h2 id="_20">下一步<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h2>
+<ul>
+<li>配置 <a href="#配置自定义域名">自定义域名</a></li>
+<li>启用 <a href="#性能优化">性能优化</a></li>
+<li>设置 <a href="#部署通知">部署通知</a></li>
+<li>查看 <a href="https://docs.netlify.com/">Netlify 文档</a></li>
+</ul>
+<hr />
+<p><strong>参考资料</strong>：
+- <a href="https://docs.netlify.com/">Netlify 官方文档</a>
+- <a href="https://zensical.org/docs/">Zensical 官方文档</a></p>
 
 
 
@@ -1108,7 +2255,7 @@
             </div>
             <div class="md-footer__button md-icon">
               
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M247.1 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L179.2 256 41.9 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>
             </div>
           </a>
         
@@ -1138,7 +2285,7 @@
     
     
     
-    <a href="https://github.com/Wcowin/Zensical-Wcowin" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+    <a href="https://github.com/Wcowin/Zensical-Chinese-Tutorial" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
     </a>
   
@@ -1181,9 +2328,11 @@
       
         <script src="../../../javascripts/extra.js"></script>
       
-        <script src="../../../javascripts/mathjax.js"></script>
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
       
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
       
     
   </body>

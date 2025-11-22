@@ -75,9 +75,16 @@
    - 解压到你想要的目录
    - 比如你在本地新建了一个 `myblog` 文件夹，就把所有文件移动到该目录
 
-2. **安装依赖**
+2. **创建虚拟环境并安装依赖**
    ```bash
-   # 建议在虚拟环境中安装
+   # 创建虚拟环境
+   python3 -m venv .venv
+   
+   # 激活虚拟环境
+   source .venv/bin/activate  # macOS/Linux
+   # 或 .venv\Scripts\activate  # Windows
+   
+   # 安装依赖
    pip install -r requirements.txt
    ```
 
@@ -107,8 +114,15 @@
    cd Zensical-Wcowin
    ```
 
-2. **安装依赖**
+2. **创建虚拟环境并安装依赖**
    ```bash
+   # 创建虚拟环境
+   python3 -m venv .venv
+   
+   # 激活虚拟环境
+   source .venv/bin/activate  # macOS/Linux
+   # 或 .venv\Scripts\activate  # Windows
+   
    # 安装所有必需的包
    pip install -r requirements.txt
    ```
@@ -135,6 +149,11 @@
 
 3. **配置和部署**
    ```bash
+   # 创建虚拟环境
+   python3 -m venv .venv
+   source .venv/bin/activate  # macOS/Linux
+   # 或 .venv\Scripts\activate  # Windows
+   
    # 安装依赖
    pip install -r requirements.txt
    
@@ -244,7 +263,12 @@ Zensical 的博客系统功能强大：
 如果遇到依赖缺失错误：
 
 ```bash
-# 单独安装缺失的包
+# 推荐：在虚拟环境中安装
+python3 -m venv .venv
+source .venv/bin/activate  # macOS/Linux
+# 或 .venv\Scripts\activate  # Windows
+
+# 单独安装 Zensical
 pip install zensical
 
 # 或者一次性安装所有依赖
@@ -257,14 +281,14 @@ pip install -r requirements.txt
 
 ```bash
 # 检查Python版本
-python --version
+python3 --version
 
 # 如果版本低于3.8，请升级Python
-# 或使用虚拟环境
-python -m venv zensical-env
-source zensical-env/bin/activate  # Linux/Mac
+# 或使用虚拟环境（推荐）
+python3 -m venv .venv
+source .venv/bin/activate  # macOS/Linux
 # 或
-zensical-env\Scripts\activate     # Windows
+.venv\Scripts\activate     # Windows
 ```
 
 #### 🔧 端口占用问题
