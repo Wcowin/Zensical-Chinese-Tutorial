@@ -79,6 +79,7 @@ nav = [
     ] },
     { "常见问题" = "faq.md" },
     { "案例展示" = "showcase.md" },
+    { "留言板" = "waline.md" },
     { "关于" = "about.md" },
     { "个人博客" = "https://wcowin.work/" },
 ]
@@ -88,7 +89,7 @@ nav = [
 # ==========================================
 [project.theme]
 variant = "modern"                # Zensical 特有：使用 modern 主题变体（或 "classic"）
-# custom_dir = "docs/overrides"     # 自定义主题目录（相对于配置文件）
+custom_dir = "docs/overrides"     # 自定义主题目录（相对于配置文件）
 logo = "https://zensical.org/assets/zensical.svg"  # 网站 Logo
 favicon = "https://zensical.org/assets/zensical.svg"          # 网站图标
 language = "zh"                   # 网站语言：中文
@@ -295,7 +296,7 @@ permalink = true  # 固定标题位置为当前位置，显示 # 符号
 [project.markdown_extensions.pymdownx.arithmatex]
 generic = true
 [project.markdown_extensions.pymdownx.betterem]
-smart_enable = "all"
+smart_enable = "false"
 [project.markdown_extensions.pymdownx.caret]
 [project.markdown_extensions.pymdownx.details]
 [project.markdown_extensions.pymdownx.emoji]

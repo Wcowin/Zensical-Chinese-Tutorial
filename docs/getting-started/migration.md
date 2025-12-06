@@ -127,7 +127,8 @@ variant = "modern"
 variant = "classic"
 ```
 
-**建议：**
+**建议：**  
+
 - 如果想要全新体验，选择 `modern`
 - 如果想保持原样，选择 `classic`
 
@@ -646,7 +647,8 @@ nav = [
 
 ---
 
-**需要帮助？**
+**需要帮助？**  
+
 - 查看 [常见问题](../faq.md)
 - 访问 [Zensical 官方文档](https://zensical.org/docs/)
 - 加入 [Zensical-Wcowin 社区](https://support.qq.com/products/646913/)

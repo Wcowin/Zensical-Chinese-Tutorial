@@ -34,3 +34,7 @@ img.img1, img.img2, img.img3 {
   will-change: box-shadow, border; /* 提示浏览器将有变化 */
 }
 
+/* 评论框高度 */
+#cusdis_thread > iframe {
+  height: 50rem;
+}

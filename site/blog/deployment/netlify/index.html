@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="https://zensical.org/assets/zensical.svg">
-      <meta name="generator" content="zensical-0.0.6">
+      <meta name="generator" content="zensical-0.0.11">
     
     
       
@@ -36,7 +36,7 @@
       
         
       
-      <link rel="stylesheet" href="../../../assets/stylesheets/modern/main.71200a3a.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/modern/main.bd6182e7.min.css">
       
         
           
@@ -95,7 +95,7 @@
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,a=__md_scope)=>JSON.parse(t.getItem(a.pathname+"."+e)),__md_set=(e,t,a=localStorage,_=__md_scope)=>{try{a.setItem(_.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
     
       
 
@@ -380,6 +380,22 @@
         
   
   案例展示
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../waline/" class="md-tabs__link">
+        
+  
+  留言板
 
       </a>
     </li>
@@ -1454,6 +1470,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../waline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    留言板
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../about/" class="md-nav__link">
         
   
@@ -2024,20 +2067,20 @@
 <div class="admonition tip">
 <p class="admonition-title">Python 版本</p>
 <p>Netlify 默认使用 Python 3.8。如果需要指定版本，在项目根目录创建 <code>runtime.txt</code>：</p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>3.11
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>3.11
+</code></pre></div>
 </div>
 <h3 id="_3">第三步：添加构建配置文件<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>在项目根目录创建 <code>netlify.toml</code> 文件：</p>
-<div class="language-toml highlight"><span class="filename">TOML</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">[build]</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="n">command</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pip install zensical &amp;&amp; zensical build&quot;</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="n">publish</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;site&quot;</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">[[redirects]]</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="n">from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/*&quot;</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="n">to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/404.html&quot;</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">404</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">[build]</span>
+<span class="w">  </span><span class="n">command</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pip install zensical &amp;&amp; zensical build&quot;</span>
+<span class="w">  </span><span class="n">publish</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;site&quot;</span>
+
+<span class="k">[[redirects]]</span>
+<span class="w">  </span><span class="n">from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/*&quot;</span>
+<span class="w">  </span><span class="n">to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/404.html&quot;</span>
+<span class="w">  </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">404</span>
+</code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">配置说明</p>
 <ul>
@@ -2049,8 +2092,8 @@
 <div class="admonition tip">
 <p class="admonition-title">Python 版本</p>
 <p>要指定 Python 版本，请在项目根目录创建 <code>runtime.txt</code> 文件（而不是在 <code>netlify.toml</code> 中设置）：</p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>3.11
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>3.11
+</code></pre></div>
 </div>
 <h3 id="_4">第四步：部署<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <ol>
@@ -2060,15 +2103,15 @@
 </ol>
 <h2 id="netlify-cli">方法二：使用 Netlify CLI 部署<a class="headerlink" href="#netlify-cli" title="Permanent link">&para;</a></h2>
 <h3 id="netlify-cli_1">安装 Netlify CLI<a class="headerlink" href="#netlify-cli_1" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>netlify-cli
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>netlify-cli
+</code></pre></div>
 <h3 id="netlify_3">登录 Netlify<a class="headerlink" href="#netlify_3" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>netlify<span class="w"> </span>login
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>netlify<span class="w"> </span>login
+</code></pre></div>
 <h3 id="_5">初始化项目<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>在项目根目录运行：</p>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>netlify<span class="w"> </span>init
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>netlify<span class="w"> </span>init
+</code></pre></div>
 <p>按照提示选择：</p>
 <ol>
 <li><strong>Create &amp; configure a new site</strong> - 创建新站点</li>
@@ -2078,10 +2121,10 @@
 <li><strong>Publish directory</strong>: <code>site</code></li>
 </ol>
 <h3 id="_6">部署网站<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># 构建并部署</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>zensical<span class="w"> </span>build
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>netlify<span class="w"> </span>deploy<span class="w"> </span>--prod
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># 构建并部署</span>
+zensical<span class="w"> </span>build
+netlify<span class="w"> </span>deploy<span class="w"> </span>--prod
+</code></pre></div>
 <h2 id="_7">配置自定义域名<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <h3 id="netlify_4">第一步：在 Netlify 添加域名<a class="headerlink" href="#netlify_4" title="Permanent link">&para;</a></h3>
 <ol>
@@ -2094,11 +2137,11 @@
 <p>在你的域名注册商处，添加以下 DNS 记录：</p>
 <h4 id="netlify-dns">使用 Netlify DNS（推荐）<a class="headerlink" href="#netlify-dns" title="Permanent link">&para;</a></h4>
 <p>Netlify 会提供 4 个 Name Server，在域名注册商处修改 NS 记录：</p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>dns1.p01.nsone.net
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>dns2.p01.nsone.net
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>dns3.p01.nsone.net
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>dns4.p01.nsone.net
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>dns1.p01.nsone.net
+dns2.p01.nsone.net
+dns3.p01.nsone.net
+dns4.p01.nsone.net
+</code></pre></div>
 <h4 id="cname">使用 CNAME 记录<a class="headerlink" href="#cname" title="Permanent link">&para;</a></h4>
 <p>如果不想更换 DNS，可以添加 CNAME 记录：</p>
 <table>
@@ -2141,8 +2184,8 @@
 <li>添加你的环境变量</li>
 </ol>
 <p>示例：</p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>GOOGLE_ANALYTICS_ID=G-XXXXXXXXXX
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>GOOGLE_ANALYTICS_ID=G-XXXXXXXXXX
+</code></pre></div>
 <h2 id="_9">自动部署配置<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <h3 id="_10">启用自动部署<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <p>Netlify 默认启用自动部署。每次推送到主分支时，会自动触发构建。</p>
@@ -2180,46 +2223,46 @@
 </ol>
 <h3 id="_15">配置缓存<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
 <p>在 <code>netlify.toml</code> 中配置缓存：</p>
-<div class="language-toml highlight"><span class="filename">TOML</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">[[headers]]</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="n">for</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/*&quot;</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span><span class="k">[headers.values]</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="n">Cache-Control</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;public, max-age=0, must-revalidate&quot;</span>
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="k">[[headers]]</span>
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">  </span><span class="n">for</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/assets/*&quot;</span>
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">  </span><span class="k">[headers.values]</span>
-</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">    </span><span class="n">Cache-Control</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;public, max-age=31536000, immutable&quot;</span>
-</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
-</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="k">[[headers]]</span>
-</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">  </span><span class="n">for</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/*.css&quot;</span>
-</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="w">  </span><span class="k">[headers.values]</span>
-</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">    </span><span class="n">Cache-Control</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;public, max-age=31536000, immutable&quot;</span>
-</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>
-</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="k">[[headers]]</span>
-</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="w">  </span><span class="n">for</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/*.js&quot;</span>
-</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="w">  </span><span class="k">[headers.values]</span>
-</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="w">    </span><span class="n">Cache-Control</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;public, max-age=31536000, immutable&quot;</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">[[headers]]</span>
+<span class="w">  </span><span class="n">for</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/*&quot;</span>
+<span class="w">  </span><span class="k">[headers.values]</span>
+<span class="w">    </span><span class="n">Cache-Control</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;public, max-age=0, must-revalidate&quot;</span>
+
+<span class="k">[[headers]]</span>
+<span class="w">  </span><span class="n">for</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/assets/*&quot;</span>
+<span class="w">  </span><span class="k">[headers.values]</span>
+<span class="w">    </span><span class="n">Cache-Control</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;public, max-age=31536000, immutable&quot;</span>
+
+<span class="k">[[headers]]</span>
+<span class="w">  </span><span class="n">for</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/*.css&quot;</span>
+<span class="w">  </span><span class="k">[headers.values]</span>
+<span class="w">    </span><span class="n">Cache-Control</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;public, max-age=31536000, immutable&quot;</span>
+
+<span class="k">[[headers]]</span>
+<span class="w">  </span><span class="n">for</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/*.js&quot;</span>
+<span class="w">  </span><span class="k">[headers.values]</span>
+<span class="w">    </span><span class="n">Cache-Control</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;public, max-age=31536000, immutable&quot;</span>
+</code></pre></div>
 <h2 id="_16">常见问题<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
 <h3 id="_17">构建失败<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
 <p><strong>问题</strong>：构建时提示 <code>zensical: command not found</code></p>
 <p><strong>解决方案</strong>：确保 <code>netlify.toml</code> 中的构建命令包含安装步骤：</p>
-<div class="language-toml highlight"><span class="filename">TOML</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">[build]</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="n">command</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pip install zensical &amp;&amp; zensical build&quot;</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">[build]</span>
+<span class="w">  </span><span class="n">command</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pip install zensical &amp;&amp; zensical build&quot;</span>
+</code></pre></div>
 <h3 id="python">Python 版本问题<a class="headerlink" href="#python" title="Permanent link">&para;</a></h3>
 <p><strong>问题</strong>：需要特定的 Python 版本</p>
 <p><strong>解决方案</strong>：在 <code>runtime.txt</code> 中指定版本：</p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>3.11
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>3.11
+</code></pre></div>
 <h3 id="404">404 页面不生效<a class="headerlink" href="#404" title="Permanent link">&para;</a></h3>
 <p><strong>问题</strong>：自定义 404 页面不显示</p>
 <p><strong>解决方案</strong>：在 <code>netlify.toml</code> 中添加重定向规则：</p>
-<div class="language-toml highlight"><span class="filename">TOML</span><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">[[redirects]]</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="n">from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/*&quot;</span>
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">  </span><span class="n">to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/404.html&quot;</span>
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">  </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">404</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">[[redirects]]</span>
+<span class="w">  </span><span class="n">from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/*&quot;</span>
+<span class="w">  </span><span class="n">to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/404.html&quot;</span>
+<span class="w">  </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">404</span>
+</code></pre></div>
 <h3 id="_18">部署时间过长<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
 <p><strong>问题</strong>：每次部署需要很长时间</p>
 <p><strong>解决方案</strong>：</p>
@@ -2230,36 +2273,36 @@
 </ol>
 <h2 id="_19">完整配置示例<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>
 <h3 id="netlifytoml">netlify.toml<a class="headerlink" href="#netlifytoml" title="Permanent link">&para;</a></h3>
-<div class="language-toml highlight"><span class="filename">TOML</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">[build]</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span><span class="n">command</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pip install zensical &amp;&amp; zensical build&quot;</span>
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">  </span><span class="n">publish</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;site&quot;</span>
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
-</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="c1"># 404 页面</span>
-</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="k">[[redirects]]</span>
-</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">  </span><span class="n">from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/*&quot;</span>
-</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">  </span><span class="n">to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/404.html&quot;</span>
-</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">  </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">404</span>
-</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>
-</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="c1"># 缓存配置</span>
-</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="k">[[headers]]</span>
-</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w">  </span><span class="n">for</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/*&quot;</span>
-</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="w">  </span><span class="k">[headers.values]</span>
-</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="w">    </span><span class="n">X-Frame-Options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;DENY&quot;</span>
-</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="w">    </span><span class="n">X-XSS-Protection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;1; mode=block&quot;</span>
-</span><span id="__span-13-17"><a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="w">    </span><span class="n">X-Content-Type-Options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;nosniff&quot;</span>
-</span><span id="__span-13-18"><a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="w">    </span><span class="n">Referrer-Policy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;strict-origin-when-cross-origin&quot;</span>
-</span><span id="__span-13-19"><a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>
-</span><span id="__span-13-20"><a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a><span class="k">[[headers]]</span>
-</span><span id="__span-13-21"><a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a><span class="w">  </span><span class="n">for</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/assets/*&quot;</span>
-</span><span id="__span-13-22"><a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a><span class="w">  </span><span class="k">[headers.values]</span>
-</span><span id="__span-13-23"><a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a><span class="w">    </span><span class="n">Cache-Control</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;public, max-age=31536000, immutable&quot;</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">[build]</span>
+<span class="w">  </span><span class="n">command</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pip install zensical &amp;&amp; zensical build&quot;</span>
+<span class="w">  </span><span class="n">publish</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;site&quot;</span>
+
+<span class="c1"># 404 页面</span>
+<span class="k">[[redirects]]</span>
+<span class="w">  </span><span class="n">from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/*&quot;</span>
+<span class="w">  </span><span class="n">to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/404.html&quot;</span>
+<span class="w">  </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">404</span>
+
+<span class="c1"># 缓存配置</span>
+<span class="k">[[headers]]</span>
+<span class="w">  </span><span class="n">for</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/*&quot;</span>
+<span class="w">  </span><span class="k">[headers.values]</span>
+<span class="w">    </span><span class="n">X-Frame-Options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;DENY&quot;</span>
+<span class="w">    </span><span class="n">X-XSS-Protection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;1; mode=block&quot;</span>
+<span class="w">    </span><span class="n">X-Content-Type-Options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;nosniff&quot;</span>
+<span class="w">    </span><span class="n">Referrer-Policy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;strict-origin-when-cross-origin&quot;</span>
+
+<span class="k">[[headers]]</span>
+<span class="w">  </span><span class="n">for</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/assets/*&quot;</span>
+<span class="w">  </span><span class="k">[headers.values]</span>
+<span class="w">    </span><span class="n">Cache-Control</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;public, max-age=31536000, immutable&quot;</span>
+</code></pre></div>
 <h3 id="runtimetxt">runtime.txt<a class="headerlink" href="#runtimetxt" title="Permanent link">&para;</a></h3>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>3.11
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>3.11
+</code></pre></div>
 <h3 id="requirementstxt">requirements.txt<a class="headerlink" href="#requirementstxt" title="Permanent link">&para;</a></h3>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>zensical
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>zensical
+</code></pre></div>
 <h2 id="_20">下一步<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h2>
 <ul>
 <li>查看 <a href="https://docs.netlify.com/">Netlify 文档</a></li>
@@ -2283,6 +2326,35 @@
   
 
 
+<!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine feedback configuration -->
+
+
+<!-- Determine whether to show feedback -->
+
+
+<!-- Was this page helpful? -->
 
 
 
@@ -2303,14 +2375,49 @@
         
       </main>
       
-        <footer class="md-footer">
+        <!--
+  Copyright (c) 2016-2025 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Footer -->
+<footer class="md-footer">
+
+  <!-- Link to previous and/or next page -->
   
     
       
-      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+      <nav
+        class="md-footer__inner md-grid"
+        aria-label="页脚"
+        
+      >
+
+        <!-- Link to previous page -->
         
           
-          <a href="../github-pages/" class="md-footer__link md-footer__link--prev" aria-label="上一页: GitHub Pages 部署（推荐）">
+          <a
+            href="../github-pages/"
+            class="md-footer__link md-footer__link--prev"
+            aria-label="上一页: GitHub Pages 部署（推荐）"
+          >
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
@@ -2325,9 +2432,15 @@
             </div>
           </a>
         
+
+        <!-- Link to next page -->
         
           
-          <a href="../gitlab-pages/" class="md-footer__link md-footer__link--next" aria-label="下一页: GitLab Pages 部署">
+          <a
+            href="../gitlab-pages/"
+            class="md-footer__link md-footer__link--next"
+            aria-label="下一页: GitLab Pages 部署"
+          >
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
@@ -2345,6 +2458,8 @@
       </nav>
     
   
+
+  <!-- Further information -->
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -2360,6 +2475,24 @@
     </a>
   
 </div>
+
+      <!-- Site Visits 访客统计 -->
+      <style>
+      .site-visit-count {
+        padding: 0 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.85rem;
+        color: var(--md-footer-fg-color--light);
+      }
+      </style>
+      <script async src="//finicounter.eu.org/finicounter.js"></script>
+      <div class="site-visit-count">
+        <span>本站访问量：</span><span id="finicount_views"></span>
+      </div>
+
+      <!-- Social links -->
       
         
 <div class="md-social">
@@ -2404,10 +2537,10 @@
       
       
       
-      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["announce.dismiss","navigation.prune","navigation.tracking","navigation.tabs","navigation.sections","navigation.top","navigation.footer","navigation.expand","navigation.indexes","navigation.instant","navigation.instant.prefetch","search.suggest","search.highlight","search.share","toc.follow","content.tooltips","content.code.copy","content.code.select","content.code.annotate"],"search":"../../../assets/javascripts/workers/search.5e1f2129.min.js","tags":null,"translations":{"clipboard.copied":"已复制","clipboard.copy":"复制","search.result.more.one":"在该页上还有 1 个符合条件的结果","search.result.more.other":"在该页上还有 # 个符合条件的结果","search.result.none":"没有找到符合条件的结果","search.result.one":"找到 1 个符合条件的结果","search.result.other":"# 个符合条件的结果","search.result.placeholder":"键入以开始搜索","search.result.term.missing":"缺少","select.version":"选择当前版本"},"version":null}</script>
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["announce.dismiss","navigation.prune","navigation.tracking","navigation.tabs","navigation.sections","navigation.top","navigation.footer","navigation.expand","navigation.indexes","navigation.instant","navigation.instant.prefetch","search.suggest","search.highlight","search.share","toc.follow","content.tooltips","content.code.copy","content.code.select","content.code.annotate"],"search":"../../../assets/javascripts/workers/search.5df7522c.min.js","tags":null,"translations":{"clipboard.copied":"已复制","clipboard.copy":"复制","search.result.more.one":"在该页上还有 1 个符合条件的结果","search.result.more.other":"在该页上还有 # 个符合条件的结果","search.result.none":"没有找到符合条件的结果","search.result.one":"找到 1 个符合条件的结果","search.result.other":"# 个符合条件的结果","search.result.placeholder":"键入以开始搜索","search.result.term.missing":"缺少","select.version":"选择当前版本"},"version":null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.6b62de02.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.21aa498e.min.js"></script>
       
         <script src="../../../javascripts/extra.js"></script>
       

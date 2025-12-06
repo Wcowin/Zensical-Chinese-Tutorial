@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="https://zensical.org/assets/zensical.svg">
-      <meta name="generator" content="zensical-0.0.6">
+      <meta name="generator" content="zensical-0.0.11">
     
     
       
@@ -36,7 +36,7 @@
       
         
       
-      <link rel="stylesheet" href="../../../assets/stylesheets/modern/main.71200a3a.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/modern/main.bd6182e7.min.css">
       
         
           
@@ -95,7 +95,7 @@
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,a=__md_scope)=>JSON.parse(t.getItem(a.pathname+"."+e)),__md_set=(e,t,a=localStorage,_=__md_scope)=>{try{a.setItem(_.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
     
       
 
@@ -380,6 +380,22 @@
         
   
   案例展示
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../waline/" class="md-tabs__link">
+        
+  
+  留言板
 
       </a>
     </li>
@@ -793,10 +809,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#post_date_format" class="md-nav__link">
+  <a href="#postdateformat" class="md-nav__link">
     <span class="md-ellipsis">
       
-        post_date_format
+        postdateformat
       
     </span>
   </a>
@@ -1121,6 +1137,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../waline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    留言板
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../about/" class="md-nav__link">
         
   
@@ -1241,10 +1284,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#post_date_format" class="md-nav__link">
+  <a href="#postdateformat" class="md-nav__link">
     <span class="md-ellipsis">
       
-        post_date_format
+        postdateformat
       
     </span>
   </a>
@@ -1312,37 +1355,37 @@
 </ul>
 <h2 id="_3">基本配置<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>在 <code>zensical.toml</code> 中启用博客插件：</p>
-<div class="language-toml highlight"><span class="filename">TOML</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">[project.plugins.blog]</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">post_date_format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;full&quot;</span><span class="w">                    </span><span class="c1"># 日期格式</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">draft</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w">                                  </span><span class="c1"># 启用草稿</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">post_readtime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w">                          </span><span class="c1"># 显示阅读时间</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">post_readtime_words_per_minute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">265</span><span class="w">          </span><span class="c1"># 每分钟阅读字数（中文适配）</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">post_url_format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;{date}/{slug}&quot;</span><span class="w">             </span><span class="c1"># 文章 URL 格式</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">pagination_per_page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="w">                      </span><span class="c1"># 每页显示文章数</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">pagination_url_format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;page/{page}&quot;</span><span class="w">         </span><span class="c1"># 分页 URL 格式</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">[project.plugins.blog]</span>
+<span class="n">post_date_format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;full&quot;</span><span class="w">                    </span><span class="c1"># 日期格式</span>
+<span class="n">draft</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w">                                  </span><span class="c1"># 启用草稿</span>
+<span class="n">post_readtime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w">                          </span><span class="c1"># 显示阅读时间</span>
+<span class="n">post_readtime_words_per_minute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">265</span><span class="w">          </span><span class="c1"># 每分钟阅读字数（中文适配）</span>
+<span class="n">post_url_format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;{date}/{slug}&quot;</span><span class="w">             </span><span class="c1"># 文章 URL 格式</span>
+<span class="n">pagination_per_page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="w">                      </span><span class="c1"># 每页显示文章数</span>
+<span class="n">pagination_url_format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;page/{page}&quot;</span><span class="w">         </span><span class="c1"># 分页 URL 格式</span>
+</code></pre></div>
 <h2 id="_4">创建博客文章<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>在 <code>docs/blog/posts/</code> 目录下创建 Markdown 文件：</p>
-<div class="language-markdown highlight"><span class="filename">Markdown</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>---
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>title: 我的第一篇博客
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>date: 2025-01-22
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>authors:
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>name: 你的名字
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    email: your@email.com
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>categories:
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>技术
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Python
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>tags:
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Zensical
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="gu">  - 教程</span>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="gu">---</span>
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="gh"># 我的第一篇博客</span>
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>这是文章内容...
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>---
+title: 我的第一篇博客
+date: 2025-01-22
+authors:
+<span class="w">  </span><span class="k">-</span><span class="w"> </span>name: 你的名字
+    email: your@email.com
+categories:
+<span class="w">  </span><span class="k">-</span><span class="w"> </span>技术
+<span class="w">  </span><span class="k">-</span><span class="w"> </span>Python
+tags:
+<span class="w">  </span><span class="k">-</span><span class="w"> </span>Zensical
+<span class="gu">  - 教程</span>
+<span class="gu">---</span>
+
+<span class="gh"># 我的第一篇博客</span>
+
+这是文章内容...
+</code></pre></div>
 <h2 id="_5">配置选项详解<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<h3 id="post_date_format">post_date_format<a class="headerlink" href="#post_date_format" title="Permanent link">&para;</a></h3>
+<h3 id="postdateformat">post<em>date</em>format<a class="headerlink" href="#postdateformat" title="Permanent link">&para;</a></h3>
 <p>日期显示格式：</p>
 <ul>
 <li><code>full</code> - 完整日期（如：2025年1月22日）</li>
@@ -1351,14 +1394,14 @@
 </ul>
 <h3 id="post_readtime">post_readtime<a class="headerlink" href="#post_readtime" title="Permanent link">&para;</a></h3>
 <p>自动计算阅读时间：</p>
-<div class="language-toml highlight"><span class="filename">TOML</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">post_readtime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">post_readtime_words_per_minute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">265</span><span class="w">  </span><span class="c1"># 中文适配</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">post_readtime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<span class="n">post_readtime_words_per_minute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">265</span><span class="w">  </span><span class="c1"># 中文适配</span>
+</code></pre></div>
 <h3 id="draft">draft<a class="headerlink" href="#draft" title="Permanent link">&para;</a></h3>
 <p>草稿功能：</p>
-<div class="language-toml highlight"><span class="filename">TOML</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">draft</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w">                    </span><span class="c1"># 启用草稿</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">draft_if_future_date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w">     </span><span class="c1"># 未来日期自动标记为草稿</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">draft</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w">                    </span><span class="c1"># 启用草稿</span>
+<span class="n">draft_if_future_date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w">     </span><span class="c1"># 未来日期自动标记为草稿</span>
+</code></pre></div>
 <p>更多详细内容请参考 <a href="../../../tutorials/blog-tutorial/">博客系统完全指南</a>。</p>
 
 
@@ -1373,6 +1416,35 @@
   
 
 
+<!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine feedback configuration -->
+
+
+<!-- Determine whether to show feedback -->
+
+
+<!-- Was this page helpful? -->
 
 
 
@@ -1393,14 +1465,49 @@
         
       </main>
       
-        <footer class="md-footer">
+        <!--
+  Copyright (c) 2016-2025 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Footer -->
+<footer class="md-footer">
+
+  <!-- Link to previous and/or next page -->
   
     
       
-      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+      <nav
+        class="md-footer__inner md-grid"
+        aria-label="页脚"
+        
+      >
+
+        <!-- Link to previous page -->
         
           
-          <a href="../../../tutorials/blog-tutorial/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Zensical 博客系统完全指南">
+          <a
+            href="../../../tutorials/blog-tutorial/"
+            class="md-footer__link md-footer__link--prev"
+            aria-label="上一页: Zensical 博客系统完全指南"
+          >
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
@@ -1415,9 +1522,15 @@
             </div>
           </a>
         
+
+        <!-- Link to next page -->
         
           
-          <a href="../search/" class="md-footer__link md-footer__link--next" aria-label="下一页: 搜索插件配置">
+          <a
+            href="../search/"
+            class="md-footer__link md-footer__link--next"
+            aria-label="下一页: 搜索插件配置"
+          >
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
@@ -1435,6 +1548,8 @@
       </nav>
     
   
+
+  <!-- Further information -->
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -1450,6 +1565,24 @@
     </a>
   
 </div>
+
+      <!-- Site Visits 访客统计 -->
+      <style>
+      .site-visit-count {
+        padding: 0 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.85rem;
+        color: var(--md-footer-fg-color--light);
+      }
+      </style>
+      <script async src="//finicounter.eu.org/finicounter.js"></script>
+      <div class="site-visit-count">
+        <span>本站访问量：</span><span id="finicount_views"></span>
+      </div>
+
+      <!-- Social links -->
       
         
 <div class="md-social">
@@ -1494,10 +1627,10 @@
       
       
       
-      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["announce.dismiss","navigation.prune","navigation.tracking","navigation.tabs","navigation.sections","navigation.top","navigation.footer","navigation.expand","navigation.indexes","navigation.instant","navigation.instant.prefetch","search.suggest","search.highlight","search.share","toc.follow","content.tooltips","content.code.copy","content.code.select","content.code.annotate"],"search":"../../../assets/javascripts/workers/search.5e1f2129.min.js","tags":null,"translations":{"clipboard.copied":"已复制","clipboard.copy":"复制","search.result.more.one":"在该页上还有 1 个符合条件的结果","search.result.more.other":"在该页上还有 # 个符合条件的结果","search.result.none":"没有找到符合条件的结果","search.result.one":"找到 1 个符合条件的结果","search.result.other":"# 个符合条件的结果","search.result.placeholder":"键入以开始搜索","search.result.term.missing":"缺少","select.version":"选择当前版本"},"version":null}</script>
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["announce.dismiss","navigation.prune","navigation.tracking","navigation.tabs","navigation.sections","navigation.top","navigation.footer","navigation.expand","navigation.indexes","navigation.instant","navigation.instant.prefetch","search.suggest","search.highlight","search.share","toc.follow","content.tooltips","content.code.copy","content.code.select","content.code.annotate"],"search":"../../../assets/javascripts/workers/search.5df7522c.min.js","tags":null,"translations":{"clipboard.copied":"已复制","clipboard.copy":"复制","search.result.more.one":"在该页上还有 1 个符合条件的结果","search.result.more.other":"在该页上还有 # 个符合条件的结果","search.result.none":"没有找到符合条件的结果","search.result.one":"找到 1 个符合条件的结果","search.result.other":"# 个符合条件的结果","search.result.placeholder":"键入以开始搜索","search.result.term.missing":"缺少","select.version":"选择当前版本"},"version":null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.6b62de02.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.21aa498e.min.js"></script>
       
         <script src="../../../javascripts/extra.js"></script>
       

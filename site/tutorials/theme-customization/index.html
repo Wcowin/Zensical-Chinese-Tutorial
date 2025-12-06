@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="https://zensical.org/assets/zensical.svg">
-      <meta name="generator" content="zensical-0.0.6">
+      <meta name="generator" content="zensical-0.0.11">
     
     
       
@@ -36,7 +36,7 @@
       
         
       
-      <link rel="stylesheet" href="../../assets/stylesheets/modern/main.71200a3a.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/modern/main.bd6182e7.min.css">
       
         
           
@@ -95,7 +95,7 @@
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,a=__md_scope)=>JSON.parse(t.getItem(a.pathname+"."+e)),__md_set=(e,t,a=localStorage,_=__md_scope)=>{try{a.setItem(_.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
     
       
 
@@ -380,6 +380,22 @@
         
   
   案例展示
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../waline/" class="md-tabs__link">
+        
+  
+  留言板
 
       </a>
     </li>
@@ -1349,6 +1365,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../../waline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    留言板
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../about/" class="md-nav__link">
         
   
@@ -1759,39 +1802,39 @@
 <h2 id="_2">主题变体<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>Zensical 提供两种主题变体：</p>
 <h3 id="modern">Modern 主题（推荐）<a class="headerlink" href="#modern" title="Permanent link">&para;</a></h3>
-<div class="language-toml highlight"><span class="filename">TOML</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">[project.theme]</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">variant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;modern&quot;</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">[project.theme]</span>
+<span class="n">variant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;modern&quot;</span>
+</code></pre></div>
 <p>全新的现代化设计，更美观、更流畅。</p>
 <h3 id="classic">Classic 主题<a class="headerlink" href="#classic" title="Permanent link">&para;</a></h3>
-<div class="language-toml highlight"><span class="filename">TOML</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">[project.theme]</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">variant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;classic&quot;</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">[project.theme]</span>
+<span class="n">variant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;classic&quot;</span>
+</code></pre></div>
 <p>与 Material for MkDocs 完全一致的外观，适合从 MkDocs 迁移的项目。</p>
 <h2 id="_3">颜色配置<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <h3 id="_4">调色板配置<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>Zensical 支持明暗主题切换和自定义颜色：</p>
-<div class="language-toml highlight"><span class="filename">TOML</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># 自动模式（跟随系统）</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">[[project.theme.palette]]</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">media</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;(prefers-color-scheme)&quot;</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">toggle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">icon</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;material/link&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;关闭自动模式&quot;</span><span class="w"> </span><span class="p">}</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c1"># 日间模式</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="k">[[project.theme.palette]]</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="n">media</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;(prefers-color-scheme: light)&quot;</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="n">scheme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;default&quot;</span><span class="w">                </span><span class="c1"># 日间模式配色</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="n">primary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;indigo&quot;</span><span class="w">                </span><span class="c1"># 主色调</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="n">accent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;indigo&quot;</span><span class="w">                 </span><span class="c1"># 强调色</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="n">toggle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">icon</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;material/toggle-switch&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;切换至夜间模式&quot;</span><span class="w"> </span><span class="p">}</span>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="c1"># 夜间模式</span>
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="k">[[project.theme.palette]]</span>
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="n">media</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;(prefers-color-scheme: dark)&quot;</span>
-</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="n">scheme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;slate&quot;</span><span class="w">                  </span><span class="c1"># 夜间模式配色</span>
-</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="n">primary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;indigo&quot;</span><span class="w">                </span><span class="c1"># 主色调</span>
-</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="n">accent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;indigo&quot;</span><span class="w">                 </span><span class="c1"># 强调色</span>
-</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="n">toggle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">icon</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;material/toggle-switch-off-outline&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;切换至日间模式&quot;</span><span class="w"> </span><span class="p">}</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># 自动模式（跟随系统）</span>
+<span class="k">[[project.theme.palette]]</span>
+<span class="n">media</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;(prefers-color-scheme)&quot;</span>
+<span class="n">toggle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">icon</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;material/link&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;关闭自动模式&quot;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="c1"># 日间模式</span>
+<span class="k">[[project.theme.palette]]</span>
+<span class="n">media</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;(prefers-color-scheme: light)&quot;</span>
+<span class="n">scheme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;default&quot;</span><span class="w">                </span><span class="c1"># 日间模式配色</span>
+<span class="n">primary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;indigo&quot;</span><span class="w">                </span><span class="c1"># 主色调</span>
+<span class="n">accent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;indigo&quot;</span><span class="w">                 </span><span class="c1"># 强调色</span>
+<span class="n">toggle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">icon</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;material/toggle-switch&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;切换至夜间模式&quot;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="c1"># 夜间模式</span>
+<span class="k">[[project.theme.palette]]</span>
+<span class="n">media</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;(prefers-color-scheme: dark)&quot;</span>
+<span class="n">scheme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;slate&quot;</span><span class="w">                  </span><span class="c1"># 夜间模式配色</span>
+<span class="n">primary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;indigo&quot;</span><span class="w">                </span><span class="c1"># 主色调</span>
+<span class="n">accent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;indigo&quot;</span><span class="w">                 </span><span class="c1"># 强调色</span>
+<span class="n">toggle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">icon</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;material/toggle-switch-off-outline&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;切换至日间模式&quot;</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
 <h3 id="_5">支持的主色调<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>Zensical 支持以下主色调：</p>
 <ul>
@@ -1819,99 +1862,99 @@
 </ul>
 <h3 id="_6">自定义颜色<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>在 <code>docs/stylesheets/extra.css</code> 中使用 CSS 变量：</p>
-<div class="language-css highlight"><span class="filename">CSS</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">:</span><span class="nd">root</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nv">--md-primary-fg-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#4051B5</span><span class="p">;</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nv">--md-accent-fg-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#536DFE</span><span class="p">;</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">}</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="p">:</span><span class="nd">root</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nv">--md-primary-fg-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#4051B5</span><span class="p">;</span>
+<span class="w">  </span><span class="nv">--md-accent-fg-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#536DFE</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="_7">功能配置<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <h3 id="_8">导航功能<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<div class="language-toml highlight"><span class="filename">TOML</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">[project.theme]</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="s2">&quot;navigation.instant&quot;</span><span class="p">,</span><span class="w">           </span><span class="c1"># 即时导航</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="s2">&quot;navigation.instant.prefetch&quot;</span><span class="p">,</span><span class="w">  </span><span class="c1"># 预加载</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="s2">&quot;navigation.tracking&quot;</span><span class="p">,</span><span class="w">          </span><span class="c1"># 锚点跟踪</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="s2">&quot;navigation.tabs&quot;</span><span class="p">,</span><span class="w">              </span><span class="c1"># 导航标签</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="s2">&quot;navigation.sections&quot;</span><span class="p">,</span><span class="w">          </span><span class="c1"># 导航部分</span>
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="s2">&quot;navigation.expand&quot;</span><span class="p">,</span><span class="w">            </span><span class="c1"># 展开导航</span>
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="s2">&quot;navigation.top&quot;</span><span class="p">,</span><span class="w">               </span><span class="c1"># 返回顶部按钮</span>
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="s2">&quot;navigation.footer&quot;</span><span class="p">,</span><span class="w">            </span><span class="c1"># 页脚导航</span>
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="p">]</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">[project.theme]</span>
+<span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;navigation.instant&quot;</span><span class="p">,</span><span class="w">           </span><span class="c1"># 即时导航</span>
+<span class="w">    </span><span class="s2">&quot;navigation.instant.prefetch&quot;</span><span class="p">,</span><span class="w">  </span><span class="c1"># 预加载</span>
+<span class="w">    </span><span class="s2">&quot;navigation.tracking&quot;</span><span class="p">,</span><span class="w">          </span><span class="c1"># 锚点跟踪</span>
+<span class="w">    </span><span class="s2">&quot;navigation.tabs&quot;</span><span class="p">,</span><span class="w">              </span><span class="c1"># 导航标签</span>
+<span class="w">    </span><span class="s2">&quot;navigation.sections&quot;</span><span class="p">,</span><span class="w">          </span><span class="c1"># 导航部分</span>
+<span class="w">    </span><span class="s2">&quot;navigation.expand&quot;</span><span class="p">,</span><span class="w">            </span><span class="c1"># 展开导航</span>
+<span class="w">    </span><span class="s2">&quot;navigation.top&quot;</span><span class="p">,</span><span class="w">               </span><span class="c1"># 返回顶部按钮</span>
+<span class="w">    </span><span class="s2">&quot;navigation.footer&quot;</span><span class="p">,</span><span class="w">            </span><span class="c1"># 页脚导航</span>
+<span class="p">]</span>
+</code></pre></div>
 <h3 id="_9">搜索功能<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
-<div class="language-toml highlight"><span class="filename">TOML</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="s2">&quot;search.suggest&quot;</span><span class="p">,</span><span class="w">               </span><span class="c1"># 搜索建议</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="s2">&quot;search.highlight&quot;</span><span class="p">,</span><span class="w">             </span><span class="c1"># 搜索高亮</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="s2">&quot;search.share&quot;</span><span class="p">,</span><span class="w">                 </span><span class="c1"># 搜索分享</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="p">]</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;search.suggest&quot;</span><span class="p">,</span><span class="w">               </span><span class="c1"># 搜索建议</span>
+<span class="w">    </span><span class="s2">&quot;search.highlight&quot;</span><span class="p">,</span><span class="w">             </span><span class="c1"># 搜索高亮</span>
+<span class="w">    </span><span class="s2">&quot;search.share&quot;</span><span class="p">,</span><span class="w">                 </span><span class="c1"># 搜索分享</span>
+<span class="p">]</span>
+</code></pre></div>
 <h3 id="_10">内容功能<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
-<div class="language-toml highlight"><span class="filename">TOML</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="s2">&quot;content.tooltips&quot;</span><span class="p">,</span><span class="w">             </span><span class="c1"># 内容提示框</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="s2">&quot;content.code.copy&quot;</span><span class="p">,</span><span class="w">            </span><span class="c1"># 代码复制按钮</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="s2">&quot;content.code.select&quot;</span><span class="p">,</span><span class="w">          </span><span class="c1"># 代码选择功能</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="s2">&quot;content.code.annotate&quot;</span><span class="p">,</span><span class="w">        </span><span class="c1"># 代码注释功能</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="p">]</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;content.tooltips&quot;</span><span class="p">,</span><span class="w">             </span><span class="c1"># 内容提示框</span>
+<span class="w">    </span><span class="s2">&quot;content.code.copy&quot;</span><span class="p">,</span><span class="w">            </span><span class="c1"># 代码复制按钮</span>
+<span class="w">    </span><span class="s2">&quot;content.code.select&quot;</span><span class="p">,</span><span class="w">          </span><span class="c1"># 代码选择功能</span>
+<span class="w">    </span><span class="s2">&quot;content.code.annotate&quot;</span><span class="p">,</span><span class="w">        </span><span class="c1"># 代码注释功能</span>
+<span class="p">]</span>
+</code></pre></div>
 <h2 id="_11">图标配置<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
-<div class="language-toml highlight"><span class="filename">TOML</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">[project.theme.icon]</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">repo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;fontawesome/brands/github&quot;</span><span class="w">          </span><span class="c1"># 仓库图标</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">previous</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;fontawesome/solid/angle-left&quot;</span><span class="w">   </span><span class="c1"># 上一页图标</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;fontawesome/solid/angle-right&quot;</span><span class="w">     </span><span class="c1"># 下一页图标</span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="n">alternate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;fontawesome/solid/language&quot;</span><span class="w">   </span><span class="c1"># 语言切换图标</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">[project.theme.icon]</span>
+<span class="n">repo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;fontawesome/brands/github&quot;</span><span class="w">          </span><span class="c1"># 仓库图标</span>
+<span class="n">previous</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;fontawesome/solid/angle-left&quot;</span><span class="w">   </span><span class="c1"># 上一页图标</span>
+<span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;fontawesome/solid/angle-right&quot;</span><span class="w">     </span><span class="c1"># 下一页图标</span>
+<span class="n">alternate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;fontawesome/solid/language&quot;</span><span class="w">   </span><span class="c1"># 语言切换图标</span>
+</code></pre></div>
 <h2 id="logo-favicon">Logo 和 Favicon<a class="headerlink" href="#logo-favicon" title="Permanent link">&para;</a></h2>
-<div class="language-toml highlight"><span class="filename">TOML</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">[project.theme]</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">logo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;assets/logo.svg&quot;</span><span class="w">           </span><span class="c1"># 网站 Logo</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="n">favicon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;assets/favicon.png&quot;</span><span class="w">     </span><span class="c1"># 网站图标</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">[project.theme]</span>
+<span class="n">logo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;assets/logo.svg&quot;</span><span class="w">           </span><span class="c1"># 网站 Logo</span>
+<span class="n">favicon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;assets/favicon.png&quot;</span><span class="w">     </span><span class="c1"># 网站图标</span>
+</code></pre></div>
 <h2 id="_12">模板覆盖<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
 <h3 id="_13">启用模板覆盖<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
-<div class="language-toml highlight"><span class="filename">TOML</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">[project.theme]</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">custom_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;docs/overrides&quot;</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">[project.theme]</span>
+<span class="n">custom_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;docs/overrides&quot;</span>
+</code></pre></div>
 <h3 id="_14">目录结构<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>docs/
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>└── overrides/
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    ├── 404.html                  # 自定义 404 页面
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    ├── main.html                 # 主模板
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    └── partials/
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>        ├── comments.html         # 评论系统
-</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>        ├── footer.html           # 页脚
-</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>        └── header.html           # 页头
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>docs/
+└── overrides/
+    ├── 404.html                  # 自定义 404 页面
+    ├── main.html                 # 主模板
+    └── partials/
+        ├── comments.html         # 评论系统
+        ├── footer.html           # 页脚
+        └── header.html           # 页头
+</code></pre></div>
 <h2 id="_15">自定义样式<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
 <h3 id="css">添加自定义 CSS<a class="headerlink" href="#css" title="Permanent link">&para;</a></h3>
 <p>在 <code>zensical.toml</code> 中：</p>
-<div class="language-toml highlight"><span class="filename">TOML</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">extra_css</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="s2">&quot;stylesheets/extra.css&quot;</span><span class="p">,</span>
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="p">]</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">extra_css</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;stylesheets/extra.css&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+</code></pre></div>
 <p>在 <code>docs/stylesheets/extra.css</code> 中编写样式：</p>
-<div class="language-css highlight"><span class="filename">CSS</span><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c">/* 自定义样式 */</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="p">.</span><span class="nc">md-header</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#4051B5</span><span class="p">;</span>
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="p">}</span>
-</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>
-</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="c">/* 响应式设计 */</span>
-</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="o">(</span><span class="nt">max-width</span><span class="o">:</span><span class="w"> </span><span class="nt">768px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">    </span><span class="p">.</span><span class="nc">md-header</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">        </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="kt">rem</span><span class="p">;</span>
-</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="p">}</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c">/* 自定义样式 */</span>
+<span class="p">.</span><span class="nc">md-header</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#4051B5</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* 响应式设计 */</span>
+<span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="o">(</span><span class="nt">max-width</span><span class="o">:</span><span class="w"> </span><span class="nt">768px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">.</span><span class="nc">md-header</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="kt">rem</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="javascript">添加自定义 JavaScript<a class="headerlink" href="#javascript" title="Permanent link">&para;</a></h3>
 <p>在 <code>zensical.toml</code> 中：</p>
-<div class="language-toml highlight"><span class="filename">TOML</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">extra_javascript</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="s2">&quot;javascripts/extra.js&quot;</span><span class="p">,</span>
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="p">]</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">extra_javascript</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;javascripts/extra.js&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+</code></pre></div>
 <p>在 <code>docs/javascripts/extra.js</code> 中编写脚本：</p>
-<div class="language-javascript highlight"><span class="filename">JavaScript</span><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1">// 即时导航兼容</span>
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nb">document</span><span class="nx">$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="c1">// 你的代码</span>
-</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="p">});</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1">// 即时导航兼容</span>
+<span class="nb">document</span><span class="nx">$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// 你的代码</span>
+<span class="p">});</span>
+</code></pre></div>
 <h2 id="_16">高级定制<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
 <h3 id="_17">自定义字体<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
 <p>参考 <a href="../../blog/advanced/custom-fonts/">自定义字体指南</a></p>
@@ -1920,39 +1963,39 @@
 <h3 id="_18">添加评论系统<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
 <p>参考 <a href="../../blog/advanced/comment-system/">添加评论系统</a></p>
 <h2 id="_19">完整配置示例<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>
-<div class="language-toml highlight"><span class="filename">TOML</span><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">[project.theme]</span>
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="n">variant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;modern&quot;</span>
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="n">custom_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;docs/overrides&quot;</span>
-</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="n">logo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;assets/logo.svg&quot;</span>
-</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="n">favicon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;assets/favicon.png&quot;</span>
-</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="n">language</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;zh&quot;</span>
-</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>
-</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">    </span><span class="s2">&quot;navigation.instant&quot;</span><span class="p">,</span>
-</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">    </span><span class="s2">&quot;navigation.tracking&quot;</span><span class="p">,</span>
-</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="w">    </span><span class="s2">&quot;navigation.tabs&quot;</span><span class="p">,</span>
-</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="w">    </span><span class="s2">&quot;navigation.sections&quot;</span><span class="p">,</span>
-</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="w">    </span><span class="s2">&quot;navigation.top&quot;</span><span class="p">,</span>
-</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="w">    </span><span class="s2">&quot;search.suggest&quot;</span><span class="p">,</span>
-</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="w">    </span><span class="s2">&quot;search.highlight&quot;</span><span class="p">,</span>
-</span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="w">    </span><span class="s2">&quot;content.code.copy&quot;</span><span class="p">,</span>
-</span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="p">]</span>
-</span><span id="__span-15-18"><a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a>
-</span><span id="__span-15-19"><a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="k">[[project.theme.palette]]</span>
-</span><span id="__span-15-20"><a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a><span class="n">media</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;(prefers-color-scheme: light)&quot;</span>
-</span><span id="__span-15-21"><a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a><span class="n">scheme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;default&quot;</span>
-</span><span id="__span-15-22"><a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a><span class="n">primary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;indigo&quot;</span>
-</span><span id="__span-15-23"><a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a><span class="n">accent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;indigo&quot;</span>
-</span><span id="__span-15-24"><a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a>
-</span><span id="__span-15-25"><a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a><span class="k">[[project.theme.palette]]</span>
-</span><span id="__span-15-26"><a id="__codelineno-15-26" name="__codelineno-15-26" href="#__codelineno-15-26"></a><span class="n">media</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;(prefers-color-scheme: dark)&quot;</span>
-</span><span id="__span-15-27"><a id="__codelineno-15-27" name="__codelineno-15-27" href="#__codelineno-15-27"></a><span class="n">scheme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;slate&quot;</span>
-</span><span id="__span-15-28"><a id="__codelineno-15-28" name="__codelineno-15-28" href="#__codelineno-15-28"></a><span class="n">primary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;indigo&quot;</span>
-</span><span id="__span-15-29"><a id="__codelineno-15-29" name="__codelineno-15-29" href="#__codelineno-15-29"></a><span class="n">accent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;indigo&quot;</span>
-</span><span id="__span-15-30"><a id="__codelineno-15-30" name="__codelineno-15-30" href="#__codelineno-15-30"></a>
-</span><span id="__span-15-31"><a id="__codelineno-15-31" name="__codelineno-15-31" href="#__codelineno-15-31"></a><span class="k">[project.theme.icon]</span>
-</span><span id="__span-15-32"><a id="__codelineno-15-32" name="__codelineno-15-32" href="#__codelineno-15-32"></a><span class="n">repo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;fontawesome/brands/github&quot;</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">[project.theme]</span>
+<span class="n">variant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;modern&quot;</span>
+<span class="n">custom_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;docs/overrides&quot;</span>
+<span class="n">logo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;assets/logo.svg&quot;</span>
+<span class="n">favicon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;assets/favicon.png&quot;</span>
+<span class="n">language</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;zh&quot;</span>
+
+<span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;navigation.instant&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;navigation.tracking&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;navigation.tabs&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;navigation.sections&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;navigation.top&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;search.suggest&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;search.highlight&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;content.code.copy&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="k">[[project.theme.palette]]</span>
+<span class="n">media</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;(prefers-color-scheme: light)&quot;</span>
+<span class="n">scheme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;default&quot;</span>
+<span class="n">primary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;indigo&quot;</span>
+<span class="n">accent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;indigo&quot;</span>
+
+<span class="k">[[project.theme.palette]]</span>
+<span class="n">media</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;(prefers-color-scheme: dark)&quot;</span>
+<span class="n">scheme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;slate&quot;</span>
+<span class="n">primary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;indigo&quot;</span>
+<span class="n">accent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;indigo&quot;</span>
+
+<span class="k">[project.theme.icon]</span>
+<span class="n">repo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;fontawesome/brands/github&quot;</span>
+</code></pre></div>
 <h2 id="_20">参考资源<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://zensical.org/docs/">Zensical 官方文档</a></li>
@@ -1974,6 +2017,35 @@
   
 
 
+<!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine feedback configuration -->
+
+
+<!-- Determine whether to show feedback -->
+
+
+<!-- Was this page helpful? -->
 
 
 
@@ -1994,14 +2066,49 @@
         
       </main>
       
-        <footer class="md-footer">
+        <!--
+  Copyright (c) 2016-2025 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Footer -->
+<footer class="md-footer">
+
+  <!-- Link to previous and/or next page -->
   
     
       
-      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+      <nav
+        class="md-footer__inner md-grid"
+        aria-label="页脚"
+        
+      >
+
+        <!-- Link to previous page -->
         
           
-          <a href="../configuration/" class="md-footer__link md-footer__link--prev" aria-label="上一页: zensical.toml 配置详解">
+          <a
+            href="../configuration/"
+            class="md-footer__link md-footer__link--prev"
+            aria-label="上一页: zensical.toml 配置详解"
+          >
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
@@ -2016,9 +2123,15 @@
             </div>
           </a>
         
+
+        <!-- Link to next page -->
         
           
-          <a href="../markdown-extensions/" class="md-footer__link md-footer__link--next" aria-label="下一页: Markdown 扩展使用">
+          <a
+            href="../markdown-extensions/"
+            class="md-footer__link md-footer__link--next"
+            aria-label="下一页: Markdown 扩展使用"
+          >
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
@@ -2036,6 +2149,8 @@
       </nav>
     
   
+
+  <!-- Further information -->
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -2051,6 +2166,24 @@
     </a>
   
 </div>
+
+      <!-- Site Visits 访客统计 -->
+      <style>
+      .site-visit-count {
+        padding: 0 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.85rem;
+        color: var(--md-footer-fg-color--light);
+      }
+      </style>
+      <script async src="//finicounter.eu.org/finicounter.js"></script>
+      <div class="site-visit-count">
+        <span>本站访问量：</span><span id="finicount_views"></span>
+      </div>
+
+      <!-- Social links -->
       
         
 <div class="md-social">
@@ -2095,10 +2228,10 @@
       
       
       
-      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["announce.dismiss","navigation.prune","navigation.tracking","navigation.tabs","navigation.sections","navigation.top","navigation.footer","navigation.expand","navigation.indexes","navigation.instant","navigation.instant.prefetch","search.suggest","search.highlight","search.share","toc.follow","content.tooltips","content.code.copy","content.code.select","content.code.annotate"],"search":"../../assets/javascripts/workers/search.5e1f2129.min.js","tags":null,"translations":{"clipboard.copied":"已复制","clipboard.copy":"复制","search.result.more.one":"在该页上还有 1 个符合条件的结果","search.result.more.other":"在该页上还有 # 个符合条件的结果","search.result.none":"没有找到符合条件的结果","search.result.one":"找到 1 个符合条件的结果","search.result.other":"# 个符合条件的结果","search.result.placeholder":"键入以开始搜索","search.result.term.missing":"缺少","select.version":"选择当前版本"},"version":null}</script>
+      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["announce.dismiss","navigation.prune","navigation.tracking","navigation.tabs","navigation.sections","navigation.top","navigation.footer","navigation.expand","navigation.indexes","navigation.instant","navigation.instant.prefetch","search.suggest","search.highlight","search.share","toc.follow","content.tooltips","content.code.copy","content.code.select","content.code.annotate"],"search":"../../assets/javascripts/workers/search.5df7522c.min.js","tags":null,"translations":{"clipboard.copied":"已复制","clipboard.copy":"复制","search.result.more.one":"在该页上还有 1 个符合条件的结果","search.result.more.other":"在该页上还有 # 个符合条件的结果","search.result.none":"没有找到符合条件的结果","search.result.one":"找到 1 个符合条件的结果","search.result.other":"# 个符合条件的结果","search.result.placeholder":"键入以开始搜索","search.result.term.missing":"缺少","select.version":"选择当前版本"},"version":null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.6b62de02.min.js"></script>
+      <script src="../../assets/javascripts/bundle.21aa498e.min.js"></script>
       
         <script src="../../javascripts/extra.js"></script>
       

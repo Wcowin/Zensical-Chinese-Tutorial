@@ -26,6 +26,7 @@
       - [🔧 依赖安装问题](#-依赖安装问题)
       - [🔧 Python版本问题](#-python版本问题)
       - [🔧 端口占用问题](#-端口占用问题)
+      - [🔧 权限问题](#-权限问题)
     - [自定义配置](#自定义配置)
     - [🚀 部署到线上](#-部署到线上)
   - [高级功能](#高级功能)
@@ -469,3 +470,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 IN THE SOFTWARE.
+
+
+
+

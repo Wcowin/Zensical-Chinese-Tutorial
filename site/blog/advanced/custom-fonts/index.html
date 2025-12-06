@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="https://zensical.org/assets/zensical.svg">
-      <meta name="generator" content="zensical-0.0.6">
+      <meta name="generator" content="zensical-0.0.11">
     
     
       
@@ -36,7 +36,7 @@
       
         
       
-      <link rel="stylesheet" href="../../../assets/stylesheets/modern/main.71200a3a.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/modern/main.bd6182e7.min.css">
       
         
           
@@ -95,7 +95,7 @@
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,a=__md_scope)=>JSON.parse(t.getItem(a.pathname+"."+e)),__md_set=(e,t,a=localStorage,_=__md_scope)=>{try{a.setItem(_.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
     
       
 
@@ -380,6 +380,22 @@
         
   
   案例展示
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../waline/" class="md-tabs__link">
+        
+  
+  留言板
 
       </a>
     </li>
@@ -1383,6 +1399,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../waline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    留言板
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../about/" class="md-nav__link">
         
   
@@ -1769,7 +1812,7 @@
 <p>为你的 Zensical 网站添加美观的中文字体</p>
 </blockquote>
 <h2 id="_2">概述<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>Zensical 支持自定义字体，你可以使用各种中文字体来美化你的网站。本文以**霞鹜文楷**为例，介绍如何配置自定义字体。</p>
+<p>Zensical 支持自定义字体，你可以使用各种中文字体来美化你的网站。本文以<strong>霞鹜文楷</strong>为例，介绍如何配置自定义字体。</p>
 <h2 id="_3">推荐字体<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <h3 id="lxgw-wenkai">霞鹜文楷（LXGW WenKai）<a class="headerlink" href="#lxgw-wenkai" title="Permanent link">&para;</a></h3>
 <p>霞鹜文楷是一款开源中文字体，基于 FONTWORKS 的 Klee One 衍生，具有文艺气息，适合阅读。</p>
@@ -1782,102 +1825,102 @@
 <h2 id="_4">配置方法<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <h3 id="css">第一步：添加字体 CSS<a class="headerlink" href="#css" title="Permanent link">&para;</a></h3>
 <p>在 <code>zensical.toml</code> 中添加字体 CSS：</p>
-<div class="language-toml highlight"><span class="filename">TOML</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">extra_css</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="s2">&quot;stylesheets/extra.css&quot;</span><span class="p">,</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="s2">&quot;https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css&quot;</span><span class="p">,</span><span class="w">  </span><span class="c1"># 霞鹜文楷</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">]</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">extra_css</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;stylesheets/extra.css&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css&quot;</span><span class="p">,</span><span class="w">  </span><span class="c1"># 霞鹜文楷</span>
+<span class="p">]</span>
+</code></pre></div>
 <h3 id="_5">第二步：配置字体样式<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>在 <code>docs/stylesheets/extra.css</code> 中添加：</p>
-<div class="language-css highlight"><span class="filename">CSS</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">@</span><span class="k">import</span><span class="w"> </span><span class="nt">url</span><span class="o">(</span><span class="s1">&#39;https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css&#39;</span><span class="o">)</span><span class="p">;</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LXGW WenKai&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">apple-system</span><span class="p">,</span><span class="w"> </span><span class="n">BlinkMacSystemFont</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Segoe UI&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Roboto</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="kc">normal</span><span class="p">;</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">}</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c">/* 返回顶部按钮字体 */</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="nt">button</span><span class="p">.</span><span class="nc">md-top</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LXGW WenKai&quot;</span><span class="p">;</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="kt">px</span><span class="p">;</span>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="kc">bold</span><span class="p">;</span>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="p">}</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">import</span><span class="w"> </span><span class="nt">url</span><span class="o">(</span><span class="s1">&#39;https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css&#39;</span><span class="o">)</span><span class="p">;</span>
+
+<span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LXGW WenKai&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">apple-system</span><span class="p">,</span><span class="w"> </span><span class="n">BlinkMacSystemFont</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Segoe UI&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Roboto</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="kc">normal</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* 返回顶部按钮字体 */</span>
+<span class="nt">button</span><span class="p">.</span><span class="nc">md-top</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LXGW WenKai&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="kc">bold</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="_6">第三步：使用其他字体源<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>你也可以使用其他字体 CDN：</p>
-<div class="language-css highlight"><span class="filename">CSS</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c">/* 使用 zeoseven 字体服务 */</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p">@</span><span class="k">import</span><span class="w"> </span><span class="nt">url</span><span class="o">(</span><span class="s1">&#39;https://fontsapi.zeoseven.com/292/main/result.css&#39;</span><span class="o">)</span><span class="p">;</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LXGW WenKai&quot;</span><span class="p">;</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">}</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c">/* 使用 zeoseven 字体服务 */</span>
+<span class="p">@</span><span class="k">import</span><span class="w"> </span><span class="nt">url</span><span class="o">(</span><span class="s1">&#39;https://fontsapi.zeoseven.com/292/main/result.css&#39;</span><span class="o">)</span><span class="p">;</span>
+
+<span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LXGW WenKai&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="_7">其他推荐字体<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <h3 id="1">1. 霞鹜文楷屏幕版<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
 <p>适合屏幕阅读，字重更粗：</p>
-<div class="language-css highlight"><span class="filename">CSS</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">@</span><span class="k">import</span><span class="w"> </span><span class="nt">url</span><span class="o">(</span><span class="s1">&#39;https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css&#39;</span><span class="o">)</span><span class="p">;</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LXGW WenKai Screen&quot;</span><span class="p">;</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">}</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">import</span><span class="w"> </span><span class="nt">url</span><span class="o">(</span><span class="s1">&#39;https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css&#39;</span><span class="o">)</span><span class="p">;</span>
+
+<span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LXGW WenKai Screen&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="2">2. 霞鹜文楷轻便版<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
 <p>体积更小，适合嵌入：</p>
-<div class="language-css highlight"><span class="filename">CSS</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">@</span><span class="k">import</span><span class="w"> </span><span class="nt">url</span><span class="o">(</span><span class="s1">&#39;https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css&#39;</span><span class="o">)</span><span class="p">;</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LXGW WenKai Lite&quot;</span><span class="p">;</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">}</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">import</span><span class="w"> </span><span class="nt">url</span><span class="o">(</span><span class="s1">&#39;https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css&#39;</span><span class="o">)</span><span class="p">;</span>
+
+<span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LXGW WenKai Lite&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="3">3. 汇文明朝体<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
-<div class="language-css highlight"><span class="filename">CSS</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">@</span><span class="k">import</span><span class="w"> </span><span class="nt">url</span><span class="o">(</span><span class="s1">&#39;https://chinese-fonts-cdn.deno.dev/packages/hwmct/dist/%E6%B1%87%E6%96%87%E6%98%8E%E6%9C%9D%E4%BD%93/result.css&#39;</span><span class="o">)</span><span class="p">;</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Huiwen-mincho&quot;</span><span class="p">;</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="p">}</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">import</span><span class="w"> </span><span class="nt">url</span><span class="o">(</span><span class="s1">&#39;https://chinese-fonts-cdn.deno.dev/packages/hwmct/dist/%E6%B1%87%E6%96%87%E6%98%8E%E6%9C%9D%E4%BD%93/result.css&#39;</span><span class="o">)</span><span class="p">;</span>
+
+<span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Huiwen-mincho&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="_8">字体配置选项<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <h3 id="zensicaltoml">在 zensical.toml 中配置<a class="headerlink" href="#zensicaltoml" title="Permanent link">&para;</a></h3>
-<div class="language-toml highlight"><span class="filename">TOML</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">[project.theme.font]</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;LXGW WenKai&quot;</span><span class="w">  </span><span class="c1"># 文本字体</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Roboto Mono&quot;</span><span class="w">  </span><span class="c1"># 代码字体</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">[project.theme.font]</span>
+<span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;LXGW WenKai&quot;</span><span class="w">  </span><span class="c1"># 文本字体</span>
+<span class="n">code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Roboto Mono&quot;</span><span class="w">  </span><span class="c1"># 代码字体</span>
+</code></pre></div>
 <h3 id="css_1">使用 CSS 变量<a class="headerlink" href="#css_1" title="Permanent link">&para;</a></h3>
-<div class="language-css highlight"><span class="filename">CSS</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">:</span><span class="nd">root</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="nv">--md-text-font</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LXGW WenKai&quot;</span><span class="p">;</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="nv">--md-code-font</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Roboto Mono&quot;</span><span class="p">;</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="p">}</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="p">:</span><span class="nd">root</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nv">--md-text-font</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LXGW WenKai&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--md-code-font</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Roboto Mono&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="_9">完整配置示例<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <h3 id="zensicaltoml_1">zensical.toml<a class="headerlink" href="#zensicaltoml_1" title="Permanent link">&para;</a></h3>
-<div class="language-toml highlight"><span class="filename">TOML</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">[project.theme]</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">custom_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;docs/overrides&quot;</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="n">extra_css</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="s2">&quot;stylesheets/extra.css&quot;</span><span class="p">,</span>
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">    </span><span class="s2">&quot;https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css&quot;</span><span class="p">,</span>
-</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="p">]</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">[project.theme]</span>
+<span class="n">custom_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;docs/overrides&quot;</span>
+
+<span class="n">extra_css</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;stylesheets/extra.css&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+</code></pre></div>
 <h3 id="stylesheetsextracss">stylesheets/extra.css<a class="headerlink" href="#stylesheetsextracss" title="Permanent link">&para;</a></h3>
-<div class="language-css highlight"><span class="filename">CSS</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">@</span><span class="k">import</span><span class="w"> </span><span class="nt">url</span><span class="o">(</span><span class="s1">&#39;https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css&#39;</span><span class="o">)</span><span class="p">;</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LXGW WenKai&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">apple-system</span><span class="p">,</span><span class="w"> </span><span class="n">BlinkMacSystemFont</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Segoe UI&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Roboto</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span>
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="kc">normal</span><span class="p">;</span>
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="p">}</span>
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="c">/* 代码块字体保持不变 */</span>
-</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="nt">code</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Roboto Mono&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Consolas&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">monospace</span><span class="p">;</span>
-</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="p">}</span>
-</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
-</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="c">/* 返回顶部按钮 */</span>
-</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="nt">button</span><span class="p">.</span><span class="nc">md-top</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LXGW WenKai&quot;</span><span class="p">;</span>
-</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="kt">px</span><span class="p">;</span>
-</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="w">    </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="kc">bold</span><span class="p">;</span>
-</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="p">}</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">import</span><span class="w"> </span><span class="nt">url</span><span class="o">(</span><span class="s1">&#39;https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css&#39;</span><span class="o">)</span><span class="p">;</span>
+
+<span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LXGW WenKai&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">apple-system</span><span class="p">,</span><span class="w"> </span><span class="n">BlinkMacSystemFont</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Segoe UI&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Roboto</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="kc">normal</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* 代码块字体保持不变 */</span>
+<span class="nt">code</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Roboto Mono&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Consolas&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">monospace</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* 返回顶部按钮 */</span>
+<span class="nt">button</span><span class="p">.</span><span class="nc">md-top</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LXGW WenKai&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="kc">bold</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="_10">注意事项<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>字体加载</strong>：使用 CDN 字体时，注意加载速度</li>
@@ -1910,10 +1953,10 @@
 <h3 id="_15">代码块字体异常<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
 <p><strong>问题</strong>：代码块也使用了中文字体</p>
 <p><strong>解决方案</strong>：
-<div class="language-css highlight"><span class="filename">CSS</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">code</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Roboto Mono&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Consolas&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">monospace</span><span class="w"> </span><span class="cp">!important</span><span class="p">;</span>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="p">}</span>
-</span></code></pre></div></p>
+<div class="highlight"><pre><span></span><code><span class="nt">code</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Roboto Mono&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Consolas&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">monospace</span><span class="w"> </span><span class="cp">!important</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></p>
 <hr />
 <p><strong>提示</strong>：选择合适的字体可以大大提升网站的阅读体验！</p>
 
@@ -1929,6 +1972,35 @@
   
 
 
+<!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine feedback configuration -->
+
+
+<!-- Determine whether to show feedback -->
+
+
+<!-- Was this page helpful? -->
 
 
 
@@ -1949,14 +2021,49 @@
         
       </main>
       
-        <footer class="md-footer">
+        <!--
+  Copyright (c) 2016-2025 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Footer -->
+<footer class="md-footer">
+
+  <!-- Link to previous and/or next page -->
   
     
       
-      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+      <nav
+        class="md-footer__inner md-grid"
+        aria-label="页脚"
+        
+      >
+
+        <!-- Link to previous page -->
         
           
-          <a href="../custom-404/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 自定义 404 页面">
+          <a
+            href="../custom-404/"
+            class="md-footer__link md-footer__link--prev"
+            aria-label="上一页: 自定义 404 页面"
+          >
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
@@ -1971,9 +2078,15 @@
             </div>
           </a>
         
+
+        <!-- Link to next page -->
         
           
-          <a href="../comment-system/" class="md-footer__link md-footer__link--next" aria-label="下一页: 添加评论系统">
+          <a
+            href="../comment-system/"
+            class="md-footer__link md-footer__link--next"
+            aria-label="下一页: 添加评论系统"
+          >
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
@@ -1991,6 +2104,8 @@
       </nav>
     
   
+
+  <!-- Further information -->
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -2006,6 +2121,24 @@
     </a>
   
 </div>
+
+      <!-- Site Visits 访客统计 -->
+      <style>
+      .site-visit-count {
+        padding: 0 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.85rem;
+        color: var(--md-footer-fg-color--light);
+      }
+      </style>
+      <script async src="//finicounter.eu.org/finicounter.js"></script>
+      <div class="site-visit-count">
+        <span>本站访问量：</span><span id="finicount_views"></span>
+      </div>
+
+      <!-- Social links -->
       
         
 <div class="md-social">
@@ -2050,10 +2183,10 @@
       
       
       
-      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["announce.dismiss","navigation.prune","navigation.tracking","navigation.tabs","navigation.sections","navigation.top","navigation.footer","navigation.expand","navigation.indexes","navigation.instant","navigation.instant.prefetch","search.suggest","search.highlight","search.share","toc.follow","content.tooltips","content.code.copy","content.code.select","content.code.annotate"],"search":"../../../assets/javascripts/workers/search.5e1f2129.min.js","tags":null,"translations":{"clipboard.copied":"已复制","clipboard.copy":"复制","search.result.more.one":"在该页上还有 1 个符合条件的结果","search.result.more.other":"在该页上还有 # 个符合条件的结果","search.result.none":"没有找到符合条件的结果","search.result.one":"找到 1 个符合条件的结果","search.result.other":"# 个符合条件的结果","search.result.placeholder":"键入以开始搜索","search.result.term.missing":"缺少","select.version":"选择当前版本"},"version":null}</script>
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["announce.dismiss","navigation.prune","navigation.tracking","navigation.tabs","navigation.sections","navigation.top","navigation.footer","navigation.expand","navigation.indexes","navigation.instant","navigation.instant.prefetch","search.suggest","search.highlight","search.share","toc.follow","content.tooltips","content.code.copy","content.code.select","content.code.annotate"],"search":"../../../assets/javascripts/workers/search.5df7522c.min.js","tags":null,"translations":{"clipboard.copied":"已复制","clipboard.copy":"复制","search.result.more.one":"在该页上还有 1 个符合条件的结果","search.result.more.other":"在该页上还有 # 个符合条件的结果","search.result.none":"没有找到符合条件的结果","search.result.one":"找到 1 个符合条件的结果","search.result.other":"# 个符合条件的结果","search.result.placeholder":"键入以开始搜索","search.result.term.missing":"缺少","select.version":"选择当前版本"},"version":null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.6b62de02.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.21aa498e.min.js"></script>
       
         <script src="../../../javascripts/extra.js"></script>
       
