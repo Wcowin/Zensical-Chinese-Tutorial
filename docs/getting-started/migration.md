@@ -398,7 +398,8 @@ admonition = {}
 
 #### PyMdown 扩展
 
-**MkDocs:**
+**MkDocs:**  
+
 ```yaml
 markdown_extensions:
   - pymdownx.superfences:
@@ -408,7 +409,8 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
 ```
 
-**Zensical:**
+**Zensical:**  
+
 ```toml
 [project.markdown_extensions."pymdownx.superfences"]
 custom_fences = [
@@ -645,7 +647,14 @@ nav = [
 
 **恭喜！你已经成功迁移到 Zensical！** 🎉
 
----
+---  
+
+## 不想迁移
+
+如果不想迁移，请看这个项目：[mkdocs-materialx](https://github.com/jaywhj/mkdocs-materialx)，material for mkdocs虽然不更了，但是博主的朋友[jaywhj](https://github.com/jaywhj)在延续mkdocs的灵魂，materialX将作为独立项目延续mkdocs风格！
+
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/055bc9ab97b94b2c8327d60eaed57b47.png)
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/83234bae31734226aa3ecccdb435ef1f.png)
 
 **需要帮助？**  
 

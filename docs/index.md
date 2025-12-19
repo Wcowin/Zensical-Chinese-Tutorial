@@ -284,7 +284,7 @@ Zensical-Chinese-Tutorial/
 <!-- Umami Analytics -->
 <script defer src="https://cloud.umami.is/script.js" data-website-id="061b4dea-9b7b-4ffa-9071-74cde70f3dfb"></script>
 
-<style>
+<!-- <style>
 body::before {
   --size: 35px;
   --line: color-mix(in hsl, canvasText, transparent 80%);
@@ -302,11 +302,11 @@ body::before {
       var(--size) var(--size);
   -webkit-mask: linear-gradient(-20deg, transparent 50%, white);
           mask: linear-gradient(-20deg, transparent 50%, white);
-  top: 0;
+  top: 80px;
   transform-style: flat;
   pointer-events: none;
   z-index: -1;
-}
+} -->
 
 @media (max-width: 768px) {
   body::before {
