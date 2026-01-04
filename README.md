@@ -1,4 +1,4 @@
-# Zensical-Wcowin 中文教程
+# Zensical-Chinese-Tutorial 中文教程
 
 > 🚀 **MkDocs 已停止更新，Zensical 是官方推荐的新一代静态网站生成器**
 
@@ -10,7 +10,7 @@
 - **𝕙𝕒𝕧𝕖 𝕒 𝕘𝕠𝕠𝕕 𝕥𝕚𝕞𝕖 !**
 
 ## 目录
-- [Zensical-Wcowin 中文教程](#zensical-wcowin-中文教程)
+- [Zensical-Chinese-Tutorial 中文教程](#zensical-chinese-tutorial-中文教程)
   - [目录](#目录)
   - [为什么选择 Zensical](#为什么选择-zensical)
   - [快速开始](#快速开始)
@@ -72,7 +72,7 @@
 
 1. **下载模板**
    - 访问 [Releases页面](https://github.com/Wcowin/Zensical-Chinese-Tutorial/releases)
-   - 下载最新版本的 `Zensical-Wcowin.zip`
+   - 下载最新版本的 `Zensical-Chinese-Tutorial.zip`
    - 解压到你想要的目录
    - 比如你在本地新建了一个 `myblog` 文件夹，就把所有文件移动到该目录
 
@@ -112,7 +112,7 @@
    git clone https://github.com/Wcowin/Zensical-Chinese-Tutorial.git
    
    # 进入项目目录
-   cd Zensical-Wcowin
+   cd Zensical-Chinese-Tutorial
    ```
 
 2. **创建虚拟环境并安装依赖**
@@ -139,7 +139,7 @@
 最适合想要部署到GitHub Pages的用户：
 
 1. **使用模板创建仓库**
-   - 点击 [使用此模板](https://github.com/new?template_name=Zensical-Wcowin&template_owner=Wcowin)
+   - 点击 [使用此模板](https://github.com/new?template_name=Zensical-Chinese-Tutorial&template_owner=Wcowin)
    - 创建你自己的仓库（建议命名为 `你的用户名.github.io`）
 
 2. **克隆到本地**

@@ -13,6 +13,9 @@ categories:
 
 > 本教程将详细讲解如何在 Zensical 中创建和管理博客
 
+!!! warning "功能状态提示"
+    博客系统是 Zensical Feature Parity 的一部分，目前正在积极开发中。以下配置基于当前版本，具体配置可能随版本更新有所变化，请以 [官方文档](https://zensical.org/docs/) 为准。
+
 ## 概述
 
 Zensical 的博客系统是一个强大的内置功能，无需额外插件即可开箱即用。它支持：

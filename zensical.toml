@@ -1,5 +1,5 @@
 # ==========================================
-# Zensical-Wcowin 配置文件
+# Zensical-Chinese-Tutorial 配置文件
 # 最好的 Zensical 中文教程
 # ==========================================
 #
@@ -268,7 +268,7 @@ feed_ttl = 1440                                                                 
 length = 20                                                                       # 最新文章数量
 pretty_print = true                                                               # 格式化输出
 feed_description = "Zensical 中文教程 - 最详细、最便捷、最前沿的 Zensical 中文教程"  # RSS 描述
-feed_title = "Zensical-Wcowin RSS Feed"                                           # RSS 标题
+feed_title = "Zensical-Chinese-Tutorial RSS Feed"                                           # RSS 标题
 
 [project.plugins.rss.date_from_meta]
 as_creation = "date"           # 创建日期来源

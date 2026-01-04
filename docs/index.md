@@ -53,6 +53,9 @@ comments: false
 
 > 不同于市面上过时的 [MkDocs 教程](https://wcowin.work/Mkdocs-Wcowin/)，本站提供了 **最详细、最便捷、最前沿** 的 Zensical 中文教程，与 [官方发布](https://zensical.org/about/roadmap/) 的版本同步。包含了 Zensical 的安装、配置、主题美化、博客系统等内容。无论你是初学者还是有经验的用户，都能在这里找到你需要的帮助。𝓳𝓾𝓼𝓽 𝓮𝓷𝓳𝓸𝔂 𝓲𝓽～
 
+!!! info "Zensical 当前状态 (2025年1月)"
+    Zensical 目前处于 **Alpha 阶段**，核心功能已可用，部分高级功能正在开发中。详见 [FAQ - 功能状态](faq.md#zensical-功能状态)。
+
 ---
 
 <div class="grid cards" markdown>
@@ -231,6 +234,7 @@ Zensical-Chinese-Tutorial/
 ## 🌟 案例展示
 
 - [Wcowin 的博客](https://wcowin.work) - 使用 Zensical 构建
+- [Suffine Hub](https://sufine.top/)  
 - [更多案例](showcase.md) - 查看更多精彩案例
 
 ## 🤝 参与贡献
@@ -246,14 +250,13 @@ Zensical-Chinese-Tutorial/
 ## 📞 联系方式
 
 - **GitHub**: [Wcowin/Zensical-Chinese-Tutorial](https://github.com/Wcowin/Zensical-Chinese-Tutorial)
-- **Email**: wcowin@qq.com
+- **Email**: [wcowin@qq.com](mailto:wcowin@qq.com)
 - **微信**: 扫描下方二维码
 
 
 <center>
 
 <p>微信</p>  
-
 <a href="https://pic3.zhimg.com/80/v2-5ef3dde831c9d0a41fe35fabb0cb8784_1440w.webp" target="_blank">
 <img src="https://pic3.zhimg.com/80/v2-5ef3dde831c9d0a41fe35fabb0cb8784_1440w.webp" style="width: 450px; height: auto;">
 </a>

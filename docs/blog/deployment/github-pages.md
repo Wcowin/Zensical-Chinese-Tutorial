@@ -172,7 +172,8 @@ git push origin main
    - 格式：`https://你的用户名.github.io/仓库名/`
    - 如果是 `用户名.github.io` 仓库，URL 是：`https://你的用户名.github.io/`
 
-**示例：**
+**示例：**  
+
 - 仓库名：`my-blog`，用户名：`zhangsan`
 - 网站 URL：`https://zhangsan.github.io/my-blog/`
 - 如果是 `zhangsan.github.io` 仓库，URL：`https://zhangsan.github.io/`

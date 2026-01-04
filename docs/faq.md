@@ -2,6 +2,28 @@
 
 > 解决 Zensical 使用中的常见问题
 
+## Zensical 功能状态
+
+!!! info "当前版本状态"
+    Zensical 目前处于 **Alpha 阶段**，正在快速迭代中。以下是功能状态概览：
+    
+    | 功能 | 状态 | 说明 |
+    |------|------|------|
+    | 核心构建 | ✅ 可用 | Rust 运行时，高性能构建 |
+    | 主题系统 | ✅ 可用 | Modern/Classic 双主题 |
+    | Markdown 扩展 | ✅ 可用 | 完整的 Python Markdown 支持 |
+    | 即时导航 | ✅ 可用 | 无刷新页面切换 |
+    | 搜索功能 | ✅ 可用 | 内置搜索（Disco 引擎开发中） |
+    | 博客系统 | ⚠️ 开发中 | Feature Parity 阶段 |
+    | 标签系统 | ⚠️ 开发中 | Feature Parity 阶段 |
+    | RSS 订阅 | ⚠️ 开发中 | Feature Parity 阶段 |
+    | 多语言 (i18n) | 🔜 规划中 | Roadmap 功能 |
+    | 版本管理 | 🔜 规划中 | Roadmap 功能 |
+    | 模块系统 | 🔜 规划中 | 替代传统插件 |
+    | 组件系统 | 🔜 规划中 | 替代模板系统 |
+    
+    详细信息请查看 [Zensical Roadmap](https://zensical.org/about/roadmap/)。
+
 ## 安装相关
 
 ### 如何安装 Zensical？
@@ -102,6 +124,9 @@ features = [
     ```
 
 ### 如何添加博客功能？
+
+!!! warning "功能状态"
+    博客功能目前在 Feature Parity 阶段开发中，配置方式可能会有变化。
 
 Zensical 内置博客插件，只需配置即可：
 
@@ -217,7 +242,7 @@ Zensical 正在开发模块系统来替代 hooks。
 
 - **官方文档**：[https://zensical.org/docs/](https://zensical.org/docs/)
 - **本教程**：[Zensical 中文教程](https://wcowin.work/Zensical-Chinese-Tutorial/)
-- **社区支持**：[Zensical-Wcowin 社区](https://support.qq.com/products/646913/)
+- **社区支持**：[Zensical-Chinese-Tutorial 社区](https://support.qq.com/products/646913/)
 - **GitHub Issues**：[提交问题](https://github.com/Wcowin/Zensical-Chinese-Tutorial/issues)
 
 ### 如何贡献到本教程？

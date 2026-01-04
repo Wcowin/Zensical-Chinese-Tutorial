@@ -17,6 +17,7 @@ categories:
 以下是一些使用 Zensical 构建的优秀网站案例：
 
 - [Wcowin 的博客](https://wcowin.work) —— 作者的个人博客，使用 Zensical 构建
+- [Suffine Hub](https://sufine.top/)  
 - [Zensical 官方文档](https://zensical.org/docs/) —— Zensical 官方文档网站
 - 更多案例敬请期待……
 
@@ -24,7 +25,7 @@ categories:
     如果你使用 Zensical 构建了网站，欢迎通过以下方式提交：
     
     - 在 GitHub 上创建 [Issue](https://github.com/Wcowin/Zensical-Chinese-Tutorial/issues)
-    - 发送邮件至 wcowin@qq.com
+    - 发送邮件至 [wcowin@qq.com](mailto:wcowin@qq.com)
     - 通过 Telegram 联系 [@Wcowin](https://t.me/Wcowin)
 
 ## 案例特点

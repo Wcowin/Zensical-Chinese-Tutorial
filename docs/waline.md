@@ -69,14 +69,29 @@ hide_comment: true
 </body> -->
 
 
-<div id="cusdis_thread"
+<!-- <div id="cusdis_thread"
   data-host="https://cusdis.com"
   data-app-id="655cf3bc-734a-4d88-8317-be350621334c"
   data-page-id="{{ PAGE_ID }}"
   data-page-url="{{ PAGE_URL }}"
   data-page-title="{{ PAGE_TITLE }}"
 ></div>
-<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+<script async defer src="https://cusdis.com/js/cusdis.es.js"></script> -->
 
 
 
+<script src="https://giscus.app/client.js"
+        data-repo="Wcowin/Zensical-Chinese-Tutorial"
+        data-repo-id="R_kgDOQavQgA"
+        data-category="General"
+        data-category-id="DIC_kwDOQavQgM4C0jUE"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
