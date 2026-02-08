@@ -18,6 +18,7 @@ categories:
 
 - [Wcowin 的博客](https://wcowin.work) —— 作者的个人博客，使用 Zensical 构建
 - [Suffine Hub](https://sufine.top/)  
+- [Beyond欣 's Notes](https://notes.beyondxin.top/index.html)  
 - [Zensical 官方文档](https://zensical.org/docs/) —— Zensical 官方文档网站
 - 更多案例敬请期待……
 

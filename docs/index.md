@@ -235,6 +235,7 @@ Zensical-Chinese-Tutorial/
 
 - [Wcowin 的博客](https://wcowin.work) - 使用 Zensical 构建
 - [Suffine Hub](https://sufine.top/)  
+- [Beyond欣 's Notes](https://notes.beyondxin.top/index.html)  
 - [更多案例](showcase.md) - 查看更多精彩案例
 
 ## 🤝 参与贡献
