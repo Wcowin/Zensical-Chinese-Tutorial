@@ -55,6 +55,7 @@ nav = [
         { "zensical.toml 配置详解" = "tutorials/configuration.md" },
         { "主题定制指南" = "tutorials/theme-customization.md" },
         { "Markdown 扩展使用" = "tutorials/markdown-extensions.md" },
+        { "使用 Markdown 高效写作" = "tutorials/zensical-markdown-tip.md" },
         { "Zensical 博客系统完全指南" = "tutorials/blog-tutorial.md" },
     ] },
     { "插件系统" = [
@@ -66,6 +67,7 @@ nav = [
     { "部署指南" = [
         { "GitHub Pages 部署（推荐）" = "blog/deployment/github-pages.md" },
         { "Netlify 部署" = "blog/deployment/netlify.md" },
+        { "EdgeOne Pages 部署" = "blog/deployment/edgeone-pages.md" },
         { "GitLab Pages 部署" = "blog/deployment/gitlab-pages.md" },
         { "自托管部署" = "blog/deployment/self-hosted.md" },
     ] },

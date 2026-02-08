@@ -196,6 +196,10 @@ GitHub Pages 会自动识别 `404.html` 文件。
 
 GitLab Pages 会自动识别 `404.html` 文件。
 
+### EdgeOne Pages
+
+EdgeOne Pages 会自动识别 `404.html` 文件。
+
 ### Nginx
 
 在 Nginx 配置中添加：
