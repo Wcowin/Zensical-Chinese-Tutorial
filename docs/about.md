@@ -17,9 +17,10 @@ Zensical-Chinese-Tutorial 是最详细、最便捷、最前沿的 Zensical 中�
 - Email: [wcowin@qq.com](mailto:wcowin@qq.com)
 - Telegram: [@Wcowin](https://t.me/Wcowin)
 
-**luwei**
+**Luwei**
 
-- GitHub: [@luwei](https://github.com/weigo6)
+- GitHub: [@Luwei](https://github.com/weigo6)
+- Email: [yang92636@qq.com](mailto:yang92636@qq.com)
 
 
 ## 贡献

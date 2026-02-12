@@ -175,6 +175,56 @@ docs/
 
 如果你不创建自定义 404 页面，Zensical 会使用默认的 404 页面。
 
+当然，你也可以选择在 Zensical 默认提供的 404 页面上进行修改。在 Zensiacl 默认提供的 404 页面上进行修改的方式属于本文[方法一：使用模板覆盖](#_2)的一种应用场景。
+
+首先在 zensical.toml 中启用模板覆盖：
+
+```
+[project.theme]
+custom_dir = "docs/overrides"
+```
+
+然后在 `docs/overrides/` 目录下创建 `404.html` 文件：
+
+```
+docs/
+└── overrides/
+    └── 404.html
+```
+
+zensical 官方提供的404 页面模板内容如下，请将其复制到 `404.html` 文件中。
+
+```html
+<!--
+  Copyright (c) 2025 Zensical and contributors
+
+  SPDX-License-Identifier: MIT
+  Third-party contributions licensed under DCO
+-->
+
+{% extends "main.html" %}
+
+<!-- Content -->
+{% block content %}
+  <h1>404 - Not found</h1>
+{% endblock %}
+```
+
+你可以在 `{% block content %}` 内部编写 `html` 代码来实现页面自定义，例如：
+
+```html
+{% extends "main.html" %}
+
+<!-- Content -->
+{% block content %}
+  <h1>404 - Not found</h1>
+  <p>页面似乎走丢了，这里是自定义内容。</p>
+  <p>在 content 内容块内进行模版覆盖。</p>
+{% endblock %}
+```
+
+使用官方默认模板进行模板覆盖的好处是能够在 404 页面中保留站点原生的页眉、顶部导航栏与页脚。
+
 ## 部署配置
 
 ### Netlify
