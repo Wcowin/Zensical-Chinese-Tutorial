@@ -56,11 +56,13 @@ Netlify 是部署 Zensical 网站的最佳选择：
 | **Publish directory** | `site` |
 
 !!! tip "Python 版本"
-    Netlify 默认使用 Python 3.8。如果需要指定版本，在项目根目录创建 `runtime.txt`：
+    Zensical 需要 Python 3.10+。Netlify 默认可能并非 3.10，建议在项目根目录创建 `runtime.txt` 指定版本：
     
     ```
     3.11
     ```
+    
+    或 `3.10`，以符合 [PyPI 要求](https://pypi.org/project/zensical/)。
 
 ### 第三步：添加构建配置文件
 

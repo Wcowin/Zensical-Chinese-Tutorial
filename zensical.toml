@@ -49,6 +49,7 @@ nav = [
     { "主页" = "index.md" },
     { "快速开始" = [
         { "5 分钟快速开始" = "getting-started/quick-start.md" },
+        { "命令行接口 (CLI)" = "getting-started/cli.md" },
         { "从 MkDocs 迁移" = "getting-started/migration.md" },
     ] },
     { "核心教程" = [
@@ -59,6 +60,7 @@ nav = [
         { "Zensical 博客系统完全指南" = "tutorials/blog-tutorial.md" },
     ] },
     { "插件系统" = [
+        { "插件概览" = "blog/plugins/overview.md" },
         { "博客插件详解" = "blog/plugins/blog.md" },
         { "搜索插件配置" = "blog/plugins/search.md" },
         { "标签插件使用" = "blog/plugins/tags.md" },

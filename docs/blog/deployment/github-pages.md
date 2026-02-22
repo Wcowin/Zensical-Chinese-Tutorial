@@ -72,7 +72,7 @@ jobs:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v5
         with:
-          python-version: 3.x
+          python-version: 3.x   # Zensical 需 Python 3.10+，3.x 在 GitHub 当前 runner 上满足要求
       - run: pip install zensical
       - run: zensical build --clean
       - uses: actions/upload-pages-artifact@v4

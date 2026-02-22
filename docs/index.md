@@ -22,6 +22,19 @@ comments: false
 </style>
 
 
+<style>
+.custom-font {
+    font-size: 31px;
+    color: #757575;
+}
+@media (max-width: 768px) {
+    .custom-font {
+        font-size: 25px;
+    }
+}
+</style>
+
+
 <div class="grid cards" markdown>
 
 -   :material-rocket-launch:{ .lg .middle } __为什么选择 Zensical？__
@@ -34,70 +47,75 @@ comments: false
     - [x] 即时导航，无需刷新页面
     - [x] 博客系统，开箱即用
     - [x] 性能优异，加载迅速
-    - [x] 𝕙𝕒𝕧𝕖 𝕒 𝕘𝕠𝕠𝕕 𝕥𝕚𝕞𝕖 !
     
-    === "Mac/PC端"
-        请在上方标签选择分类/左侧目录选择文章
+    === "Mac/PC 端"
+        请在上方标签选择分类 / 左侧目录选择文章
     
     === "移动端"
         请点击左上角图标选择分类和文章
 
 </div>
 <style>
-    @media only screen and (max-width: 768px) {
-        .responsive-image {
-            display: none;
-        }
-    }
+@media (max-width: 768px) {
+    .responsive-image { display: none; }
+}
 </style>
 
 > 不同于市面上过时的 [MkDocs 教程](https://wcowin.work/Mkdocs-Wcowin/)，本站提供了 **最详细、最便捷、最前沿** 的 Zensical 中文教程，与 [官方发布](https://zensical.org/about/roadmap/) 的版本同步。包含了 Zensical 的安装、配置、主题美化、博客系统等内容。无论你是初学者还是有经验的用户，都能在这里找到你需要的帮助。𝓳𝓾𝓼𝓽 𝓮𝓷𝓳𝓸𝔂 𝓲𝓽～
 
-!!! info "Zensical 当前状态 (2025年1月)"
-    Zensical 目前处于 **Alpha 阶段**，核心功能已可用，部分高级功能正在开发中。详见 [FAQ - 功能状态](faq.md#zensical-功能状态)。
+!!! info "当前状态 (2026年2月)"
+    Zensical 处于 **Alpha**（[PyPI](https://pypi.org/project/zensical/)），核心功能可用，部分能力开发中。详见 [FAQ - 功能状态](faq.md#zensical-功能状态)。
 
 ---
 
+## 导航
+
+按用途选下方卡片，或看 [推荐学习路径](#_2)。
+
 <div class="grid cards" markdown>
 
--   :simple-zenn:{ .lg .middle } __Zensical 快速开始（必看）__
+-   :simple-zenn:{ .lg .middle } __快速开始__
 
     ---
     
     - [5 分钟快速开始](getting-started/quick-start.md)
-    - [Zensical 博客系统完全指南](tutorials/blog-tutorial.md)
+    - [命令行接口 (CLI)](getting-started/cli.md)
+    - [从 MkDocs 迁移](getting-started/migration.md)
     - [zensical.toml 配置详解](tutorials/configuration.md)
-    - [从 MkDocs 迁移到 Zensical](getting-started/migration.md)
     - [常见问题解答](faq.md)
 
--   :material-palette:{ .lg .middle } __主题定制__
+-   :material-book-open:{ .lg .middle } __核心教程__
 
     ---
     
+    - [博客系统完全指南](tutorials/blog-tutorial.md)
     - [主题配置指南](tutorials/theme-customization.md)
-    - [配置详解](tutorials/configuration.md)
+    - [Markdown 扩展](tutorials/markdown-extensions.md)
+    - [Markdown 高效写作](tutorials/zensical-markdown-tip.md)
 
 -   :material-puzzle:{ .lg .middle } __插件系统__
 
     ---
     
-    - [博客插件详解](blog/plugins/blog.md)
-    - [搜索插件配置](blog/plugins/search.md)
-    - [标签插件使用](blog/plugins/tags.md)
-    - [RSS 插件配置](blog/plugins/rss.md)
+    - [插件概览](blog/plugins/overview.md)
+    - [博客](blog/plugins/blog.md)
+    - [搜索](blog/plugins/search.md)
+    - [标签](blog/plugins/tags.md)
+    - [RSS](blog/plugins/rss.md)
 
 -   :material-rocket:{ .lg .middle } __部署指南__
 
     ---
     
-    - [GitHub Pages 部署（推荐）](blog/deployment/github-pages.md)
-    - [Netlify 部署](blog/deployment/netlify.md)
-    - [GitLab Pages 部署](blog/deployment/gitlab-pages.md)
-    - [自托管部署](blog/deployment/self-hosted.md)
+    - [GitHub Pages（推荐）](blog/deployment/github-pages.md)
+    - [Netlify](blog/deployment/netlify.md)
+    - [EdgeOne Pages](blog/deployment/edgeone-pages.md)
+    - [GitLab Pages](blog/deployment/gitlab-pages.md)
+    - [自托管](blog/deployment/self-hosted.md)
 
 </div>
 
-<!-- ## 🆚 Zensical vs MkDocs
+<!-- ## Zensical vs MkDocs (保留备用)
 
 | 特性 | Zensical | MkDocs |
 |------|----------|--------|
@@ -109,150 +127,46 @@ comments: false
 | **配置文件** | TOML | YAML |
 | **中文支持** | ✅ 完整 | ✅ 完整 | -->
 
-## 📚 推荐学习路径
+## 推荐学习路径
 
-### 初学者路线
+- **新手**  
+  [5 分钟快速开始](getting-started/quick-start.md) → [配置详解](tutorials/configuration.md) → [博客指南](tutorials/blog-tutorial.md) → [主题定制](tutorials/theme-customization.md) → [GitHub Pages 部署](blog/deployment/github-pages.md)
+- **从 MkDocs 迁移**  
+  [迁移指南](getting-started/migration.md) → [配置差异](tutorials/configuration.md) → 测试后部署
+- **进阶**  
+  [性能](blog/advanced/performance.md)、[SEO](blog/advanced/seo.md)、[i18n](blog/advanced/i18n.md)、[404/字体/评论](blog/advanced/custom-404.md) 等见左侧「高级主题」
 
-1. **第一步**：阅读 [5 分钟快速开始](getting-started/quick-start.md)
-2. **第二步**：学习 [zensical.toml 配置详解](tutorials/configuration.md)
-3. **第三步**：掌握 [博客系统完全指南](tutorials/blog-tutorial.md)
-4. **第四步**：尝试 [主题定制](tutorials/theme-customization.md)
-5. **第五步**：部署到线上 [GitHub Pages 部署](blog/deployment/github-pages.md)
+## 快速开始
 
-### 从 MkDocs 迁移
-
-1. **第一步**：阅读 [从 MkDocs 迁移到 Zensical](getting-started/migration.md)
-2. **第二步**：了解 [配置文件差异](tutorials/configuration.md)
-3. **第三步**：测试和调整
-4. **第四步**：重新部署
-
-### 高级用户路线
-
-1. **性能优化**：阅读 [性能优化指南](blog/advanced/performance.md)
-2. **SEO 优化**：学习 [SEO 优化](blog/advanced/seo.md)
-3. **多语言支持**：配置 [多语言支持](blog/advanced/i18n.md)
-4. **自定义 404 页面**：学习 [自定义 404 页面](blog/advanced/custom-404.md)
-5. **自定义字体**：配置 [自定义字体](blog/advanced/custom-fonts.md)
-6. **添加评论系统**：配置 [评论系统](blog/advanced/comment-system.md)
-7. **扩展开发**：等待 Zensical 模块系统发布
-
-## 🎯 核心特性
-
-### 即时导航
-
-Zensical 的即时导航功能让你的网站像单页应用一样流畅：
-
-```toml
-[project.theme]
-features = [
-    "navigation.instant",      # 即时导航
-    "navigation.instant.prefetch",  # 预加载
-]
-```
-
-!!! warning "重要"
-    即时导航需要设置 `site_url` 才能正常工作：
-    
-    ```toml
-    [project]
-    site_url = "https://example.com"
-    ```
-
-### 博客系统
-
-很快到来
-
-### Modern 主题
-
-全新的 Modern 主题变体，更现代、更美观：
-
-```toml
-[project.theme]
-variant = "modern"  # 或 "classic"
-```
-
-## 🚀 快速开始
+在项目目录下执行（需 [Python 3.10+](https://pypi.org/project/zensical/)）：
 
 ```bash
-# 创建虚拟环境
 python3 -m venv .venv
-source .venv/bin/activate  # macOS/Linux
-# 或 .venv\Scripts\activate  # Windows
-
-# 安装 Zensical
+source .venv/bin/activate   # Windows: .venv\Scripts\activate
 pip install zensical
-
-# 创建新项目
 zensical new .
-
-# 启动开发服务器
 zensical serve
 ```
 
-打开浏览器访问 [http://localhost:8000](http://localhost:8000)
+浏览器打开 [http://localhost:8000](http://localhost:8000) 即可预览。完整步骤见 [5 分钟快速开始](getting-started/quick-start.md)。
 
-详细步骤请阅读 [5 分钟快速开始](getting-started/quick-start.md)
+常用命令：`zensical serve` 预览，`zensical build --clean` 清理构建。  
+更多见 [官方文档](https://zensical.org/docs/)。Zensical 不支持 MkDocs hooks，可用模板覆盖或 JavaScript 替代。
 
-## 📖 文档结构
+## 案例
 
-```
-Zensical-Chinese-Tutorial/
-├── docs/
-│   ├── index.md                    # 本页面
-│   ├── about.md                    # 关于页面
-│   ├── faq.md                      # 常见问题
-│   ├── showcase.md                  # 案例展示
-│   ├── getting-started/            # 快速开始
-│   │   ├── quick-start.md          # 5 分钟快速开始
-│   │   └── migration.md            # 从 MkDocs 迁移
-│   ├── tutorials/                   # 核心教程
-│   │   ├── blog-tutorial.md        # 博客系统完全指南
-│   │   ├── configuration.md        # 配置详解
-│   │   ├── theme-customization.md  # 主题定制
-│   │   └── markdown-extensions.md  # Markdown 扩展
-│   ├── blog/                       # 博客相关
-│   │   ├── plugins/                # 插件文档
-│   │   ├── deployment/             # 部署指南
-│   │   └── advanced/              # 高级主题
-├── zensical.toml                   # 配置文件
-└── README.md                       # 项目说明
-```
+- [Wcowin 的博客](https://wcowin.work)
+- [Suffine Hub](https://sufine.top/)
+- [Beyond欣's Notes](https://notes.beyondxin.top/index.html)
+- [更多案例](showcase.md)
 
-## 💡 实用技巧
+## 贡献与联系
 
-!!! tip "提示"
-    - 使用 `zensical serve` 实时预览
-    - 使用 `zensical build --clean` 清理构建
-    - 查看 [官方文档](https://zensical.org/docs/) 获取最新信息
+欢迎 Fork 后提 PR。
 
-!!! warning "注意"
-    Zensical 不支持 MkDocs hooks，请使用模板覆盖或 JavaScript 替代
-
-!!! info "信息"
-    本教程持续更新，与 Zensical 官方版本同步
-
-## 🌟 案例展示
-
-- [Wcowin 的博客](https://wcowin.work) - 使用 Zensical 构建
-- [Suffine Hub](https://sufine.top/)  
-- [Beyond欣 's Notes](https://notes.beyondxin.top/index.html)  
-- [更多案例](showcase.md) - 查看更多精彩案例
-
-## 🤝 参与贡献
-
-欢迎参与 Zensical-Chinese-Tutorial 的完善：
-
-1. Fork 本仓库
-2. 创建你的特性分支
-3. 提交你的修改
-4. 推送到分支
-5. 创建 Pull Request
-
-## 📞 联系方式
-
-- **GitHub**: [Wcowin/Zensical-Chinese-Tutorial](https://github.com/Wcowin/Zensical-Chinese-Tutorial)
-- **Email**: [wcowin@qq.com](mailto:wcowin@qq.com)
-- **微信**: 扫描下方二维码
+- **GitHub**：[Wcowin/Zensical-Chinese-Tutorial](https://github.com/Wcowin/Zensical-Chinese-Tutorial)
+- **Email**：[wcowin@qq.com](mailto:wcowin@qq.com)
+- 微信与 Telegram 见下方
 
 
 <center>
@@ -271,11 +185,6 @@ Zensical-Chinese-Tutorial/
 </center>
 
 ---
-
-<center>
-<b>开始你的 Zensical 之旅吧！</b> 🚀
-
-</center>
 
 <!--
   将所有页面级脚本和元数据统一放置在这里

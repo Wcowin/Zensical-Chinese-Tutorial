@@ -63,9 +63,12 @@ zensical --version
 
 ## 迁移步骤
 
-### 第一步：创建 zensical.toml
+### 第一步：创建 zensical.toml（或继续使用 mkdocs.yml）
 
 Zensical 推荐使用 `zensical.toml` 配置文件（虽然也支持 `mkdocs.yml`）。
+
+!!! info "兼容：继续使用 mkdocs.yml"
+    Zensical 原生理解现有 `mkdocs.yml` 并自动适配为内部格式，**无需修改即可构建**。插件会匹配到对应的 Zensical 模块。详见官方 [Compatibility - Configuration](https://zensical.org/compatibility/configuration/)。
 
 #### 自动转换（推荐）
 

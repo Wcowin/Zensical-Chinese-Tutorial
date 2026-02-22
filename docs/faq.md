@@ -24,6 +24,12 @@
     
     详细信息请查看 [Zensical Roadmap](https://zensical.org/about/roadmap/)。
 
+### 与 Material for MkDocs 的完整功能对照表
+
+官方提供与 Material for MkDocs 的 **Feature Parity** 详细列表（核心功能、站点结构、外观、Markdown 扩展、内容、导航、优化、扩展等）。如需逐项对照，请查看：
+
+- **[Compatibility - Feature parity](https://zensical.org/compatibility/features/)**（英文，随版本更新）
+
 ## 安装相关
 
 ### 如何安装 Zensical？
@@ -54,7 +60,7 @@ pip install zensical
 
 ### Zensical 需要什么 Python 版本？
 
-Zensical 需要 Python 3.8 或更高版本。推荐使用 Python 3.9+。
+Zensical 需要 **Python 3.10** 或更高版本（见 [PyPI](https://pypi.org/project/zensical/)）。推荐使用 Python 3.11+。
 
 ## 配置相关
 

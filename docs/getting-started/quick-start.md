@@ -20,7 +20,7 @@ categories:
 
 ### 检查 Python 版本
 
-Zensical 需要 Python 3.8 或更高版本。首先检查你的 Python 版本：
+Zensical 需要 **Python 3.10** 或更高版本（以 [PyPI 当前要求](https://pypi.org/project/zensical/) 为准）。首先检查你的 Python 版本：
 
 ```bash
 python3 --version
@@ -28,10 +28,10 @@ python3 --version
 python --version
 ```
 
-如果版本低于 3.8，请先升级 Python。
+如果版本低于 3.10，请先升级 Python。
 
 !!! tip "推荐版本"
-    推荐使用 Python 3.9 或更高版本，以获得最佳性能和兼容性。
+    推荐使用 Python 3.11 或更高版本，以获得最佳性能和兼容性。
 
 ### 创建项目目录
 
@@ -45,7 +45,7 @@ cd my-zensical-site
 
 ## 第二步：安装 Zensical
 
-Zensical 是用 Rust 和 Python 编写的，以 Python 包的形式发布。**强烈推荐使用 Python 虚拟环境**进行安装，避免依赖冲突。
+Zensical 是用 Rust 和 Python 编写的，以 [Python 包](https://pypi.org/project/zensical) 形式发布。安装方式有三种：**pip**（推荐）、**uv**、**Docker**，与 [官方 Get started](https://zensical.org/docs/get-started/) 一致。使用 pip 或 uv 时**强烈推荐先创建 Python 虚拟环境**，避免依赖冲突。
 
 ### 使用 pip 安装（推荐）
 
@@ -110,6 +110,19 @@ uv add zensical
 # 验证安装
 uv run zensical --version
 ```
+
+!!! tip "uv 作为开发依赖"
+    若仅用于本地构建文档，可安装为开发依赖：`uv add --dev zensical`。
+
+### 使用 Docker 安装
+
+若已熟悉 Docker，可直接使用官方镜像，无需在宿主机安装 Python 或虚拟环境：
+
+- **镜像**：[zensical/zensical](https://hub.docker.com/r/zensical/zensical)（Docker Hub）
+- **用法**：在项目根目录（含 `zensical.toml` 或 `mkdocs.yml`）下运行构建或预览，具体命令见 [Docker Hub 说明](https://hub.docker.com/r/zensical/zensical)。
+
+!!! info "何时用 Docker"
+    适合 CI/CD、无本地 Python 环境或希望环境隔离的场景。日常开发仍推荐 pip/uv + 虚拟环境，便于调试与扩展。
 
 ## 第三步：创建项目
 
