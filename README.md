@@ -1,9 +1,19 @@
-# Zensical 中文教程
+# Zensical 中文教程  
 
-> 🚀 最详细、最便捷、最前沿的 Zensical 中文教程
+<p align="center">最详细、最便捷、最前沿的 Zensical 中文教程</p>
 
-[![Built with Zensical](https://img.shields.io/badge/Built_with-Zensical-4051B5?style=flat-square)](https://zensical.org/)
-[![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](LICENSE)
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/zensical/zensical/master/.github/assets/zensical-dark.png">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/zensical/zensical/master/.github/assets/zensical.png">
+    <img alt="Zensical" src="https://raw.githubusercontent.com/zensical/zensical/master/.github/assets/zensical.png" width="290" height="240">
+  </picture>
+</p>  
+
+<p align="center">
+  <a href="https://zensical.org/"><img src="https://img.shields.io/badge/Built_with-Zensical-4051B5?style=for-the-badge" alt="Built with Zensical" /></a>
+  <a href="https://github.com/Wcowin/Zensical-Chinese-Tutorial/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="MIT License" /></a>
+</p>
 
 **在线阅读**：[https://wcowin.work/Zensical-Chinese-Tutorial/](https://wcowin.work/Zensical-Chinese-Tutorial/)
 
@@ -74,9 +84,13 @@ zensical build --clean
 - **Email**: wcowin@qq.com
 - **Telegram**: [@Wcowin](https://t.me/Wcowin)
 
-## 贡献
+## 贡献  
 
-欢迎提交 Issue 和 Pull Request！
+<a href="https://github.com/Wcowin/Zensical-Chinese-Tutorial/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Wcowin/Zensical-Chinese-Tutorial" />
+</a>
+
+欢迎提交 [Issue](https://github.com/Wcowin/Zensical-Chinese-Tutorial/issues) 和 [Pull Request](https://github.com/Wcowin/Zensical-Chinese-Tutorial/pulls)！
 
 ## License
 
