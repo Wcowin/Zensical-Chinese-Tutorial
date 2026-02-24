@@ -11,7 +11,6 @@ title: 添加 GitHub 仓库卡片
 - 支持 PC 和移动端自适应布局
 - 当 **Fork 数为 0** 或 **没有 License** 时，会自动隐藏对应的指标，避免显示一串「0」
 
-从当前版本开始，主题已经内置了这张卡片的 **CSS 和 JavaScript**，你只需要在文档中插入一小段 HTML 即可，下面的示例会详细说明；再往后的章节则保留了旧版「手写实现」作为原理参考。
 
 <div class="github-repo-card-wrapper">
   <a
