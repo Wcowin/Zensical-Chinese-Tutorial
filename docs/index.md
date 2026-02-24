@@ -43,7 +43,7 @@ comments: false
     
     ![Zensical Logo](https://zensical.org/assets/zensical.svg){ class="responsive-image" align=right width="200" style="border-radius: 15px;" }
     
-    - [x] MkDocs 已停止更新，Zensical 是官方推荐的新一代
+    - [x] [MkDocs for Material](https://squidfunk.github.io/mkdocs-material/blog/2025/11/11/insiders-now-free-for-everyone/) 已停止更新进入维护模式，[Zensical](https://zensical.org/) 是官方推荐的新一代博客系统
     - [x] 即时导航，无需刷新页面
     - [x] 博客系统，开箱即用
     - [x] 性能优异，加载迅速
@@ -61,7 +61,7 @@ comments: false
 }
 </style>
 
-> 不同于市面上过时的 [MkDocs 教程](https://wcowin.work/Mkdocs-Wcowin/)，本站提供了 **最详细、最便捷、最前沿** 的 Zensical 中文教程，与 [官方发布](https://zensical.org/about/roadmap/) 的版本同步。包含了 Zensical 的安装、配置、主题美化、博客系统等内容。无论你是初学者还是有经验的用户，都能在这里找到你需要的帮助。𝓳𝓾𝓼𝓽 𝓮𝓷𝓳𝓸𝔂 𝓲𝓽～
+> 不同于市面上过时的 [MkDocs 教程](https://wcowin.work/Mkdocs-Wcowin/)（其实也是我写的），本站提供了 **最详细、最便捷、最前沿** 的 Zensical 中文教程，与 [官方发布](https://zensical.org/docs/get-started/) 的版本同步。包含了 Zensical 的安装、配置、主题美化、博客系统等内容。无论你是初学者还是有经验的用户，都能在这里找到你需要的帮助。𝓳𝓾𝓼𝓽 𝓮𝓷𝓳𝓸𝔂 𝓲𝓽～
 
 !!! info "当前状态 (2026年2月)"
     Zensical 处于 **Alpha**（[PyPI](https://pypi.org/project/zensical/)），核心功能可用，部分能力开发中。详见 [FAQ - 功能状态](faq.md#zensical-功能状态)。
@@ -93,7 +93,7 @@ comments: false
     - [Markdown 扩展](tutorials/markdown-extensions.md)
     - [Markdown 高效写作](tutorials/zensical-markdown-tip.md)
 
--   :material-puzzle:{ .lg .middle } __插件系统__
+-   :material-puzzle:{ .lg .middle } __插件系统(暂未开发)__
 
     ---
     

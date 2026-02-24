@@ -21,13 +21,18 @@ Zensical 的长期规划与愿景以官方为准，建议关注：
 - **[Vision](https://zensical.org/about/vision/)**：产品愿景与社区协作方式
 - **[Newsletter](https://zensical.org/about/newsletter/)**：月度进展与动态
 
-## 作者
+## 共同作者
 
 **Wcowin**
 
 - GitHub: [@Wcowin](https://github.com/Wcowin)
 - Email: [wcowin@qq.com](mailto:wcowin@qq.com)
 - Telegram: [@Wcowin](https://t.me/Wcowin)
+
+**jaywhj**
+
+- GitHub: [@jaywhj](https://github.com/jaywhj)
+- Email: [junewhj@qq.com](mailto:junewhj@qq.com)
 
 **Luwei**
 
@@ -38,6 +43,10 @@ Zensical 的长期规划与愿景以官方为准，建议关注：
 ## 贡献
 
 欢迎参与项目完善！
+
+<a href="https://github.com/Wcowin/Zensical-Chinese-Tutorial/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Wcowin/Zensical-Chinese-Tutorial" />
+</a>
 
 ## License
 

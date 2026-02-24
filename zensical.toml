@@ -29,7 +29,9 @@ edit_uri = "edit/main/docs"                              # 编辑按钮跳转的
 
 # ===== 额外的 JavaScript 文件 =====
 extra_javascript = [
-    "javascripts/extra.js",                                   # 额外功能脚本
+    "javascripts/extra.js",
+    "javascripts/github-heatmap.js",                        # GitHub 贡献热力图
+    "javascripts/github-repo-card.js", 
     # "javascripts/mathjax.js",                                 # MathJax 配置
     # "https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"       # MathJax CDN
     "https://unpkg.com/katex@0/dist/katex.min.js",            # 1. 先加载 KaTeX 核心库
@@ -41,6 +43,7 @@ extra_javascript = [
 extra_css = [
     "stylesheets/extra.css",          # 额外样式
     "stylesheets/ziti.css",            # 字体样式
+    "stylesheets/github-widgets.css",  # GitHub 贡献热力图
     "https://unpkg.com/katex@0/dist/katex.min.css"
 ]
 
@@ -59,13 +62,13 @@ nav = [
         { "使用 Markdown 高效写作" = "tutorials/zensical-markdown-tip.md" },
         { "Zensical 博客系统完全指南" = "tutorials/blog-tutorial.md" },
     ] },
-    { "插件系统" = [
-        { "插件概览" = "blog/plugins/overview.md" },
-        { "博客插件详解" = "blog/plugins/blog.md" },
-        { "搜索插件配置" = "blog/plugins/search.md" },
-        { "标签插件使用" = "blog/plugins/tags.md" },
-        { "RSS 插件配置" = "blog/plugins/rss.md" },
-    ] },
+    # { "插件系统" = [
+    #     { "插件概览" = "blog/plugins/overview.md" },
+    #     { "博客插件详解" = "blog/plugins/blog.md" },
+    #     { "搜索插件配置" = "blog/plugins/search.md" },
+    #     { "标签插件使用" = "blog/plugins/tags.md" },
+    #     { "RSS 插件配置" = "blog/plugins/rss.md" },
+    # ] },
     { "部署指南" = [
         { "GitHub Pages 部署（推荐）" = "blog/deployment/github-pages.md" },
         { "Netlify 部署" = "blog/deployment/netlify.md" },
@@ -80,6 +83,8 @@ nav = [
         { "自定义 404 页面" = "blog/advanced/custom-404.md" },
         { "自定义字体" = "blog/advanced/custom-fonts.md" },
         { "添加评论系统" = "blog/advanced/comment-system.md" },
+        { "GitHub 贡献热力图" = "blog/advanced/github-heatmap.md" },
+        { "GitHub 仓库卡片" = "blog/advanced/github-repo-card.md" },
     ] },
     { "常见问题" = "faq.md" },
     { "案例展示" = "showcase.md" },

@@ -12,7 +12,7 @@ categories:
 
 > Zensical 支持的 Markdown 扩展详解
 
-Zensical 使用 Python Markdown 和 PyMdown Extensions 来提供与 MkDocs 相同的 Markdown 方言，确保现有内容的兼容性。
+Zensical 基于 Python Markdown 和 PyMdown Extensions，在 Markdown 语法和扩展上与 MkDocs 1.x 高度兼容，便于现有内容的迁移与复用。
 
 ## 配置概述
 
@@ -72,6 +72,8 @@ HTML 规范由 W3C 维护。
 !!! info "信息"
     这是一个信息框
 ```
+
+**注意：** MkDocs 项目目前仍在积极维护，上例中的“已停止更新”只是演示 Definition List 语法的示例文本，并不代表实际项目状态。
 
 **效果：**
 
@@ -203,12 +205,13 @@ toc_depth = 3         # 目录深度
 generic = true
 ```
 
-还需要添加 MathJax 或 KaTeX：
+还需要在 `docs/javascripts/mathjax.js` 中配置 MathJax，并在 `zensical.toml` 的 `[project]` 段中通过 `extra_javascript` 引入：
 
 ```toml
+[project]
 extra_javascript = [
     "javascripts/mathjax.js",
-    "https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js",
+    "https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"
 ]
 ```
 
@@ -393,7 +396,7 @@ def hello():
 ```toml
 [project.markdown_extensions."pymdownx.superfences"]
 custom_fences = [
-    { name = "mermaid", class = "mermaid", format = "!!python/name:pymdownx.superfences.fence_code_format" }
+    { name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" }
 ]
 ```
 
@@ -493,7 +496,7 @@ custom_checkbox = true
 
 ## 完整配置示例
 
-以下是推荐的完整 Markdown 扩展配置：
+以下是在官方默认配置基础上略作调整的推荐 Markdown 扩展配置（例如设置 `toc_depth = 3`、启用代码行号锚点等）：
 
 ```toml
 # ===== Python Markdown 扩展 =====

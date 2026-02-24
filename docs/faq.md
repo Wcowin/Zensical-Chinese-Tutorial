@@ -50,6 +50,19 @@ pip install zensical
 
 详细步骤请参考 [5 分钟快速开始](getting-started/quick-start.md)。
 
+### 权限问题
+
+在安装时如果遇到类似 `Permission denied`、`Could not install packages due to an OSError` 等权限错误，通常有以下原因与解决方式：
+
+1. **没有在虚拟环境中安装（最常见）**  
+   - 请先创建并激活 `.venv`，再执行 `pip install zensical`（推荐做法）。
+
+2. **误用 sudo 安装**  
+   - 不推荐用 `sudo pip install ...`，容易污染系统 Python 环境并引发后续依赖问题。
+
+3. **确实要安装到用户目录（不推荐用于项目开发）**  
+   - macOS/Linux 可使用 `pip install --user zensical`。
+
 ### 安装后提示 `command not found: zensical` 怎么办？
 
 这通常是因为虚拟环境未激活。请确保：
