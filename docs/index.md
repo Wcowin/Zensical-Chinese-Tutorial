@@ -136,7 +136,9 @@ comments: false
 - **进阶**  
   [性能](blog/advanced/performance.md)、[SEO](blog/advanced/seo.md)、[i18n](blog/advanced/i18n.md)、[404/字体/评论](blog/advanced/custom-404.md) 等见左侧「高级主题」
 
-## 快速开始
+## 快速开始  
+
+![Google Chrome 2026-02-25 18.29.42.png](https://i.imgant.com/v2/7fTK6kG.png)
 
 在项目目录下执行（需 [Python 3.10+](https://pypi.org/project/zensical/)）：
 
