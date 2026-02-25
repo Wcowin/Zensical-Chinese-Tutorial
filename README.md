@@ -17,7 +17,9 @@
 
 **在线阅读**：[https://wcowin.work/Zensical-Chinese-Tutorial/](https://wcowin.work/Zensical-Chinese-Tutorial/)
 
-## 为什么选择 Zensical？
+## 为什么选择 Zensical？  
+
+![image](https://i.111666.best/image/yXOkJDmGrZYTPwOqpvaXIN.png)  
 
 - ✅ MkDocs 已停止更新，Zensical 是官方推荐的新一代
 - ✅ 即时导航，无需刷新页面
