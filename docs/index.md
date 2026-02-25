@@ -45,7 +45,7 @@ comments: false
     
     - [x] [MkDocs for Material](https://squidfunk.github.io/mkdocs-material/blog/2025/11/11/insiders-now-free-for-everyone/) 已停止更新进入维护模式，[Zensical](https://zensical.org/) 是官方推荐的新一代博客系统
     - [x] 即时导航，无需刷新页面
-    - [x] 博客系统，开箱即用
+    - [x] 无需费心，开箱即用
     - [x] 性能优异，加载迅速
     
     === "Mac/PC 端"
