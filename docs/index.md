@@ -161,6 +161,7 @@ zensical serve
 - [Suffine Hub](https://sufine.top/)
 - [Beyond欣's Notes](https://notes.beyondxin.top/index.html)
 - [更多案例](showcase.md)
+- 基于 Mkdocs、Zensical 的主题与站点汇总在：https://gist.github.com/Wcowin/d36a31b86aec04c203fec1562bb2391b        支持评论提交
 
 ![image.png](https://i.imgant.com/v2/OrGeyFz.png)
 
