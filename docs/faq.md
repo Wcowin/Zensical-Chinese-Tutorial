@@ -261,7 +261,6 @@ Zensical 正在开发模块系统来替代 hooks。
 
 - **官方文档**：[https://zensical.org/docs/](https://zensical.org/docs/)
 - **本教程**：[Zensical 中文教程](https://wcowin.work/Zensical-Chinese-Tutorial/)
-- **社区支持**：[Zensical-Chinese-Tutorial 社区](https://support.qq.com/products/646913/)
 - **GitHub Issues**：[提交问题](https://github.com/Wcowin/Zensical-Chinese-Tutorial/issues)
 
 ### 如何贡献到本教程？
@@ -276,4 +275,4 @@ Zensical 正在开发模块系统来替代 hooks。
 
 ---
 
-**还有其他问题？** 请访问 [Zensical 官方文档](https://zensical.org/docs/) 或在 [社区](https://support.qq.com/products/646913/) 提问。
+**还有其他问题？** 请访问 [Zensical 官方文档](https://zensical.org/docs/) 或发送邮件至 [wcowin@qq.com](mailto:wcowin@qq.com) 提问。

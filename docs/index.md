@@ -7,7 +7,7 @@ hide:
 comments: false
 ---
 
-<center><font class="custom-font ml3">最好的 Zensical 中文教程</font></center>
+<center><font class="custom-font ml3">最好的 Zensical教程</font></center>
 
 <style>
 .custom-font {
@@ -64,13 +64,11 @@ comments: false
 > 不同于市面上过时的 [MkDocs 教程](https://wcowin.work/Mkdocs-Wcowin/)（其实也是我写的），本站提供了 **最详细、最便捷、最前沿** 的 Zensical 中文教程，与 [官方发布](https://zensical.org/docs/get-started/) 的版本同步。包含了 Zensical 的安装、配置、主题美化、博客系统等内容。无论你是初学者还是有经验的用户，都能在这里找到你需要的帮助。𝓳𝓾𝓼𝓽 𝓮𝓷𝓳𝓸𝔂 𝓲𝓽～
 
 !!! info "当前状态 (2026年2月)"
-    Zensical 处于 **Alpha**（[PyPI](https://pypi.org/project/zensical/)），核心功能可用，部分能力开发中。详见 [FAQ - 功能状态](faq.md#zensical-功能状态)。
+    Zensical 处于 **Alpha**（[PyPI](https://pypi.org/project/zensical/)），核心功能可用，部分能力开发中。详见 [FAQ - 功能状态](faq.md#zensical)。
 
 ---
 
 ## 导航
-
-按用途选下方卡片，或看 [推荐学习路径](#_2)。
 
 <div class="grid cards" markdown>
 
@@ -81,14 +79,14 @@ comments: false
     - [5 分钟快速开始](getting-started/quick-start.md)
     - [命令行接口 (CLI)](getting-started/cli.md)
     - [从 MkDocs 迁移](getting-started/migration.md)
-    - [zensical.toml 配置详解](tutorials/configuration.md)
     - [常见问题解答](faq.md)
 
 -   :material-book-open:{ .lg .middle } __核心教程__
 
     ---
-    
-    - [博客系统完全指南](tutorials/blog-tutorial.md)
+    <!-- - [博客系统完全指南](tutorials/blog-tutorial.md) -->
+
+    - [zensical.toml 配置详解](tutorials/configuration.md)
     - [主题配置指南](tutorials/theme-customization.md)
     - [Markdown 扩展](tutorials/markdown-extensions.md)
     - [Markdown 高效写作](tutorials/zensical-markdown-tip.md)
@@ -115,17 +113,6 @@ comments: false
 
 </div>
 
-<!-- ## Zensical vs MkDocs (保留备用)
-
-| 特性 | Zensical | MkDocs |
-|------|----------|--------|
-| **维护状态** | ✅ 积极开发 | ⚠️ 已停止更新 |
-| **即时导航** | ✅ 原生支持 | ❌ 需要插件 |
-| **博客系统** | ✅ 开箱即用 | ⚠️ 需要插件 |
-| **性能** | ✅ 优异 | ⚠️ 一般 |
-| **现代化** | ✅ 现代设计 | ⚠️ 传统设计 |
-| **配置文件** | TOML | YAML |
-| **中文支持** | ✅ 完整 | ✅ 完整 | -->
 
 ## 推荐学习路径
 
@@ -134,7 +121,7 @@ comments: false
 - **从 MkDocs 迁移**  
   [迁移指南](getting-started/migration.md) → [配置差异](tutorials/configuration.md) → 测试后部署
 - **进阶**  
-  [性能](blog/advanced/performance.md)、[SEO](blog/advanced/seo.md)、[i18n](blog/advanced/i18n.md)、[404/字体/评论](blog/advanced/custom-404.md) 等见左侧「高级主题」
+  [性能](blog/advanced/performance.md)、[SEO](blog/advanced/seo.md)、[i18n](blog/advanced/i18n.md)、[404/字体/评论](blog/advanced/custom-404.md) 等见「高级主题」
 
 ## 快速开始  
 
@@ -161,7 +148,7 @@ zensical serve
 - [Suffine Hub](https://sufine.top/)
 - [Beyond欣's Notes](https://notes.beyondxin.top/index.html)
 - [更多案例](showcase.md)
-- 基于 Mkdocs、Zensical 的主题与站点汇总在：https://gist.github.com/Wcowin/d36a31b86aec04c203fec1562bb2391b        支持评论提交
+- 基于 Mkdocs、Zensical 的主题与站点汇总在：<a href="https://gist.github.com/Wcowin/d36a31b86aec04c203fec1562bb2391b" target="_blank">GitHub Gist</a>(支持评论提交)
 
 ![image.png](https://i.imgant.com/v2/OrGeyFz.png)
 

@@ -748,4 +748,4 @@ nav = [
 
 - 查看 [常见问题](../faq.md)
 - 访问 [Zensical 官方文档](https://zensical.org/docs/)
-- 加入 [Zensical-Chinese-Tutorial 社区](https://support.qq.com/products/646913/)
+- 发送邮件至 [wcowin@qq.com](mailto:wcowin@qq.com) 提问
