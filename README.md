@@ -21,7 +21,7 @@
 
 ![Google Chrome 2026-02-25 18.29.42.png](https://i.imgant.com/v2/7fTK6kG.png) 
 
-- ✅ MkDocs 已停止更新，Zensical 是官方推荐的新一代
+- ✅ Material for MkDocs 已停止更新，Zensical 是官方推荐的新一代
 - ✅ 即时导航，无需刷新页面
 - ✅ 博客系统，开箱即用
 - ✅ Rust 运行时，性能优异
