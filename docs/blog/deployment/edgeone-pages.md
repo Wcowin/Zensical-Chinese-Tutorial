@@ -86,7 +86,7 @@ EdgeOne Pages 构建系统会优先检测 package.json。虽然我们是 Python 
 
 ```json
 {
-  "installCommand": "python3 get-pip.py && python3 -m pip install zensical --upgrade pip",
+  "installCommand": "python3 get-pip.py && python3 -m pip install --user zensical; export PATH=\"/dev/shm/home/.local/bin:$PATH\"; exit 0",
   "buildCommand": "python3 -m zensical build --clean",
   "outputDirectory": "./site",
   "headers": [
@@ -109,7 +109,11 @@ EdgeOne Pages 构建系统会优先检测 package.json。虽然我们是 Python 
 
 **配置详解：**
 
-- **installCommand (环境安装)**:python3 get-pip.py: 运行下载的脚本，安装 pip。python3 -m pip install ...: 升级 pip 并安装 zensical 库。使用 python3 -m 是为了确保调用的是当前环境下的解释器。
+- **installCommand (环境安装)**:python3 get-pip.py: 运行下载的脚本，安装 pip；--user 显式指定用户目录安装，避免触发系统级权限检查；export PATH=... 确保后续构建能正确调用 zensical 命令行工具；exit 0 强制覆盖 pyenv 钩子产生的 126 错误码，让 CI 认为安装步骤成功。
+
+!!! tip
+    运行如下的构建命令：python3 get-pip.py && python3 -m pip install zensical --upgrade pip 将会遇到报错，原因是EdgeOne Pages 的 CI 运行在高度受限的沙箱容器中，通常禁止修改 /usr/bin 下的系统二进制文件权限，或将其挂载为只读/不可执行。而当 pip install 执行完毕后，pyenv 会自动调用 pyenv-rehash 来更新命令缓存（shim）。由于权限不足导致执行失败，由于依赖实际已安装成功，因此我们可以覆盖构建过程中产生的 126 错误码，以便进入下一步的构建流程。
+
 - **buildCommand (构建指令)**:python3 -m zensical build --clean: 调用 Zensical 生成静态网页，--clean 确保每次构建前清理旧缓存，防止样式混乱。
 - **outputDirectory (输出目录)**:./site: Zensical 默认的生成目录。EdgeOne 会将此目录发布到外网。
 - **headers (可选优化)**:配置 HTTP 响应头，增加安全性（防止点击劫持）并设置缓存策略（2小时缓存），提升访问体验。
