@@ -74,6 +74,7 @@ nav = [
         { "Netlify 部署" = "blog/deployment/netlify.md" },
         { "EdgeOne Pages 部署" = "blog/deployment/edgeone-pages.md" },
         { "GitLab Pages 部署" = "blog/deployment/gitlab-pages.md" },
+        { "Cloudflare Pages 部署" = "blog/deployment/cloudflare-pages.md" },
         { "自托管部署" = "blog/deployment/self-hosted.md" },
     ] },
     { "高级主题" = [
