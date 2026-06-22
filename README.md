@@ -88,8 +88,8 @@ zensical build --clean
 
 ## 贡献  
 
-<a href="https://github.com/Wcowin/Zensical-Chinese-Tutorial/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Wcowin/Zensical-Chinese-Tutorial" />
+<a href="https://github.com/Wkwcowin/Zensical-Chinese-Tutorial/graphs/contributors">
+  <img src="https://github.com/Wkwcowin/Zensical-Chinese-Tutorial" />
 </a>
 
 欢迎提交 [Issue](https://github.com/Wcowin/Zensical-Chinese-Tutorial/issues) 和 [Pull Request](https://github.com/Wcowin/Zensical-Chinese-Tutorial/pulls)！
