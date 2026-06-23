@@ -6,6 +6,10 @@
   const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   const DAYS = ['', 'Mon', '', 'Wed', '', 'Fri', ''];
 
+  // 缓存配置
+  const CACHE_DURATION = 3 * 60 * 60 * 1000; // 3小时
+  const CACHE_KEY_PREFIX = 'github-heatmap-';
+
   function formatDate(dateStr) {
     const d = new Date(dateStr);
     return `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`;
@@ -42,7 +46,81 @@
     `;
   }
 
+  // 从缓存获取数据
+  function getCachedData(username) {
+    try {
+      const cacheKey = CACHE_KEY_PREFIX + username;
+      const cached = localStorage.getItem(cacheKey);
+      const cacheTime = localStorage.getItem(cacheKey + '-time');
+
+      if (cached && cacheTime) {
+        const age = Date.now() - parseInt(cacheTime, 10);
+        if (age < CACHE_DURATION) {
+          return JSON.parse(cached);
+        }
+      }
+    } catch (e) {
+      // localStorage 不可用（隐私模式等），静默失败
+    }
+    return null;
+  }
+
+  // 保存数据到缓存
+  function setCachedData(username, data) {
+    try {
+      const cacheKey = CACHE_KEY_PREFIX + username;
+      localStorage.setItem(cacheKey, JSON.stringify(data));
+      localStorage.setItem(cacheKey + '-time', Date.now().toString());
+    } catch (e) {
+      // localStorage 不可用或已满，静默失败
+    }
+  }
+
+  // 清除缓存数据
+  function clearCachedData(username) {
+    try {
+      const cacheKey = CACHE_KEY_PREFIX + username;
+      localStorage.removeItem(cacheKey);
+      localStorage.removeItem(cacheKey + '-time');
+    } catch (e) {
+      // localStorage 不可用，静默失败
+    }
+  }
+
+  // 验证 API 响应格式
+  function isValidHeatmapData(data) {
+    return data &&
+           typeof data === 'object' &&
+           data.total && typeof data.total.lastYear === 'number' &&
+           Array.isArray(data.contributions) &&
+           data.contributions.every(day => 
+             day && typeof day.date === 'string' && 
+             typeof day.count === 'number' && 
+             typeof day.level === 'number'
+           );
+  }
+
+  // 从 API 获取数据
+  async function fetchHeatmapData(username) {
+    const response = await fetch(`https://github-contributions-api.jogruber.de/v4/${username}?y=last`);
+    if (!response.ok) {
+      throw new Error('GitHub contributions API error: ' + response.status);
+    }
+    const data = await response.json();
+    
+    // 验证响应格式
+    if (!isValidHeatmapData(data)) {
+      throw new Error('Invalid API response format');
+    }
+    
+    return data;
+  }
+
   async function loadHeatmap(container) {
+    // 避免重复初始化
+    if (container.dataset.githubHeatmapInitialized === 'true') return;
+    container.dataset.githubHeatmapInitialized = 'true';
+
     const username = container.getAttribute('data-username') || 'Wcowin';
     container.innerHTML = buildHeatmapInnerHTML(username);
 
@@ -52,13 +130,35 @@
 
     if (!svg || !statsEl || !tooltipEl) return;
 
-    try {
-      const response = await fetch(`https://github-contributions-api.jogruber.de/v4/${username}?y=last`);
-      const data = await response.json();
-      renderHeatmap(container, data, username);
-    } catch (error) {
-      console.error('Error loading GitHub contributions:', error);
-      statsEl.textContent = '--';
+    // 尝试获取缓存数据
+    const cachedData = getCachedData(username);
+
+    if (cachedData && isValidHeatmapData(cachedData)) {
+      // 有缓存：先显示缓存数据
+      renderHeatmap(container, cachedData, username);
+
+      // 后台静默刷新（不阻塞，失败时清理缓存）
+      fetchHeatmapData(username)
+        .then(data => {
+          setCachedData(username, data);
+          renderHeatmap(container, data, username);
+        })
+        .catch(() => {
+          // 获取失败，清除过期缓存，下次会重新尝试
+          clearCachedData(username);
+        });
+    } else {
+      // 无缓存或缓存无效：从 API 获取
+      try {
+        const data = await fetchHeatmapData(username);
+        setCachedData(username, data);
+        renderHeatmap(container, data, username);
+      } catch (error) {
+        console.error('Error loading GitHub contributions:', error);
+        statsEl.textContent = '加载失败';
+        // 清除可能存在的无效缓存
+        clearCachedData(username);
+      }
     }
   }
 
@@ -69,9 +169,16 @@
 
     if (!svg || !statsEl || !tooltipEl) return;
 
-    statsEl.textContent = data.total.lastYear;
+    // 安全获取贡献数
+    const totalContributions = data.total && typeof data.total.lastYear === 'number' 
+      ? data.total.lastYear 
+      : 0;
+    statsEl.textContent = totalContributions.toString();
 
-    const weeks = Math.ceil(data.contributions.length / ROWS);
+    // 安全获取贡献数据
+    const contributions = Array.isArray(data.contributions) ? data.contributions : [];
+    
+    const weeks = Math.ceil(contributions.length / ROWS);
     const labelOffset = 28;
     const headerOffset = 16;
     const svgWidth = labelOffset + weeks * (CELL + GAP);
@@ -84,11 +191,14 @@
     let lastMonth = -1;
     for (let w = 0; w < weeks; w++) {
       const idx = w * ROWS;
-      if (idx < data.contributions.length) {
-        const month = new Date(data.contributions[idx].date).getMonth();
-        if (month !== lastMonth) {
-          monthLabels.push({ label: MONTHS[month], x: labelOffset + w * (CELL + GAP) });
-          lastMonth = month;
+      if (idx < contributions.length) {
+        const date = new Date(contributions[idx].date);
+        if (!isNaN(date.getTime())) {
+          const month = date.getMonth();
+          if (month !== lastMonth) {
+            monthLabels.push({ label: MONTHS[month], x: labelOffset + w * (CELL + GAP) });
+            lastMonth = month;
+          }
         }
       }
     }
@@ -117,7 +227,10 @@
       }
     });
 
-    data.contributions.forEach((day, idx) => {
+    contributions.forEach((day, idx) => {
+      // 验证日期数据
+      if (!day || typeof day.date !== 'string') return;
+      
       const col = Math.floor(idx / ROWS);
       const row = idx % ROWS;
       const rect = document.createElementNS(ns, 'rect');
@@ -130,9 +243,11 @@
       rect.setAttribute('ry', 2);
       rect.setAttribute('class', 'heatmap-cell');
       rect.setAttribute('data-date', day.date);
-      rect.setAttribute('data-count', day.count);
+      rect.setAttribute('data-count', day.count || 0);
 
-      const opacity = LEVEL_OPACITY[Math.min(day.level, 4)];
+      // 安全的 level 值
+      const level = typeof day.level === 'number' ? day.level : 0;
+      const opacity = LEVEL_OPACITY[Math.min(level, 4)];
       rect.setAttribute('fill', `rgba(35, 154, 59, ${opacity})`);
 
       rect.addEventListener('mouseenter', (e) => {
@@ -186,7 +301,11 @@
     }
 
     function tooltip(date, count, event) {
-      const text = count > 0 ? `${formatDate(date)}: ${count} 次贡献` : `${formatDate(date)}: 无贡献`;
+      const dateObj = new Date(date);
+      const dateText = !isNaN(dateObj.getTime()) 
+        ? formatDate(date) 
+        : date;
+      const text = count > 0 ? `${dateText}: ${count} 次贡献` : `${dateText}: 无贡献`;
       const contentEl = tooltipEl.querySelector('.github-heatmap-tooltip__content');
       if (contentEl) {
         contentEl.textContent = text;
@@ -199,7 +318,13 @@
 
       if (target && target.getBoundingClientRect) {
         const cellRect = target.getBoundingClientRect();
+        
+        // 先显示 tooltip 才能获取正确尺寸
+        tooltipEl.style.visibility = 'hidden';
+        tooltipEl.style.display = 'block';
         const tooltipRect = tooltipEl.getBoundingClientRect();
+        tooltipEl.style.visibility = '';
+        tooltipEl.style.display = '';
 
         let x = cellRect.left + cellRect.width / 2 - tooltipRect.width / 2;
         let y = cellRect.top - tooltipRect.height - gap;
@@ -241,4 +366,3 @@
     initHeatmaps();
   }
 })();
-

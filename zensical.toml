@@ -90,6 +90,7 @@ nav = [
         { "链接与脚注验证" = "blog/advanced/validation.md" },
         { "GitHub 贡献热力图" = "blog/advanced/github-heatmap.md" },
         { "GitHub 仓库卡片" = "blog/advanced/github-repo-card.md" },
+        { "Giscus 评论系统明暗主题同步修复教程" = "blog/advanced/giscus-theme-sync.md" },
     ] },
     { "常见问题" = "faq.md" },
     { "案例展示" = "showcase.md" },
