@@ -1,6 +1,6 @@
 # Zensical 中文教程  
 
-<p align="center">提供最详细、最便捷、最前沿的 Zensical 中文教程</p>
+<p align="center">最详细、最便捷、最前沿的 Zensical 中文教程</p>
 
 <p align="center">
   <picture>
