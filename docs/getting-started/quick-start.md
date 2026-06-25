@@ -1,16 +1,15 @@
 ---
 title: 5 分钟快速开始
 date: 2025-01-22
-authors:
-  - name: Wcowin
-    email: wcowin@qq.com
 categories:
-  - 快速开始
+  - zensical
 ---
 
 # 5 分钟快速开始 Zensical
 
 > 从零到一，快速搭建你的 Zensical 文档站点
+
+本zensical系列由Wcowin原创，禁止转载。  
 
 !!! info "官方文档"
     Zensical 官方网站: [https://zensical.org/](https://zensical.org/)  

@@ -82,7 +82,7 @@ zensical build --clean
 
 ## 联系方式
 
-- **GitHub**: [@Wcowin](https://github.com/Wcowin)
+- **GitHub**: [@Wcowin](https://github.com/Wkwcowin)
 - **Email**: wcowin@qq.com
 - **Telegram**: [@Wcowin](https://t.me/Wcowin)
 

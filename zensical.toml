@@ -63,6 +63,7 @@ nav = [
         { "GLightbox 图片灯箱" = "tutorials/glightbox.md" },
         { "使用 Markdown 高效写作" = "tutorials/zensical-markdown-tip.md" },
         { "Zensical 博客系统完全指南" = "tutorials/blog-tutorial.md" },
+        { "Zensical Studio 使用指南" = "tutorials/studio.md" },
     ] },
     # { "插件系统" = [
     #     { "插件概览" = "blog/plugins/overview.md" },
@@ -96,7 +97,7 @@ nav = [
     { "案例展示" = "showcase.md" },
     { "留言板" = "waline.md" },
     { "关于" = "about.md" },
-    { "加入社群" = "https://pic3.zhimg.com/80/v2-5ef3dde831c9d0a41fe35fabb0cb8784_1440w.webp" },
+    { "加入社群" = "https://picx.zhimg.com/80/v2-ff732fe4d4b59cd111ca0e4a6eb5e1a9_1440w.webp" },
     { "个人博客" = "https://wcowin.work/" },
 ]
 

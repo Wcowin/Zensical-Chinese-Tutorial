@@ -79,19 +79,19 @@ hide_comment: true
 <script async defer src="https://cusdis.com/js/cusdis.es.js"></script> -->
 
 
-
 <script src="https://giscus.app/client.js"
-        data-repo="Wcowin/Zensical-Chinese-Tutorial"
-        data-repo-id="R_kgDOQavQgA"
+        data-repo="Wkwcowin/Comment"
+        data-repo-id="R_kgDOS6WZ6Q"
         data-category="General"
-        data-category-id="DIC_kwDOQavQgM4C0jUE"
+        data-category-id="DIC_kwDOS6WZ6c4C_Ik1"
         data-mapping="pathname"
-        data-strict="0"
+        data-strict="1"
         data-reactions-enabled="1"
         data-emit-metadata="0"
-        data-input-position="bottom"
+        data-input-position="top"
         data-theme="preferred_color_scheme"
         data-lang="zh-CN"
+        data-loading="lazy"
         crossorigin="anonymous"
         async>
 </script>
