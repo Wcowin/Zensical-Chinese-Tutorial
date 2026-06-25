@@ -1,5 +1,3 @@
-# Zensical 官方推荐的 GitHub Pages 部署工作流
-# 文档: https://zensical.org/docs/publish-your-site/
 name: Documentation
 on:
   push:
@@ -19,13 +17,28 @@ jobs:
     steps:
       - uses: actions/configure-pages@v5
       - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: 3.x
       - run: pip install zensical
+
+      # 生成 Ask AI 的 API Key 配置文件
+      # - name: Generate GLM API Config
+      #   run: |
+      #     echo "window.GLM_API_KEY = '${{ secrets.GLM_API_KEY }}';" > docs/javascripts/glm-api-config.js
+
       - run: zensical build --clean
       - uses: actions/upload-pages-artifact@v4
         with:
           path: site
-      - id: deployment
-        uses: actions/deploy-pages@v4
+      - uses: actions/deploy-pages@v4
+        id: deployment
+
+      # IndexNow - 通知搜索引擎内容更新
+      # - name: IndexNow
+      #   uses: bojieyang/indexnow-action@v2
+      #   with:
+      #     sitemap-location: "https://wcowin.work/sitemap.xml"
+      #     key: ${{ secrets.INDEXNOW_KEY }}
