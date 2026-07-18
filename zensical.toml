@@ -23,7 +23,7 @@ site_dir = "site"                                # 生成的网站目录
 use_directory_urls = true                        # 使用目录形式的URL
 
 # ===== 仓库配置 =====
-repo_url = "https://github.com/Wkwcowin/Zensical-Chinese-Tutorial"  # 右上角点击跳转的链接
+repo_url = "https://github.com/Wcowin/Zensical-Chinese-Tutorial"  # 右上角点击跳转的链接
 repo_name = "Zensical-Chinese-Tutorial"                            # 右上角的名字
 edit_uri = "edit/main/docs"                              # 编辑按钮跳转的链接
 
@@ -197,7 +197,7 @@ deprecated = "已弃用"
 # 显示在页脚的社交媒体图标
 [[project.extra.social]]
 icon = "fontawesome/brands/github"
-link = "https://github.com/Wkwcowin/Zensical-Chinese-Tutorial"
+link = "https://github.com/Wcowin/Zensical-Chinese-Tutorial"
 name = "GitHub"
 
 [[project.extra.social]]

@@ -12,7 +12,7 @@
 
 <p align="center">
   <a href="https://zensical.org/"><img src="https://img.shields.io/badge/Built_with-Zensical-4051B5?style=for-the-badge" alt="Built with Zensical" /></a>
-  <a href="https://github.com/Wkwcowin/Zensical-Chinese-Tutorial/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="MIT License" /></a>
+  <a href="https://github.com/Wcowin/Zensical-Chinese-Tutorial/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="MIT License" /></a>
 </p>
 
 **在线阅读**：[https://wcowin.work/Zensical-Chinese-Tutorial/](https://wcowin.work/Zensical-Chinese-Tutorial/)
@@ -31,7 +31,7 @@
 
 ```bash
 # 克隆项目
-git clone https://github.com/Wkwcowin/Zensical-Chinese-Tutorial.git
+git clone https://github.com/Wcowin/Zensical-Chinese-Tutorial.git
 cd Zensical-Chinese-Tutorial
 
 # 创建虚拟环境
@@ -82,17 +82,17 @@ zensical build --clean
 
 ## 联系方式
 
-- **GitHub**: [@Wcowin](https://github.com/Wkwcowin)
+- **GitHub**: [@Wcowin](https://github.com/Wcowin)
 - **Email**: wcowin@qq.com
 - **Telegram**: [@Wcowin](https://t.me/Wcowin)
 
 ## 贡献  
 
-<a href="https://github.com/Wkwcowin/Zensical-Chinese-Tutorial/graphs/contributors">
-  <img src="https://github.com/Wkwcowin/Zensical-Chinese-Tutorial" />
+<a href="https://github.com/Wcowin/Zensical-Chinese-Tutorial/graphs/contributors">
+  <img src="https://github.com/Wcowin/Zensical-Chinese-Tutorial" />
 </a>
 
-欢迎提交 [Issue](https://github.com/Wkwcowin/Zensical-Chinese-Tutorial/issues) 和 [Pull Request](https://github.com/Wkwcowin/Zensical-Chinese-Tutorial/pulls)！
+欢迎提交 [Issue](https://github.com/Wcowin/Zensical-Chinese-Tutorial/issues) 和 [Pull Request](https://github.com/Wcowin/Zensical-Chinese-Tutorial/pulls)！
 
 ## License
 
