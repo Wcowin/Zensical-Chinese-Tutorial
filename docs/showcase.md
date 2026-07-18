@@ -25,7 +25,7 @@ categories:
 !!! tip "提交你的案例"
     如果你使用 Zensical 构建了网站，欢迎通过以下方式提交：
     
-    - 在 GitHub 上创建 [Issue](https://github.com/Wkwcowin/Zensical-Chinese-Tutorial/issues)
+    - 在 GitHub 上创建 [Issue](https://github.com/Wcowin/Zensical-Chinese-Tutorial/issues)
     - 发送邮件至 [wcowin@qq.com](mailto:wcowin@qq.com)
     - 通过 Telegram 联系 [@Wcowin](https://t.me/Wcowin)
 

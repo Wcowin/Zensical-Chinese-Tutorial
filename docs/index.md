@@ -156,7 +156,7 @@ zensical serve
 
 欢迎 Fork 后提 PR。
 
-- **GitHub**：[Wcowin/Zensical-Chinese-Tutorial](https://github.com/Wkwcowin/Zensical-Chinese-Tutorial)
+- **GitHub**：[Wcowin/Zensical-Chinese-Tutorial](https://github.com/Wcowin/Zensical-Chinese-Tutorial)
 - **Email**：[wcowin@qq.com](mailto:wcowin@qq.com)
 - 微信与 Telegram 见下方
 

@@ -261,7 +261,7 @@ Zensical 正在开发模块系统来替代 hooks。
 
 - **官方文档**：[https://zensical.org/docs/](https://zensical.org/docs/)
 - **本教程**：[Zensical 中文教程](https://wcowin.work/Zensical-Chinese-Tutorial/)
-- **GitHub Issues**：[提交问题](https://github.com/Wkwcowin/Zensical-Chinese-Tutorial/issues)
+- **GitHub Issues**：[提交问题](https://github.com/Wcowin/Zensical-Chinese-Tutorial/issues)
 
 ### 如何贡献到本教程？
 

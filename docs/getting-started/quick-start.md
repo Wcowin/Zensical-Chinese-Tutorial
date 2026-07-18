@@ -186,7 +186,7 @@ tree -a
     
     ```bash
     # 克隆模板项目
-    git clone https://github.com/Wkwcowin/Zensical-Chinese-Tutorial.git my-site
+    git clone https://github.com/Wcowin/Zensical-Chinese-Tutorial.git my-site
     cd my-site
     
     # （推荐）创建并激活虚拟环境
